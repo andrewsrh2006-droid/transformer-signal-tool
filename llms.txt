@@ -1,0 +1,33 @@
+# Transformer Leading-Signal Dashboard
+
+> An offline Streamlit tool that screens ~400 economic signals to find which genuinely **lead** U.S. transformer prices (FRED PPI `PCU335311335311`) — by how many months and how trustworthy each lead is — and rejects the false ones. Each signal runs through a ±24-month lag-correlation scan, three robustness gates (smoothing, holds-over-time, 3-year-block episode jackknife), permutation-FDR + bootstrap significance, and a commodity-cycle control, then gets exactly one verdict. Fully reproducible from committed data; the same engine re-points to any outcome.
+
+The repository has two halves connected only by committed result files: an **offline pipeline** (`run_pipeline.py` + `signal_tool/`) that does the heavy statistics and writes `outputs/`, and a **Streamlit dashboard** (`app.py`) that only reads `outputs/` and renders it. There are no FRED calls and no API key at runtime, so the app starts in seconds.
+
+## Start here (read in this order)
+
+- [BUILD_GUIDE.md](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/BUILD_GUIDE.md): THE comprehensive reference — architecture, the full methodology (every gate and every correlation), the verdict taxonomy, a one-table threshold reference, reproduction steps, an output-file reference, and how to adapt the tool to a different outcome. Read this first for any deep question.
+- [README.md](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/README.md): quick start (`pip install -r requirements.txt` then `streamlit run app.py`) and what the three dashboard tabs show.
+
+## Code (what each file does)
+
+- [app.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/app.py): the dashboard and the ONLY file needed at runtime. Reads `outputs/`, renders three tabs — Screen, Correlation (with the lead-lag propagation map above each co-movement matrix), and Compare.
+- [run_pipeline.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/run_pipeline.py): the offline regeneration pipeline (~15 min). Writes every file in `outputs/`. Never invoked by the dashboard.
+- [signal_tool/config.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/config.py): the outcome series, the ~400 candidate signals, the market control, and **every threshold**.
+- [signal_tool/process.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/process.py): the year-over-year transform and series alignment.
+- [signal_tool/correlate.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/correlate.py): lag correlation, peak finding, and lead classification (true lead / co-mover / reversed).
+- [signal_tool/screen.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/screen.py): the three robustness gates — smoothing, holds-over-time, and the 3-year-block episode jackknife.
+- [signal_tool/significance.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/significance.py): circular-shift permutation p-value, Benjamini-Hochberg FDR q-value, and the moving-block bootstrap CI.
+- [signal_tool/control.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/control.py): the market-cycle control — partial correlation, `is_cycle_driven`, and the survival label.
+- [signal_tool/leaderboard.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/leaderboard.py): the `verdict()` logic and the four-group verdict taxonomy with its precedence rules.
+- [signal_tool/cluster.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/cluster.py): hierarchical clustering of signals into "forces" (tight) and "blocs" (loose).
+- [signal_tool/leadlag.py](https://raw.githubusercontent.com/andrewsrh2006-droid/transformer-signal-tool/main/signal_tool/leadlag.py): the directed "A leads B" propagation-map edges.
+
+## Key facts for an agent
+
+- **Outcome:** FRED `PCU335311335311` (transformer PPI). **Market control:** `PPIACO` (all-commodities). **Lag window:** ±24 months.
+- **Significant** = FDR q < 0.05 **AND** the bootstrap 95% CI excludes zero.
+- **Verdict groups:** Leads / Co-movers / Reversed / Rejected. Full taxonomy and precedence in BUILD_GUIDE §7.
+- **Run the dashboard:** `streamlit run app.py`. **Regenerate results:** `python3 run_pipeline.py`.
+- **Adapt to a new outcome:** BUILD_GUIDE §12 — swap `config.OUTCOME`, cache the data, curate candidates, re-run. (An electricity-price outcome run exists on the `electricity-price` branch as a worked example.)
+- **Data:** ~517 FRED series cached under `data/raw/`; results committed under `outputs/`. No network at runtime.
