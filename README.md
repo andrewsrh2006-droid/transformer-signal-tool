@@ -15,11 +15,15 @@ The dashboard is **fully offline**: it reads precomputed results from `outputs/`
 
 ## What it shows
 
-- **Screen** — per-signal peak lead/lag, the disqualifying robustness gates (smoothing, holds-over-time, 3-year-block episode jackknife), permutation *p* / bootstrap CI, and market-cycle control, with a verdict per signal.
-- **Correlation** — correlation-of-correlations heatmap that collapses redundant signals into independent "forces."
-- **Lead–lag**, **Compare**, and **Groups** tabs for the network of leads and the clustering ladder.
+Three tabs, all rendered from the committed `outputs/`:
+
+- **🔬 Screen** — everything about one signal / force / bloc: peak lead/lag, the disqualifying robustness gates (smoothing, holds-over-time, 3-year-block episode jackknife), FDR *q* / bootstrap CI, and the market-cycle control, with a verdict.
+- **🔗 Correlation** — at each level (signal / tight-force / loose-bloc), the **lead-lag propagation map** (which signals lead which others) above the **co-movement matrix** that collapses redundant signals into independent "forces," plus the clustering dendrograms.
+- **🏆 Compare** — every verdict side by side in one colour-coded transparency table.
 
 Verdicts and the full ranking live in `outputs/leaderboard.csv` / `outputs/leaderboard.md`.
+
+**📘 For the complete methodology — every gate, the correlation math, the verdict taxonomy, all thresholds, and how to reproduce or re-point the whole site — see [`BUILD_GUIDE.md`](BUILD_GUIDE.md).**
 
 ## Regenerating the results (optional, developer step)
 
