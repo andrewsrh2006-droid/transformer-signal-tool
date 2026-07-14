@@ -1244,8 +1244,8 @@ def main():
         "cycle is removed** (not just riding commodity prices), and be **statistically "
         "significant**. Correlated signals are grouped into \"forces,\" so five copper series "
         "count as one witness, not five. Use the tabs below: **Screen** (each item's checks), "
-        "**Correlation** (how signals and forces relate, plus the groupings), **Lead-lag map** "
-        "(which signals lead which others), **Compare** (every verdict side by side).")
+        "**Correlation** (the lead-lag propagation map — which signals lead which others — above "
+        "each co-movement matrix, plus the groupings), **Compare** (every verdict side by side).")
 
     st.markdown(header_tiles_html(board), unsafe_allow_html=True)
     _summed = int(sum(int((board["verdict"] == k).sum()) for _, k in VERDICT_TILES))
@@ -1254,8 +1254,8 @@ def main():
                f"screening-gate outcome (cycle control, robustness gates, significance). The four "
                f"group totals sum to **{_summed}** = the {len(board)} signals tested.")
 
-    tab_screen, tab_corr, tab_leadlag, tab_compare = st.tabs(
-        ["🔬 Screen", "🔗 Correlation", "🗺️ Lead-lag map", "🏆 Compare"])
+    tab_screen, tab_corr, tab_compare = st.tabs(
+        ["🔬 Screen", "🔗 Correlation", "🏆 Compare"])
 
     catalog = build_force_catalog(clusters_json, force_df)
     bloc_catalog = build_force_catalog(load_clusters_loose(), load_bloc_leaderboard())
@@ -1292,10 +1292,65 @@ def main():
         return st.radio("Spread scale", ["Standardized (z-score)", "Raw %-pts"],
                         horizontal=True, key=key).startswith("Standardized")
 
+    def render_leadlag(edges, layer, tname="Transformer PPI"):
+        """The item→item propagation map for one level (signal / force / bloc), shown above that
+        level's co-movement matrix in the Correlation tab."""
+        if edges is None or len(edges) == 0:
+            st.info("Run the pipeline to generate the lead-lag edges.")
+            return
+        role, ind, outd, labels = leadlag_roles(edges)
+        tid = next((n for n, lb in labels.items() if lb == tname), None)
+        if tid is not None:
+            led_by = int(ind.get(tid, 0))
+            leads = int(outd.get(tid, 0))
+            pure = (leads == 0 and led_by > 0)
+            st.markdown(f"**What leads transformer.** Transformer PPI is led by **{led_by}** "
+                        f"{layer}(s) and leads **{leads}** → "
+                        + ("**pure sink ✓** (led by many, leads nothing) — the terminal end of "
+                           "the propagation chain." if pure
+                           else f"the {leads} it appears to lead are **later-stage output / "
+                           "macro / financial series that lag it** (see the full edge table), "
+                           "not its material inputs. Within the input→transformer chain shown "
+                           "below it is still the **terminal sink** (rightmost node)."))
+            direct = (edges[edges["target_id"] == tid]
+                      .sort_values("r", key=lambda s: s.abs(), ascending=False).head(8))
+            if len(direct):
+                st.markdown("Direct leaders (strongest first): "
+                            + " · ".join(f"**{d['source']}** ({d['r']:+.2f} @ +{int(d['lag'])}m)"
+                                         for _, d in direct.iterrows()))
+        full_nodes = set(edges["source_id"]) | set(edges["target_id"])
+        show_full = st.checkbox(f"Show the full {layer} graph ({len(full_nodes)} nodes) "
+                                "instead of just the transformer chain",
+                                value=(len(full_nodes) <= 14), key=f"ll_full_{layer}")
+        if show_full or tid is None:
+            nodes = full_nodes
+        else:
+            nodes = leadlag_ancestors(edges, tid) | {tid}
+        st.plotly_chart(leadlag_fig(edges, nodes, labels, role,
+                        title=f"{layer.capitalize()} propagation → transformer"),
+                        use_container_width=True, key=f"leadlag_{layer}")
+        with st.expander(f"Full edge table — {len(edges)} genuine-lead edges"):
+            et = edges.rename(columns={"source": "Leads (A)", "target": "→ B",
+                                       "lag": "Lag (mo)", "r": "r", "gain": "Gain vs lag0",
+                                       "n": "n"})[["Leads (A)", "→ B", "Lag (mo)", "r",
+                                                   "Gain vs lag0", "n"]]
+            st.dataframe(et.sort_values("r", key=lambda s: s.abs(), ascending=False),
+                         use_container_width=True, hide_index=True, height=340)
+
     # ============================ CORRELATION ============================
     with tab_corr:
         st.caption(LAYER_REMINDER)
-        st.subheader("🔹 Signal level — inter-signal correlation")
+        st.markdown("Two views at each level. First the **🗺️ lead-lag propagation map** — item → "
+                    "item, a directed edge **A → B** kept only where A is a **genuine lead** of B "
+                    "(lag ≥ 1, |r| ≥ 0.50, real lead-sharpness gain over lag 0). Flow is left→right: "
+                    "🟢 **sources** (lead, not led) · 🔵 **relays** · 🔴 **sinks** (led, lead nothing). "
+                    "Then the **🔗 co-movement matrix** — undirected |r| between the same items. "
+                    "Both are read-only; they change no scoring.")
+
+        st.subheader("🔹 Signal level")
+        st.markdown("**🗺️ Lead-lag propagation map — individual signals**")
+        render_leadlag(load_leadlag("signal"), "signal")
+        st.markdown("**🔗 Inter-signal correlation**")
         if len(inter) <= 40:
             st.plotly_chart(heatmap_fig(inter), use_container_width=True, key="corr_heatmap")
         else:
@@ -1307,7 +1362,10 @@ def main():
         render_ladder_note()
 
         st.divider()
-        st.subheader("🔸 Tight-force level — inter-force correlation (the cousin check)")
+        st.subheader("🔸 Tight-force level — force composites")
+        st.markdown("**🗺️ Lead-lag propagation map — force composites**")
+        render_leadlag(load_leadlag("force"), "force")
+        st.markdown("**🔗 Inter-force correlation (the cousin check)**")
         if force_df is not None and "n_signals" in force_df:
             _sf = force_df[force_df.get("status", "scored") == "scored"] if "status" in force_df else force_df
             _tm = int((_sf["n_signals"] > 1).sum())
@@ -1335,7 +1393,10 @@ def main():
                               os.path.join(OUT, "charts", "_clustered_heatmap.png"), "witness")
 
         st.divider()
-        st.subheader("🔶 Loose-bloc level — inter-bloc correlation (most independent, coarser)")
+        st.subheader("🔶 Loose-bloc level — bloc composites (most independent, coarser)")
+        st.markdown("**🗺️ Lead-lag propagation map — bloc composites**")
+        render_leadlag(load_leadlag("bloc"), "bloc")
+        st.markdown("**🔗 Inter-bloc correlation**")
         _blb = load_bloc_leaderboard()
         if _blb is not None and "n_signals" in _blb:
             _bs = _blb[_blb.get("status", "scored") == "scored"] if "status" in _blb else _blb
@@ -1474,72 +1535,6 @@ def main():
                 "already weak (raw ≈ partial, small drop) is labelled *‘not cycle-driven (weak on "
                 "its own)’*, and is **not** downgraded to STRONG BUT CYCLE-DRIVEN — the cycle "
                 "explained nothing there.")
-
-    # =============================== LEAD-LAG MAP ===============================
-    with tab_leadlag:
-        st.caption(LAYER_REMINDER)
-        st.markdown("Everything else measures **item → transformer**; this maps **item → item** "
-                    "to expose the *propagation chain*. A directed edge **A → B** is kept only if "
-                    "A is a **genuine lead** of B: lag ≥ 1, |r| ≥ 0.50, and a real lead-sharpness "
-                    "gain over lag 0 (co-mover check). Flow is left→right: "
-                    "🟢 **sources** (lead, not led) · 🔵 **relays** · 🔴 **sinks** (led, lead nothing). "
-                    "Read-only — it changes no scoring.")
-
-        def render_leadlag(edges, layer, tname="Transformer PPI"):
-            if edges is None or len(edges) == 0:
-                st.info("Run the pipeline to generate the lead-lag edges.")
-                return
-            role, ind, outd, labels = leadlag_roles(edges)
-            # transformer node id: the one whose label is the transformer
-            tid = next((n for n, lb in labels.items() if lb == tname), None)
-            # summary line
-            if tid is not None:
-                led_by = int(ind.get(tid, 0))
-                leads = int(outd.get(tid, 0))
-                pure = (leads == 0 and led_by > 0)
-                st.markdown(f"**What leads transformer.** Transformer PPI is led by **{led_by}** "
-                            f"{layer}(s) and leads **{leads}** → "
-                            + ("**pure sink ✓** (led by many, leads nothing) — the terminal end of "
-                               "the propagation chain." if pure
-                               else f"the {leads} it appears to lead are **later-stage output / "
-                               "macro / financial series that lag it** (see the full edge table), "
-                               "not its material inputs. Within the input→transformer chain shown "
-                               "below it is still the **terminal sink** (rightmost node)."))
-                direct = (edges[edges["target_id"] == tid]
-                          .sort_values("r", key=lambda s: s.abs(), ascending=False).head(8))
-                if len(direct):
-                    st.markdown("Direct leaders (strongest first): "
-                                + " · ".join(f"**{d['source']}** ({d['r']:+.2f} @ +{int(d['lag'])}m)"
-                                             for _, d in direct.iterrows()))
-            # graph: default to transformer's propagation chain (its ancestors) for readability
-            full_nodes = set(edges["source_id"]) | set(edges["target_id"])
-            show_full = st.checkbox(f"Show the full {layer} graph ({len(full_nodes)} nodes) "
-                                    "instead of just the transformer chain",
-                                    value=(len(full_nodes) <= 14), key=f"ll_full_{layer}")
-            if show_full or tid is None:
-                nodes = full_nodes
-            else:
-                nodes = leadlag_ancestors(edges, tid) | {tid}
-            st.plotly_chart(leadlag_fig(edges, nodes, labels, role,
-                            title=f"{layer.capitalize()} propagation → transformer"),
-                            use_container_width=True, key=f"leadlag_{layer}")
-            # full edge table
-            with st.expander(f"Full edge table — {len(edges)} genuine-lead edges"):
-                et = edges.rename(columns={"source": "Leads (A)", "target": "→ B",
-                                           "lag": "Lag (mo)", "r": "r", "gain": "Gain vs lag0",
-                                           "n": "n"})[["Leads (A)", "→ B", "Lag (mo)", "r",
-                                                       "Gain vs lag0", "n"]]
-                st.dataframe(et.sort_values("r", key=lambda s: s.abs(), ascending=False),
-                             use_container_width=True, hide_index=True, height=340)
-
-        st.subheader("🔹 Signal level — individual signals")
-        render_leadlag(load_leadlag("signal"), "signal")
-        st.divider()
-        st.subheader("🔸 Tight-force level — force composites")
-        render_leadlag(load_leadlag("force"), "force")
-        st.divider()
-        st.subheader("🔶 Loose-bloc level — bloc composites")
-        render_leadlag(load_leadlag("bloc"), "bloc")
 
     # ==================== COMPARE — identical columns, signal ↔ force ====================
     with tab_compare:
