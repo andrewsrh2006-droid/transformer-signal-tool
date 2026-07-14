@@ -1,26 +1,34 @@
 """Scoring and verdicts, and assembly of the ranked leaderboard.
 
 Verdicts are assigned by RELATIONSHIP TYPE first, so the label agrees with the Lead-type and
-Why columns on the dashboard. Only a near-zero correlation is rejected outright; a co-mover or a
-reversal is named as such at any strength, and a forward lead is then graded:
+Why columns on the dashboard. Every verdict belongs to one of four relationship groups — LEAD,
+CO-MOVER, REVERSED, REJECTED — and within a group is graded by strength, robustness and
+significance. Significance = FDR q < 0.05 AND the bootstrap 95% CI excludes zero (both must hold).
+
   REJECTED            — |r| < 0.30: no relationship in any direction.
-  CO-MOVER (not a lead) — the peak sits at/near lag 0 (moves WITH the outcome, not ahead),
-                        at any |r| >= 0.30, and its co-movement survives the commodity cycle.
-  CO-MOVER (cycle-driven) — a co-mover whose partial |r| collapses below 0.20 once the broad
-                        commodity cycle is removed: the co-movement is just the cycle.
-  REVERSED            — the OUTCOME leads the candidate (peak lag < 0), at any |r| >= 0.30.
-  CONFIRMED           — forward lead, |r| >= 0.50, passes the screen, q < 0.05, AND retains
-                        market-controlled partial |r| >= 0.20 (survives the commodity cycle).
-  STRONG BUT CYCLE-DRIVEN — a CONFIRMED forward lead whose partial |r| collapses below 0.20
-                        once the broad commodity cycle is removed.
-  STRONG / NOT ROBUST — forward lead, |r| >= 0.50, real & significant but FRAGILE: it fails a
-                        robustness gate (smoothing / holds-over-time / episode).
-  NOT SIGNIFICANT     — forward lead, |r| >= 0.50, clears the gates but fails the FDR
-                        significance test (q >= 0.05) or its bootstrap CI spans zero: the
-                        correlation could be chance. Worse than fragile, better than rejected.
-  REVERSED (cycle-driven) — a reversal whose partial |r| collapses once the commodity cycle is
-                        removed: the lag is just the cycle.
+
+  LEAD group (peak lag >= 0, forward lead):
+  CONFIRMED           — |r| >= 0.50, passes the screen, significant, AND retains market-controlled
+                        partial |r| >= 0.20 (survives the commodity cycle).
+  STRONG BUT CYCLE-DRIVEN — a CONFIRMED forward lead whose partial |r| collapses below 0.20 once
+                        the broad commodity cycle is removed.
+  STRONG / NOT ROBUST — |r| >= 0.50, significant but FRAGILE: it fails a robustness gate
+                        (smoothing / holds-over-time / episode).
+  STRONG / NOT SIGNIFICANT — |r| >= 0.50, clears the gates but fails significance (q >= 0.05 or the
+                        bootstrap CI spans zero): the correlation could be chance.
   PARTIAL / INCONCLUSIVE — moderate forward lead (0.30 <= |r| < 0.50).
+
+  CO-MOVER group (peak at/near lag 0, moves WITH the outcome, at any |r| >= 0.30):
+  CO-MOVER (not a lead) — significant co-movement that survives the commodity cycle.
+  CO-MOVER (cycle-driven) — a significant co-mover whose partial |r| collapses below 0.20 once the
+                        cycle is removed: the co-movement is just the cycle.
+  CO-MOVER (not significant) — the co-movement could be chance (q >= 0.05 or CI spans zero).
+
+  REVERSED group (OUTCOME leads the candidate, peak lag < 0, at any |r| >= 0.30):
+  REVERSED            — a significant reversal.
+  REVERSED (cycle-driven) — a significant reversal whose partial |r| collapses once the cycle is
+                        removed: the lag is just the cycle.
+  REVERSED (not significant) — the reversal could be chance (q >= 0.05 or CI spans zero).
 """
 
 import pandas as pd
@@ -47,30 +55,38 @@ def verdict(peak_r: float, peak_lag: int, screen_pass: bool, q_value: float,
     contemporaneous band, so a −1/−2 near-zero peak is a co-mover, not a reversal). Significance
     uses the FDR q-value, not the raw p."""
     ar = abs(peak_r)
-    sig = (q_value is not None) and (q_value < CFG.SIG_ALPHA)   # FDR-controlled
+    has_q = q_value is not None
+    # Significant = FDR q < 0.05 AND the bootstrap 95% CI excludes zero. Both must hold, so a
+    # relationship that could be chance on either test is "not significant".
+    significant = has_q and (q_value < CFG.SIG_ALPHA) and ci_excludes_zero
 
     # 1. No relationship in any direction.
     if ar < CFG.R_MIN_SCREEN:
         return "REJECTED"
 
-    # 2. Relationship type first — co-mover (near lag 0), then reversal (outcome leads).
+    # 2. Relationship type first — co-mover (near lag 0), then reversal (outcome leads). Each
+    #    carries a significance sub-split: a co-mover / reversal whose FDR q >= 0.05 (or whose
+    #    bootstrap CI spans zero) could be chance, and is named "(not significant)". Composites
+    #    carry no q (has_q False) and keep the plain relationship label. apply_cycle_control later
+    #    splits only the SIGNIFICANT ones into their (cycle-driven) variant; a (not significant)
+    #    label is terminal (significance is the deeper doubt).
     if is_comover:
-        return "CO-MOVER (not a lead)"
+        return "CO-MOVER (not a lead)" if (not has_q or significant) else COMOVER_NOTSIG_VERDICT
     if peak_lag < 0:
-        return "REVERSED"
+        return "REVERSED" if (not has_q or significant) else REVERSED_NOTSIG_VERDICT
 
     # 3. Forward lead (lag >= 0, |r| >= 0.30): grade by strength / gates / significance.
     #    A strong forward lead that isn't CONFIRMED fails EITHER a robustness gate (structural:
     #    it's real & significant but fragile → STRONG / NOT ROBUST) OR statistical significance
-    #    (it could be chance → NOT SIGNIFICANT). Significance is checked after the gates because
-    #    a gate failure is the more concrete defect. apply_cycle_control may later downgrade
+    #    (it could be chance → STRONG / NOT SIGNIFICANT). Significance is checked after the gates
+    #    because a gate failure is the more concrete defect. apply_cycle_control may later downgrade
     #    CONFIRMED to STRONG BUT CYCLE-DRIVEN.
     if ar >= CFG.R_STRONG:
         if not screen_pass:                       # a robustness gate (smoothing/holds/episode) failed
             return "STRONG / NOT ROBUST"
-        if sig and ci_excludes_zero:
+        if significant:
             return "CONFIRMED"
-        return "NOT SIGNIFICANT"                  # gates pass, but q >= 0.05 or the CI spans zero
+        return "STRONG / NOT SIGNIFICANT"         # gates pass, but q >= 0.05 or the CI spans zero
     return "PARTIAL / INCONCLUSIVE"   # moderate forward lead (0.30 <= |r| < 0.50)
 
 
@@ -83,8 +99,10 @@ CYCLE_PARTIAL_MIN = 0.20
 CYCLE_DRIVEN_VERDICT = "STRONG BUT CYCLE-DRIVEN"
 COMOVER_VERDICT = "CO-MOVER (not a lead)"
 COMOVER_CYCLE_VERDICT = "CO-MOVER (cycle-driven)"
+COMOVER_NOTSIG_VERDICT = "CO-MOVER (not significant)"
 REVERSED_VERDICT = "REVERSED"
 REVERSED_CYCLE_VERDICT = "REVERSED (cycle-driven)"
+REVERSED_NOTSIG_VERDICT = "REVERSED (not significant)"
 
 
 def apply_cycle_control(verdict_label: str, partial_r, raw_r=None) -> str:
@@ -93,9 +111,9 @@ def apply_cycle_control(verdict_label: str, partial_r, raw_r=None) -> str:
     (see control.is_cycle_driven). A CONFIRMED forward lead is downgraded to STRONG BUT
     CYCLE-DRIVEN; a pure CO-MOVER or REVERSED is split off to its (cycle-driven) variant,
     separating a relationship that is transformer-specific from one that is merely the commodity
-    cycle. NOT SIGNIFICANT is left alone (significance is the more fundamental doubt — we don't
-    interpret the cycle for a relationship that could be chance). An item that is weak on its own
-    with a small drop is NOT downgraded (the cycle removed nothing)."""
+    cycle. Any (not significant) verdict is left alone (significance is the more fundamental doubt —
+    we don't interpret the cycle for a relationship that could be chance). An item that is weak on
+    its own with a small drop is NOT downgraded (the cycle removed nothing)."""
     from . import control as CTRL
     if not CTRL.is_cycle_driven(raw_r, partial_r):
         return verdict_label
@@ -110,17 +128,23 @@ def apply_cycle_control(verdict_label: str, partial_r, raw_r=None) -> str:
 
 # Rank order for sorting the leaderboard (best first).
 VERDICT_RANK = {
+    # Lead group
     "CONFIRMED": 0,
     "STRONG BUT CYCLE-DRIVEN": 1,
     "STRONG / NOT ROBUST": 2,
-    "NOT SIGNIFICANT": 3,
+    "STRONG / NOT SIGNIFICANT": 3,
     "SHORT-SAMPLE (unverified)": 4,
     "PARTIAL / INCONCLUSIVE": 5,
+    # Co-mover group
     "CO-MOVER (not a lead)": 6,
     "CO-MOVER (cycle-driven)": 7,
-    "REVERSED": 8,
-    "REVERSED (cycle-driven)": 9,
-    "REJECTED": 10,
+    "CO-MOVER (not significant)": 8,
+    # Reversed group
+    "REVERSED": 9,
+    "REVERSED (cycle-driven)": 10,
+    "REVERSED (not significant)": 11,
+    # Rejected
+    "REJECTED": 12,
 }
 
 

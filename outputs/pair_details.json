@@ -8374,7 +8374,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.3874,
     "survival_vs_cycle": "survives",
     "r_signal_market": -0.0612,
@@ -8661,7 +8661,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.1494,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.3321,
@@ -9229,7 +9229,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": -0.2494,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": -0.1973,
@@ -9454,7 +9454,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.2494,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": -0.2541,
@@ -9679,7 +9679,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": -0.252,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": -0.1778,
@@ -9904,7 +9904,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.257,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": -0.2257,
@@ -10739,7 +10739,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.4902,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.2328,
@@ -11953,7 +11953,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": -0.1488,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.6395,
@@ -14091,7 +14091,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.4415,
     "survival_vs_cycle": "survives",
     "r_signal_market": -0.4249,
@@ -14839,7 +14839,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.5436,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.0037,
@@ -15469,7 +15469,7 @@
         "PFOODINDEXM"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.5011,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.2575,
@@ -15694,7 +15694,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.5229,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.1043,
@@ -16244,7 +16244,7 @@
         "PCU22112222112243"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.4906,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.1661,
@@ -20221,7 +20221,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.2293,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": 0.5589,
@@ -22482,7 +22482,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.405,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.3257,
@@ -24682,7 +24682,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.5983,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.3118,
@@ -26332,7 +26332,7 @@
         "PFOODINDEXM"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.2947,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": 0.1734,
@@ -29681,7 +29681,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.1113,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4373,
@@ -30254,7 +30254,7 @@
         "PFOODINDEXM"
       ]
     },
-    "verdict": "REVERSED (cycle-driven)",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.1759,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4212,
@@ -37990,7 +37990,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.1753,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4284,
@@ -51813,7 +51813,7 @@
         "PFOODINDEXM"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.2686,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": 0.1891,
@@ -57701,7 +57701,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.1352,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.3192,
@@ -58323,7 +58323,7 @@
         "PFOODINDEXM"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.1854,
     "survival_vs_cycle": "not cycle-driven (weak on its own)",
     "r_signal_market": 0.3127,
@@ -58869,7 +58869,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.165,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4378,
@@ -59200,7 +59200,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": -0.1184,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4803,
@@ -60690,7 +60690,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.139,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4749,
@@ -62638,7 +62638,7 @@
         "PCU22112222112243"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.3028,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.2091,
@@ -64968,7 +64968,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.1115,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.3363,
@@ -66517,7 +66517,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.1599,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4089,
@@ -75902,7 +75902,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (cycle-driven)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.1627,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5819,
@@ -76213,7 +76213,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": 0.1835,
     "survival_vs_cycle": "not cycle-driven (weak on its own)",
     "r_signal_market": 0.2619,
@@ -76465,7 +76465,7 @@
         "PCU22112222112243"
       ]
     },
-    "verdict": "REVERSED (cycle-driven)",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.1859,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4167,
@@ -76640,7 +76640,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "NOT SIGNIFICANT",
+    "verdict": "STRONG / NOT SIGNIFICANT",
     "partial_r_ctrl_market": 0.6384,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.0044,
@@ -94006,7 +94006,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.3731,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.076,
@@ -94231,7 +94231,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.3727,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.0793,
@@ -95800,7 +95800,7 @@
         "PCU22112222112243"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": 0.3179,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.1889,
@@ -96468,7 +96468,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.3665,
     "survival_vs_cycle": "survives",
     "r_signal_market": -0.2268,
@@ -99177,7 +99177,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.2493,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": -0.2493,
@@ -99854,7 +99854,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (not significant)",
     "partial_r_ctrl_market": -0.2481,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": -0.1936,
@@ -100079,7 +100079,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.2598,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": -0.224,
@@ -100760,7 +100760,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.2527,
     "survival_vs_cycle": "partly survives",
     "r_signal_market": -0.1761,
@@ -102112,7 +102112,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (not significant)",
     "partial_r_ctrl_market": -0.3485,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.0036,
