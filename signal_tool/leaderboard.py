@@ -5,7 +5,9 @@ Why columns on the dashboard. Only a near-zero correlation is rejected outright;
 reversal is named as such at any strength, and a forward lead is then graded:
   REJECTED            — |r| < 0.30: no relationship in any direction.
   CO-MOVER (not a lead) — the peak sits at/near lag 0 (moves WITH the outcome, not ahead),
-                        at any |r| >= 0.30.
+                        at any |r| >= 0.30, and its co-movement survives the commodity cycle.
+  CO-MOVER (cycle-driven) — a co-mover whose partial |r| collapses below 0.20 once the broad
+                        commodity cycle is removed: the co-movement is just the cycle.
   REVERSED            — the OUTCOME leads the candidate (peak lag < 0), at any |r| >= 0.30.
   CONFIRMED           — forward lead, |r| >= 0.50, passes the screen, q < 0.05, AND retains
                         market-controlled partial |r| >= 0.20 (survives the commodity cycle).
@@ -67,19 +69,24 @@ def verdict(peak_r: float, peak_lag: int, screen_pass: bool, q_value: float,
 # force composites.
 CYCLE_PARTIAL_MIN = 0.20
 CYCLE_DRIVEN_VERDICT = "STRONG BUT CYCLE-DRIVEN"
+COMOVER_VERDICT = "CO-MOVER (not a lead)"
+COMOVER_CYCLE_VERDICT = "CO-MOVER (cycle-driven)"
 
 
 def apply_cycle_control(verdict_label: str, partial_r, raw_r=None) -> str:
-    """Fold the market-cycle control into the verdict. Only CONFIRMED is affected, and only
-    when the item is genuinely CYCLE-DRIVEN — the partial is weak AND the correlation actually
-    dropped from raw to partial (see control.is_cycle_driven). An item that is weak on its own
-    with a small drop is NOT downgraded. (A CONFIRMED item has raw |r| ≥ 0.50, so a collapse to
-    partial < 0.20 always clears the drop threshold; the raw_r guard just makes this explicit.)"""
-    if verdict_label != "CONFIRMED":
-        return verdict_label
+    """Fold the market-cycle control into the verdict, only when the item is genuinely
+    CYCLE-DRIVEN — the partial is weak AND the correlation actually dropped from raw to partial
+    (see control.is_cycle_driven). A CONFIRMED forward lead is downgraded to STRONG BUT
+    CYCLE-DRIVEN; a pure CO-MOVER is split off to CO-MOVER (cycle-driven), separating a co-mover
+    that is transformer-specific from one that is merely the commodity cycle. An item that is
+    weak on its own with a small drop is NOT downgraded (the cycle removed nothing)."""
     from . import control as CTRL
-    if CTRL.is_cycle_driven(raw_r, partial_r):
+    if not CTRL.is_cycle_driven(raw_r, partial_r):
+        return verdict_label
+    if verdict_label == "CONFIRMED":
         return CYCLE_DRIVEN_VERDICT
+    if verdict_label == COMOVER_VERDICT:
+        return COMOVER_CYCLE_VERDICT
     return verdict_label
 
 
@@ -91,8 +98,9 @@ VERDICT_RANK = {
     "SHORT-SAMPLE (unverified)": 3,
     "PARTIAL / INCONCLUSIVE": 4,
     "CO-MOVER (not a lead)": 5,
-    "REVERSED": 6,
-    "REJECTED": 7,
+    "CO-MOVER (cycle-driven)": 6,
+    "REVERSED": 7,
+    "REJECTED": 8,
 }
 
 

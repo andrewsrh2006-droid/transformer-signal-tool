@@ -6144,7 +6144,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1558,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5181,
@@ -7152,7 +7152,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.0989,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5917,
@@ -8209,7 +8209,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.0908,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5903,
@@ -8661,7 +8661,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1494,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.3321,
@@ -11953,7 +11953,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.1488,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.6395,
@@ -13731,7 +13731,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.0839,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.6134,
@@ -18374,7 +18374,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.007,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5835,
@@ -20887,7 +20887,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1871,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.891,
@@ -29681,7 +29681,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1113,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4373,
@@ -37990,7 +37990,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1753,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4284,
@@ -41142,7 +41142,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.0151,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.8134,
@@ -42812,7 +42812,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.0991,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.7201,
@@ -45423,7 +45423,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.2306,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.6668,
@@ -46040,7 +46040,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.0902,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.6322,
@@ -54366,7 +54366,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1936,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5374,
@@ -54954,7 +54954,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.0098,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.6703,
@@ -57366,7 +57366,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.0397,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5478,
@@ -57701,7 +57701,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1352,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.3192,
@@ -58869,7 +58869,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.165,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4378,
@@ -59200,7 +59200,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.1184,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4803,
@@ -59531,7 +59531,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.0218,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.3734,
@@ -60690,7 +60690,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.139,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4749,
@@ -61823,7 +61823,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1053,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.7532,
@@ -63472,7 +63472,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.196,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.6872,
@@ -63798,7 +63798,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.1939,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.6632,
@@ -64968,7 +64968,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1115,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.3363,
@@ -65903,7 +65903,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": -0.2748,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.885,
@@ -66517,7 +66517,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1599,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4089,
@@ -66805,7 +66805,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1043,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.8739,
@@ -69135,7 +69135,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1376,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.7648,
@@ -69433,7 +69433,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1668,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5964,
@@ -69731,7 +69731,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1598,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5902,
@@ -70029,7 +70029,7 @@
         "PRAWMINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1598,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5902,
@@ -75902,7 +75902,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1627,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.5819,
@@ -77755,7 +77755,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1768,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4692,
@@ -80882,7 +80882,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1719,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4761,
@@ -81199,7 +81199,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1691,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4674,
@@ -81516,7 +81516,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1664,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4595,
@@ -81833,7 +81833,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1637,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4523,
@@ -82150,7 +82150,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1613,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4458,
@@ -82467,7 +82467,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1589,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4397,
@@ -82784,7 +82784,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1567,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4341,
@@ -83101,7 +83101,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1547,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4289,
@@ -83418,7 +83418,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.1528,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.424,
@@ -83735,7 +83735,7 @@
         "PINDUINDEXM"
       ]
     },
-    "verdict": "CO-MOVER (not a lead)",
+    "verdict": "CO-MOVER (cycle-driven)",
     "partial_r_ctrl_market": 0.151,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4193,

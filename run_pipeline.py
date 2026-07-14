@@ -1171,7 +1171,7 @@ def _fmt_ci(lo, hi):
 
 def write_markdown(board, inter, clusters, label_by_id):
     n_lead = int((board["verdict"] == "CONFIRMED").sum())
-    n_como = int((board["verdict"] == "CO-MOVER (not a lead)").sum())
+    n_como = int((board["verdict"].isin(["CO-MOVER (not a lead)", "CO-MOVER (cycle-driven)"])).sum())
     n_short = int((board["verdict"] == "SHORT-SAMPLE (unverified)").sum())
     lines = ["# Leaderboard — do metal inputs lead transformer prices?", "",
              f"**{n_lead} true leads · {n_como} co-movers** (strong & FDR-significant but peak ≈ lag 0)"
