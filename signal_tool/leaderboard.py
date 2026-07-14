@@ -1,16 +1,18 @@
 """Scoring and verdicts, and assembly of the ranked leaderboard.
 
-Verdicts (from the brief, Section 5):
-  CONFIRMED           — leads, |r| >= 0.50, passes the screen, p < 0.05, AND retains
+Verdicts are assigned by RELATIONSHIP TYPE first, so the label agrees with the Lead-type and
+Why columns on the dashboard. Only a near-zero correlation is rejected outright; a co-mover or a
+reversal is named as such at any strength, and a forward lead is then graded:
+  REJECTED            — |r| < 0.30: no relationship in any direction.
+  CO-MOVER (not a lead) — the peak sits at/near lag 0 (moves WITH the outcome, not ahead),
+                        at any |r| >= 0.30.
+  REVERSED            — the OUTCOME leads the candidate (peak lag < 0), at any |r| >= 0.30.
+  CONFIRMED           — forward lead, |r| >= 0.50, passes the screen, q < 0.05, AND retains
                         market-controlled partial |r| >= 0.20 (survives the commodity cycle).
-  STRONG BUT CYCLE-DRIVEN — strong, leading, robust and significant, but the partial |r|
-                        collapses below 0.20 once the broad commodity cycle is removed: it
-                        does not carry transformer-specific information beyond the cycle.
-  STRONG / NOT ROBUST — strong (|r| >= 0.50) and correctly directed but fails the
-                        screen or significance (a likely false correlation).
-  REVERSED            — strong but the OUTCOME leads the candidate (peak lag < 0).
-  REJECTED            — |r| < 0.30, or not significant.
-  PARTIAL / INCONCLUSIVE — moderate (0.30 <= |r| < 0.50) or mixed.
+  STRONG BUT CYCLE-DRIVEN — a CONFIRMED forward lead whose partial |r| collapses below 0.20
+                        once the broad commodity cycle is removed.
+  STRONG / NOT ROBUST — forward lead, |r| >= 0.50, but fails the screen or significance.
+  PARTIAL / INCONCLUSIVE — moderate forward lead (0.30 <= |r| < 0.50).
 """
 
 import pandas as pd
@@ -27,37 +29,35 @@ COMOVER_MIN_GAIN = 0.05
 
 def verdict(peak_r: float, peak_lag: int, screen_pass: bool, q_value: float,
             ci_excludes_zero: bool, is_comover: bool = False, lead_gain: float = None) -> str:
-    """Assign a verdict. Significance uses the FDR q-value (not raw p) so that testing
-    many signals doesn't manufacture false positives. A strong, significant, correctly
-    directed pair that merely CO-MOVES (peak barely beats lag 0) is separated out as a
-    CO-MOVER rather than credited as a lead — and a peak only 1-2 months on the negative side
-    with the same co-mover signature is a CO-MOVER too, not a REVERSED."""
+    """Assign a verdict by RELATIONSHIP TYPE first, so it matches the Lead-type / Why columns.
+
+    Order: |r| < 0.30 → REJECTED (no relationship in any direction); else a co-mover (peak near
+    lag 0) → CO-MOVER; else the outcome leads (peak lag < 0) → REVERSED; else a forward lead
+    (|r| >= 0.30, lag >= 0) is graded by strength, gates and significance. So REVERSED and
+    CO-MOVER apply at ANY strength >= 0.30 — only a near-zero |r| is rejected. `is_comover` is
+    the same near-lag-0 flag used by the Lead-type column (it already folds in the ±2 / small-gain
+    contemporaneous band, so a −1/−2 near-zero peak is a co-mover, not a reversal). Significance
+    uses the FDR q-value, not the raw p."""
     ar = abs(peak_r)
     sig = (q_value is not None) and (q_value < CFG.SIG_ALPHA)   # FDR-controlled
 
+    # 1. No relationship in any direction.
     if ar < CFG.R_MIN_SCREEN:
         return "REJECTED"
 
+    # 2. Relationship type first — co-mover (near lag 0), then reversal (outcome leads).
+    if is_comover:
+        return "CO-MOVER (not a lead)"
     if peak_lag < 0:
-        # Near-contemporaneous co-mover (|lag| <= 2 AND gain < 0.05): the −1/−2 is within noise,
-        # so call it a CO-MOVER (if the co-movement is real), not a reversal. Only a peak that
-        # meaningfully leads from the outcome side (bigger negative lag, or a real gain) is REVERSED.
-        near_zero = abs(peak_lag) <= COMOVER_MAX_LAG
-        weak_gain = (lead_gain is not None) and (abs(lead_gain) < COMOVER_MIN_GAIN)
-        if near_zero and weak_gain:
-            return "CO-MOVER (not a lead)" if sig else "REJECTED"
-        return "REVERSED" if ar >= CFG.R_STRONG else "REJECTED"
+        return "REVERSED"
 
-    # peak_lag >= 0  (candidate leads)
+    # 3. Forward lead (lag >= 0, |r| >= 0.30): grade by strength / gates / significance.
+    #    apply_cycle_control may later downgrade CONFIRMED to STRONG BUT CYCLE-DRIVEN.
     if ar >= CFG.R_STRONG:
         if screen_pass and sig and ci_excludes_zero:
-            return "CO-MOVER (not a lead)" if is_comover else "CONFIRMED"
+            return "CONFIRMED"
         return "STRONG / NOT ROBUST"
-
-    # moderate: 0.30 <= |r| < 0.50, leading
-    if screen_pass and sig:
-        return "CO-MOVER (not a lead)" if is_comover else "PARTIAL / INCONCLUSIVE"
-    return "REJECTED"
+    return "PARTIAL / INCONCLUSIVE"   # moderate forward lead (0.30 <= |r| < 0.50)
 
 
 # A CONFIRMED item must ALSO carry transformer-specific information beyond the broad

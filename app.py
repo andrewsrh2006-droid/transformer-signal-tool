@@ -34,6 +34,7 @@ from signal_tool import matrix as MTX
 from signal_tool import control as CTRL
 from signal_tool import correlate as C
 from signal_tool import screen as SCR
+from signal_tool import leaderboard as LB
 
 # One-line reminder shown atop every analytical tab: the two layers are the SAME checks at
 # different aggregation, and the force count is not a count of independent bets.
@@ -68,18 +69,38 @@ VERDICT_BG = {
     "REJECTED": "#ffebe9",
 }
 
-# One tile per verdict, in the order the screen funnels them (best → rejected). The header and
-# the Compare-tab tally strip both render from this list, so their counts always agree.
+# One tile per verdict. Relationship type leads (confirmed → co-mover → reversed), then the
+# weaker forward grades, then short-sample and rejected. The header tiles and the Compare-tab
+# tally strip both render from this list, so their counts always agree.
 VERDICT_TILES = [
     ("✅ Confirmed", "CONFIRMED"),
-    ("🌀 Strong but cycle-driven", "STRONG BUT CYCLE-DRIVEN"),
-    ("⚠️ Strong/not robust", "STRONG / NOT ROBUST"),
-    ("⚠️ Partial", "PARTIAL / INCONCLUSIVE"),
     ("↔️ Co-mover", "CO-MOVER (not a lead)"),
     ("❌ Reversed", "REVERSED"),
+    ("🌀 Strong but cycle-driven", "STRONG BUT CYCLE-DRIVEN"),
+    ("⚠️ Strong / not robust", "STRONG / NOT ROBUST"),
+    ("⚠️ Partial", "PARTIAL / INCONCLUSIVE"),
     ("⏳ Short-sample", "SHORT-SAMPLE (unverified)"),
     ("❌ Rejected", "REJECTED"),
 ]
+
+
+def header_tiles_html(board) -> str:
+    """Verdict tally as wrapping tiles (never clipped): a big count over a full, two-line-capable
+    label, tinted per verdict. Signals-tested leads; the eight verdict tiles sum to it."""
+    vc = board["verdict"].value_counts()
+    tiles = [("📊 Signals tested", None, len(board))]
+    tiles += [(lbl, key, int(vc.get(key, 0))) for lbl, key in VERDICT_TILES]
+    cells = []
+    for lbl, key, count in tiles:
+        fg = "#24292f" if key is None else VERDICT_COLORS.get(key, "#24292f")
+        bg = "#f6f8fa" if key is None else VERDICT_BG.get(key, "#f6f8fa")
+        cells.append(
+            f"<div style='flex:1 1 130px;min-width:130px;background:{bg};border:1px solid #d0d7de;"
+            f"border-radius:9px;padding:8px 10px'>"
+            f"<div style='font-size:1.5rem;font-weight:700;color:{fg};line-height:1'>{count}</div>"
+            f"<div style='font-size:0.8rem;color:{fg};margin-top:3px;white-space:normal;"
+            f"line-height:1.15'>{lbl}</div></div>")
+    return "<div style='display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 6px'>" + "".join(cells) + "</div>"
 
 # Cell shout-palette for the Compare transparency table (fg, bg). Failures use red, passes green,
 # soft-fails amber — so a verdict is legible from the row alone, no drill-down needed.
@@ -512,6 +533,28 @@ def load_bloc_matrix():
     return pd.read_csv(fp, index_col=0) if os.path.exists(fp) else None
 
 
+def render_clustering(cj, dpath, hpath, one_witness_word):
+    """How a group level is defined: the dendrogram, the cluster listing (multi-signal clusters
+    vs independent singletons), and the clustered correlation heatmap. Shared by both levels."""
+    if os.path.exists(dpath):
+        st.image(dpath, use_container_width=True)
+    if cj:
+        st.markdown(f"**Clusters at the r = {cj['cut_r']:.2f} cut** "
+                    f"(method: {cj['method']}, distance: {cj['distance']}):")
+        multi, singles = [], []
+        for k, members in cj["clusters"].items():
+            names = [m["label"] for m in members]
+            (multi if len(names) > 1 else singles).append((k, names))
+        for k, names in multi:
+            st.markdown(f"- 🔴 **Cluster {k} — one {one_witness_word} ({len(names)}):** "
+                        + ", ".join(names))
+        if singles:
+            st.markdown(f"- ⚪ **{len(singles)} independent singletons** (each its own group).")
+    if os.path.exists(hpath):
+        with st.expander("Clustered correlation heatmap (leaf order)", expanded=False):
+            st.image(hpath, use_container_width=True)
+
+
 @st.cache_data(show_spinner=False)
 def load_ladder():
     fp = os.path.join(OUT, "grouping_ladder.json")
@@ -759,6 +802,17 @@ def _why_reason(row):
     return "confirmed lead"
 
 
+def sort_by_verdict(df: pd.DataFrame, r_col: str = "peak_r") -> pd.DataFrame:
+    """Order rows best-to-worst by verdict (the same rank the signal leaderboard uses), then by
+    |r| within a verdict — so all three Compare tables sort consistently."""
+    if "verdict" not in df.columns:
+        return df
+    d = df.copy()
+    d["_vr"] = d["verdict"].map(LB.VERDICT_RANK).fillna(9)
+    d["_ar"] = d[r_col].abs() if r_col in d.columns else 0
+    return d.sort_values(["_vr", "_ar"], ascending=[True, False]).drop(columns=["_vr", "_ar"])
+
+
 def compare_frame(df: pd.DataFrame, name_col: str) -> pd.DataFrame:
     """Map a signal-board OR force-board frame onto the identical transparency layout."""
     rows = []
@@ -967,14 +1021,21 @@ def sidebar():
     st.sidebar.caption("Do metal inputs lead transformer prices?")
     st.sidebar.markdown("---")
     st.sidebar.markdown(
-        "**Method** · YoY correlation across lags [−24,+24]; three disqualifying gates "
-        "(smoothing, holds-over-time, episode-robustness); circular-shift permutation p and "
-        "moving-block bootstrap CI; correlation-of-correlations to strip duplicate witnesses.")
+        "**What it does** · Finds which economic signals genuinely lead US transformer prices, "
+        "and rejects the false ones. Full guide and the tab map are at the top of the page.")
     st.sidebar.caption("Source: FRED (monthly), precomputed. Outcome: PCU335311335311.")
 
 
 def main():
     sidebar()
+    # Make the tab labels read as prominent, obviously-clickable buttons.
+    st.markdown(
+        "<style>"
+        ".stTabs [data-baseweb='tab-list'] { gap: 6px; }"
+        ".stTabs [data-baseweb='tab'] { padding: 10px 18px; }"
+        ".stTabs [data-baseweb='tab'] [data-testid='stMarkdownContainer'] p,"
+        ".stTabs [data-baseweb='tab'] p { font-size: 1.18rem; font-weight: 700; }"
+        "</style>", unsafe_allow_html=True)
     st.title("Transformer leading-signal dashboard")
 
     if not outputs_exist():
@@ -986,19 +1047,26 @@ def main():
 
     clusters_json, ctrl_df, force_df = load_analysis()
 
-    # Headline metrics — one tile per verdict, straight off the verdict column. They sum to the
-    # signals-tested total. (The independent-force count now lives on the Correlation tab.)
-    vc = board["verdict"].value_counts()
-    tiles = [("Signals tested", None)] + VERDICT_TILES
-    cols = st.columns(len(tiles))
-    for col, (label, key) in zip(cols, tiles):
-        col.metric(label, len(board) if key is None else int(vc.get(key, 0)))
-    _summed = int(sum(int(vc.get(k, 0)) for _, k in VERDICT_TILES))
+    # Plain-language guide (what the tool does + how to read the tabs), then the verdict tally.
+    st.markdown(
+        "This tool screens roughly 400 economic signals to find which genuinely **lead US "
+        "transformer prices** (FRED PPI `PCU335311335311`), and rejects the false ones. Each "
+        "signal is tested on year-over-year changes across a two-year lead/lag window, then must "
+        "clear four hurdles to count as a real lead: **survive smoothing** (not noise), **hold "
+        "across eras** and not depend on one episode, **keep its edge after the broad commodity "
+        "cycle is removed** (not just riding commodity prices), and be **statistically "
+        "significant**. Correlated signals are grouped into \"forces,\" so five copper series "
+        "count as one witness, not five. Use the tabs below: **Screen** (each item's checks), "
+        "**Correlation** (how signals and forces relate, plus the groupings), **Lead-lag map** "
+        "(which signals lead which others), **Compare** (every verdict side by side).")
+
+    st.markdown(header_tiles_html(board), unsafe_allow_html=True)
+    _summed = int(sum(int((board["verdict"] == k).sum()) for _, k in VERDICT_TILES))
     st.caption(f"Every screened signal lands in exactly one verdict — the eight verdict tiles "
                f"sum to **{_summed}** = the {len(board)} signals tested.")
 
-    tab_screen, tab_corr, tab_leadlag, tab_compare, tab_groups = st.tabs(
-        ["🔬 Screen", "🔗 Correlation", "🗺️ Lead-lag map", "🏆 Compare", "🌳 Groups"])
+    tab_screen, tab_corr, tab_leadlag, tab_compare = st.tabs(
+        ["🔬 Screen", "🔗 Correlation", "🗺️ Lead-lag map", "🏆 Compare"])
 
     catalog = build_force_catalog(clusters_json, force_df)
     bloc_catalog = build_force_catalog(load_clusters_loose(), load_bloc_leaderboard())
@@ -1014,8 +1082,13 @@ def main():
             return None
         keys = [c["key"] for c in cat]
         by = {c["key"]: c for c in cat}
-        sel = st.selectbox(label, keys, key=key,
-                           format_func=lambda k: f"{by[k]['name']} · {len(by[k]['ids'])} signals")
+
+        def _fmt(k):
+            row = by[k].get("row")
+            v = row["verdict"] if (row is not None and "verdict" in row) else None
+            base = f"{by[k]['name']} · {len(by[k]['ids'])} signals"
+            return f"{base}  ·  {v}" if v else base
+        sel = st.selectbox(label, keys, key=key, format_func=_fmt)
         return by[sel]
 
     def pick_force(key):
@@ -1063,6 +1136,15 @@ def main():
                        "that still co-move (just under the 0.70 cut). Cohesive, but **cousins remain**, "
                        "so the force **count is not a count of independent bets**.")
 
+        with st.expander("How the tight forces are defined — complete-linkage clustering", expanded=False):
+            st.markdown("**Complete linkage** makes every cluster *tight* — every pair ≥ 0.70 — so no "
+                        "loose grab-bag forms (the copper/non-ferrous core stays separate from "
+                        "steel/GOES, aluminium mill stands alone). Cohesive, but more/smaller groups "
+                        "can still be **cousins** (0.5–0.7).")
+            render_clustering(clusters_json,
+                              os.path.join(OUT, "charts", "_dendrogram.png"),
+                              os.path.join(OUT, "charts", "_clustered_heatmap.png"), "witness")
+
         st.divider()
         st.subheader("🔶 Loose-bloc level — inter-bloc correlation (most independent, coarser)")
         _blb = load_bloc_leaderboard()
@@ -1082,6 +1164,16 @@ def main():
             bcous = cousin_pairs(bm)
             st.warning(f"**{len(bcous)} cousin pair(s)** among loose blocs — fewer than at the tight "
                        "level, because merging cousins removed the near-0.70 pairs.")
+
+        with st.expander("How the loose blocs are defined — average-linkage clustering", expanded=False):
+            st.markdown("**Average linkage** merges same-sign cousins into bigger blocs (opposite-sign "
+                        "grab-bags are still split out as incoherent, not averaged). Fewer, coarser, "
+                        "more independent groups — lower cross-correlation than the tight forces.")
+            render_clustering(load_clusters_loose(),
+                              os.path.join(OUT, "charts", "_dendrogram_loose.png"),
+                              os.path.join(OUT, "charts", "_clustered_heatmap_loose.png"), "bloc")
+
+        st.divider()
         st.caption("Either way, the **partial-r market control** (Screen tab) is the real "
                    "independence check — the inter-group matrix shows co-movement, the partial r "
                    "shows whether a group adds transformer-specific information beyond the cycle.")
@@ -1133,12 +1225,19 @@ def main():
                            file_name=f"{cid}_views.csv", mime="text/csv", key="dl_sig")
 
         # Shared renderer for a GROUP (tight force OR loose bloc) — identical battery.
-        def render_group_screen(g, prefix, one_word):
+        def render_group_screen(g, prefix, one_word, icon):
+            gv = g["row"]["verdict"] if (g["row"] is not None and "verdict" in g["row"]) else None
+            if gv:
+                badge = (f"<span style='background:{VERDICT_BG.get(gv, '#eee')};"
+                         f"color:{VERDICT_COLORS.get(gv, '#000')};padding:1px 9px;border-radius:5px;"
+                         f"font-weight:700;font-size:0.8em'>{gv}</span>")
+                st.markdown(f"#### {icon} {one_word} — {g['name']}  ·  {badge}", unsafe_allow_html=True)
+            else:
+                st.markdown(f"#### {icon} {one_word} — {g['name']}")
             st.caption(f"Composite of {len(g['ids'])} members: "
                        + ", ".join(LABEL.get(m, m).split(" (")[0] for m in g["ids"]))
             comp = force_composite_yoy(tuple(g["ids"]))
             ga = analyze(comp)
-            gv = g["row"]["verdict"] if (g["row"] is not None and "verdict" in g["row"]) else None
             st.markdown("**① Gates · sharpness · market control**")
             render_screen_panel(ga, verdict=gv)
             st.markdown("**② Cycle graph — raw r vs cycle-controlled partial r**")
@@ -1168,14 +1267,14 @@ def main():
         st.subheader("🔸 Tight-force level — identical battery on the composite")
         f = pick_force("screen_force")
         if f:
-            render_group_screen(f, "screen_force", "Force")
+            render_group_screen(f, "screen_force", "Force", "🔸")
 
         st.divider()
         # ------------------------------- 🔶 LOOSE BLOC -------------------------------
         st.subheader("🔶 Loose-bloc level — identical battery on the composite")
         bl = pick_bloc("screen_bloc")
         if bl:
-            render_group_screen(bl, "screen_bloc", "Bloc")
+            render_group_screen(bl, "screen_bloc", "Bloc", "🔶")
 
         st.caption("The **cycle graph** (left) is the raw lead-r beside the market-controlled "
                    "partial r — a tall raw bar collapsing to a near-zero partial = cycle-driven, "
@@ -1295,6 +1394,7 @@ def main():
             fv_opts = list(pd.unique(scored["verdict"].dropna())) if "verdict" in scored else []
             fpick = st.multiselect("Filter verdict", fv_opts, default=fv_opts, key="cmp_fverd")
             fview = scored[scored["verdict"].isin(fpick)] if fv_opts else scored
+            fview = sort_by_verdict(fview, "raw_r")
             singles = int((fview["n_signals"] == 1).sum()) if "n_signals" in fview else 0
             multis = int((fview["n_signals"] > 1).sum()) if "n_signals" in fview else 0
             st.caption(f"{len(fview)} tight forces shown — {multis} clusters + {singles} singletons "
@@ -1311,6 +1411,7 @@ def main():
             st.warning("Run the pipeline to generate `loose_bloc_cycle_control.csv`.")
         else:
             bscored = bloc_df[bloc_df.get("status", "scored") == "scored"] if "status" in bloc_df else bloc_df
+            bscored = sort_by_verdict(bscored, "raw_r")
             bmul = int((bscored["n_signals"] > 1).sum()) if "n_signals" in bscored else 0
             bsin = int((bscored["n_signals"] == 1).sum()) if "n_signals" in bscored else 0
             st.caption(f"{len(bscored)} loose blocs — {bmul} merged blocs + {bsin} singletons. "
@@ -1321,56 +1422,6 @@ def main():
             st.caption("Same identical columns. The ladder is **signals → tight forces → loose "
                        "blocs**; partial-r (Screen) and the inter-group matrix (Correlation) stay "
                        "the real independence check at every rung.")
-
-    # ============================ GROUPS ============================
-    with tab_groups:
-        st.subheader("How the groupings are defined — hierarchical clustering")
-        st.markdown("Two cuts of the **same** 1−r distance tree define the two group levels used "
-                    "on every other tab: 🔸 **tight forces** (complete linkage) and 🔶 **loose "
-                    "blocs** (average linkage).")
-        render_ladder_note()
-
-        def render_clustering(cj, dpath, hpath, one_witness_word):
-            method = cj.get("method", "") if cj else ""
-            if os.path.exists(dpath):
-                st.image(dpath, use_container_width=True)
-            if cj:
-                st.markdown(f"**Clusters at the r = {cj['cut_r']:.2f} cut** "
-                            f"(method: {cj['method']}, distance: {cj['distance']}):")
-                multi, singles = [], []
-                for k, members in cj["clusters"].items():
-                    names = [m["label"] for m in members]
-                    (multi if len(names) > 1 else singles).append((k, names))
-                for k, names in multi:
-                    st.markdown(f"- 🔴 **Cluster {k} — one {one_witness_word} ({len(names)}):** "
-                                + ", ".join(names))
-                if singles:
-                    st.markdown(f"- ⚪ **{len(singles)} independent singletons** (each its own group).")
-            if os.path.exists(hpath):
-                with st.expander("Clustered correlation heatmap (leaf order)", expanded=False):
-                    st.image(hpath, use_container_width=True)
-
-        st.divider()
-        st.subheader("🔸 Tight forces — complete linkage (cohesive, cousins remain)")
-        render_clustering(clusters_json,
-                          os.path.join(OUT, "charts", "_dendrogram.png"),
-                          os.path.join(OUT, "charts", "_clustered_heatmap.png"), "witness")
-        st.info("**Complete linkage** makes every cluster *tight* — every pair ≥ 0.70 — so no loose "
-                "grab-bag forms (copper/non-ferrous core stays separate from steel/GOES, aluminium "
-                "mill stands alone). Cohesive, but more/smaller groups can still be **cousins** "
-                "(0.5–0.7).")
-
-        st.divider()
-        st.subheader("🔶 Loose blocs — average linkage (most independent, coarser)")
-        loose_cj = load_clusters_loose()
-        render_clustering(loose_cj,
-                          os.path.join(OUT, "charts", "_dendrogram_loose.png"),
-                          os.path.join(OUT, "charts", "_clustered_heatmap_loose.png"), "bloc")
-        st.info("**Average linkage** merges same-sign cousins into bigger blocs (opposite-sign "
-                "grab-bags are still split out as incoherent, not averaged). Fewer, coarser, more "
-                "independent groups — lower cross-correlation than the tight forces. Either way, "
-                "the inter-group matrix (Correlation) and the partial-r control (Screen) are the "
-                "real independence check.")
 
 
 if __name__ == "__main__":
