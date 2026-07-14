@@ -19,16 +19,18 @@ significance. Significance = FDR q < 0.05 AND the bootstrap 95% CI excludes zero
   PARTIAL / INCONCLUSIVE — moderate forward lead (0.30 <= |r| < 0.50).
 
   CO-MOVER group (peak at/near lag 0, moves WITH the outcome, at any |r| >= 0.30):
-  CO-MOVER (not a lead) — significant co-movement that survives the commodity cycle.
-  CO-MOVER (cycle-driven) — a significant co-mover whose partial |r| collapses below 0.20 once the
-                        cycle is removed: the co-movement is just the cycle.
-  CO-MOVER (not significant) — the co-movement could be chance (q >= 0.05 or CI spans zero).
+  CO-MOVER (not a lead) — co-movement that survives the commodity cycle.
+  CO-MOVER (cycle-driven) — a co-mover whose partial |r| collapses below 0.20 once the cycle is
+                        removed: the co-movement is just the cycle. (Cycle-first: this label wins
+                        over "not significant".)
+  CO-MOVER (not significant) — a co-mover that is NOT cycle-driven but could be chance
+                        (q >= 0.05 or CI spans zero).
 
   REVERSED group (OUTCOME leads the candidate, peak lag < 0, at any |r| >= 0.30):
-  REVERSED            — a significant reversal.
-  REVERSED (cycle-driven) — a significant reversal whose partial |r| collapses once the cycle is
-                        removed: the lag is just the cycle.
-  REVERSED (not significant) — the reversal could be chance (q >= 0.05 or CI spans zero).
+  REVERSED            — a reversal that survives the commodity cycle.
+  REVERSED (cycle-driven) — a reversal whose partial |r| collapses once the cycle is removed: the
+                        lag is just the cycle. (Cycle-first: wins over "not significant".)
+  REVERSED (not significant) — a reversal that is NOT cycle-driven but could be chance.
 """
 
 import pandas as pd
@@ -108,20 +110,26 @@ REVERSED_NOTSIG_VERDICT = "REVERSED (not significant)"
 def apply_cycle_control(verdict_label: str, partial_r, raw_r=None) -> str:
     """Fold the market-cycle control into the verdict, only when the item is genuinely
     CYCLE-DRIVEN — the partial is weak AND the correlation actually dropped from raw to partial
-    (see control.is_cycle_driven). A CONFIRMED forward lead is downgraded to STRONG BUT
-    CYCLE-DRIVEN; a pure CO-MOVER or REVERSED is split off to its (cycle-driven) variant,
-    separating a relationship that is transformer-specific from one that is merely the commodity
-    cycle. Any (not significant) verdict is left alone (significance is the more fundamental doubt —
-    we don't interpret the cycle for a relationship that could be chance). An item that is weak on
-    its own with a small drop is NOT downgraded (the cycle removed nothing)."""
+    (see control.is_cycle_driven). An item that is weak on its own with a small drop is NOT
+    downgraded (the cycle removed nothing).
+
+    Precedence differs by relationship group:
+      * LEAD group — significance-first. Only a CONFIRMED (already significant) forward lead is
+        downgraded to STRONG BUT CYCLE-DRIVEN; a STRONG / NOT SIGNIFICANT lead is left alone
+        (a relationship that could be chance isn't interpreted through the cycle).
+      * CO-MOVER / REVERSED groups — cycle-first. For a non-lead, "is this just the commodity
+        cycle?" is the more informative distinction, so the (cycle-driven) label wins over
+        (not significant): a cycle-driven co-mover/reversal is tagged (cycle-driven) whether or
+        not it is significant. (not significant) is thus reserved for co-movers/reversals that are
+        NOT cycle-driven."""
     from . import control as CTRL
     if not CTRL.is_cycle_driven(raw_r, partial_r):
         return verdict_label
     if verdict_label == "CONFIRMED":
         return CYCLE_DRIVEN_VERDICT
-    if verdict_label == COMOVER_VERDICT:
+    if verdict_label in (COMOVER_VERDICT, COMOVER_NOTSIG_VERDICT):
         return COMOVER_CYCLE_VERDICT
-    if verdict_label == REVERSED_VERDICT:
+    if verdict_label in (REVERSED_VERDICT, REVERSED_NOTSIG_VERDICT):
         return REVERSED_CYCLE_VERDICT
     return verdict_label
 

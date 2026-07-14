@@ -878,11 +878,14 @@ def compose_reason(raw, lead, lead_class, survival, partial, n=None, short=False
         notsig = True
 
     def rel_qual():
-        if notsig:
-            return f", but not significant (q={q:.2f})" if q is not None else ", but not significant"
+        # CO-MOVER / REVERSED are cycle-first: "is this just the commodity cycle?" is the more
+        # informative read for a non-lead, so cycle-driven wins over not-significant (matching the
+        # verdict). not-significant is the qualifier only when the row is NOT cycle-driven.
         if surv == "cycle-driven":
             return (f", and cycle-driven (partial {partial:+.2f})" if partial is not None
                     else ", and cycle-driven")
+        if notsig:
+            return f", but not significant (q={q:.2f})" if q is not None else ", but not significant"
         return ""
 
     if raw is not None and abs(raw) < 0.30:
