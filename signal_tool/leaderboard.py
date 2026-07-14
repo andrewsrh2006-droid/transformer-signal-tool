@@ -13,7 +13,13 @@ reversal is named as such at any strength, and a forward lead is then graded:
                         market-controlled partial |r| >= 0.20 (survives the commodity cycle).
   STRONG BUT CYCLE-DRIVEN — a CONFIRMED forward lead whose partial |r| collapses below 0.20
                         once the broad commodity cycle is removed.
-  STRONG / NOT ROBUST — forward lead, |r| >= 0.50, but fails the screen or significance.
+  STRONG / NOT ROBUST — forward lead, |r| >= 0.50, real & significant but FRAGILE: it fails a
+                        robustness gate (smoothing / holds-over-time / episode).
+  NOT SIGNIFICANT     — forward lead, |r| >= 0.50, clears the gates but fails the FDR
+                        significance test (q >= 0.05) or its bootstrap CI spans zero: the
+                        correlation could be chance. Worse than fragile, better than rejected.
+  REVERSED (cycle-driven) — a reversal whose partial |r| collapses once the commodity cycle is
+                        removed: the lag is just the cycle.
   PARTIAL / INCONCLUSIVE — moderate forward lead (0.30 <= |r| < 0.50).
 """
 
@@ -54,11 +60,17 @@ def verdict(peak_r: float, peak_lag: int, screen_pass: bool, q_value: float,
         return "REVERSED"
 
     # 3. Forward lead (lag >= 0, |r| >= 0.30): grade by strength / gates / significance.
-    #    apply_cycle_control may later downgrade CONFIRMED to STRONG BUT CYCLE-DRIVEN.
+    #    A strong forward lead that isn't CONFIRMED fails EITHER a robustness gate (structural:
+    #    it's real & significant but fragile → STRONG / NOT ROBUST) OR statistical significance
+    #    (it could be chance → NOT SIGNIFICANT). Significance is checked after the gates because
+    #    a gate failure is the more concrete defect. apply_cycle_control may later downgrade
+    #    CONFIRMED to STRONG BUT CYCLE-DRIVEN.
     if ar >= CFG.R_STRONG:
-        if screen_pass and sig and ci_excludes_zero:
+        if not screen_pass:                       # a robustness gate (smoothing/holds/episode) failed
+            return "STRONG / NOT ROBUST"
+        if sig and ci_excludes_zero:
             return "CONFIRMED"
-        return "STRONG / NOT ROBUST"
+        return "NOT SIGNIFICANT"                  # gates pass, but q >= 0.05 or the CI spans zero
     return "PARTIAL / INCONCLUSIVE"   # moderate forward lead (0.30 <= |r| < 0.50)
 
 
@@ -71,15 +83,19 @@ CYCLE_PARTIAL_MIN = 0.20
 CYCLE_DRIVEN_VERDICT = "STRONG BUT CYCLE-DRIVEN"
 COMOVER_VERDICT = "CO-MOVER (not a lead)"
 COMOVER_CYCLE_VERDICT = "CO-MOVER (cycle-driven)"
+REVERSED_VERDICT = "REVERSED"
+REVERSED_CYCLE_VERDICT = "REVERSED (cycle-driven)"
 
 
 def apply_cycle_control(verdict_label: str, partial_r, raw_r=None) -> str:
     """Fold the market-cycle control into the verdict, only when the item is genuinely
     CYCLE-DRIVEN — the partial is weak AND the correlation actually dropped from raw to partial
     (see control.is_cycle_driven). A CONFIRMED forward lead is downgraded to STRONG BUT
-    CYCLE-DRIVEN; a pure CO-MOVER is split off to CO-MOVER (cycle-driven), separating a co-mover
-    that is transformer-specific from one that is merely the commodity cycle. An item that is
-    weak on its own with a small drop is NOT downgraded (the cycle removed nothing)."""
+    CYCLE-DRIVEN; a pure CO-MOVER or REVERSED is split off to its (cycle-driven) variant,
+    separating a relationship that is transformer-specific from one that is merely the commodity
+    cycle. NOT SIGNIFICANT is left alone (significance is the more fundamental doubt — we don't
+    interpret the cycle for a relationship that could be chance). An item that is weak on its own
+    with a small drop is NOT downgraded (the cycle removed nothing)."""
     from . import control as CTRL
     if not CTRL.is_cycle_driven(raw_r, partial_r):
         return verdict_label
@@ -87,6 +103,8 @@ def apply_cycle_control(verdict_label: str, partial_r, raw_r=None) -> str:
         return CYCLE_DRIVEN_VERDICT
     if verdict_label == COMOVER_VERDICT:
         return COMOVER_CYCLE_VERDICT
+    if verdict_label == REVERSED_VERDICT:
+        return REVERSED_CYCLE_VERDICT
     return verdict_label
 
 
@@ -95,12 +113,14 @@ VERDICT_RANK = {
     "CONFIRMED": 0,
     "STRONG BUT CYCLE-DRIVEN": 1,
     "STRONG / NOT ROBUST": 2,
-    "SHORT-SAMPLE (unverified)": 3,
-    "PARTIAL / INCONCLUSIVE": 4,
-    "CO-MOVER (not a lead)": 5,
-    "CO-MOVER (cycle-driven)": 6,
-    "REVERSED": 7,
-    "REJECTED": 8,
+    "NOT SIGNIFICANT": 3,
+    "SHORT-SAMPLE (unverified)": 4,
+    "PARTIAL / INCONCLUSIVE": 5,
+    "CO-MOVER (not a lead)": 6,
+    "CO-MOVER (cycle-driven)": 7,
+    "REVERSED": 8,
+    "REVERSED (cycle-driven)": 9,
+    "REJECTED": 10,
 }
 
 

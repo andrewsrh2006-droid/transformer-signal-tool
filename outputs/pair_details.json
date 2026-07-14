@@ -30254,7 +30254,7 @@
         "PFOODINDEXM"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (cycle-driven)",
     "partial_r_ctrl_market": 0.1759,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4212,
@@ -76465,7 +76465,7 @@
         "PCU22112222112243"
       ]
     },
-    "verdict": "REVERSED",
+    "verdict": "REVERSED (cycle-driven)",
     "partial_r_ctrl_market": 0.1859,
     "survival_vs_cycle": "cycle-driven",
     "r_signal_market": 0.4167,
@@ -76640,7 +76640,7 @@
       "n_corroborators": 0,
       "corroborators": []
     },
-    "verdict": "STRONG / NOT ROBUST",
+    "verdict": "NOT SIGNIFICANT",
     "partial_r_ctrl_market": 0.6384,
     "survival_vs_cycle": "survives",
     "r_signal_market": 0.0044,

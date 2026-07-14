@@ -57,6 +57,8 @@ VERDICT_COLORS = {
     "CO-MOVER (not a lead)": "#0969da",
     "CO-MOVER (cycle-driven)": "#0e7490",
     "REVERSED": "#8250df",
+    "REVERSED (cycle-driven)": "#5a3ea8",
+    "NOT SIGNIFICANT": "#57606a",
     "REJECTED": "#cf222e",
 }
 VERDICT_BG = {
@@ -68,6 +70,8 @@ VERDICT_BG = {
     "CO-MOVER (not a lead)": "#ddf4ff",
     "CO-MOVER (cycle-driven)": "#d0f0f5",
     "REVERSED": "#fbefff",
+    "REVERSED (cycle-driven)": "#efeafb",
+    "NOT SIGNIFICANT": "#eef1f5",
     "REJECTED": "#ffebe9",
 }
 
@@ -79,8 +83,10 @@ VERDICT_TILES = [
     ("↔️ Co-mover (pure)", "CO-MOVER (not a lead)"),
     ("🌀 Co-mover · cycle-driven", "CO-MOVER (cycle-driven)"),
     ("❌ Reversed", "REVERSED"),
+    ("🌀 Reversed · cycle-driven", "REVERSED (cycle-driven)"),
     ("🌀 Strong but cycle-driven", "STRONG BUT CYCLE-DRIVEN"),
     ("⚠️ Strong / not robust", "STRONG / NOT ROBUST"),
+    ("❓ Not significant", "NOT SIGNIFICANT"),
     ("⚠️ Partial", "PARTIAL / INCONCLUSIVE"),
     ("⏳ Short-sample", "SHORT-SAMPLE (unverified)"),
     ("❌ Rejected", "REJECTED"),
@@ -89,7 +95,7 @@ VERDICT_TILES = [
 
 def header_tiles_html(board) -> str:
     """Verdict tally as wrapping tiles (never clipped): a big count over a full, two-line-capable
-    label, tinted per verdict. Signals-tested leads; the eight verdict tiles sum to it."""
+    label, tinted per verdict. Signals-tested leads; the verdict tiles sum to it."""
     vc = board["verdict"].value_counts()
     tiles = [("📊 Signals tested", None, len(board))]
     tiles += [(lbl, key, int(vc.get(key, 0))) for lbl, key in VERDICT_TILES]
@@ -725,7 +731,7 @@ def style_board(board: pd.DataFrame):
 # ONE column layout shared by the signal and force tables so rows line up 1:1. Every column
 # that drives a verdict is visible and failures shout in color — no drill-down needed.
 COMPARE_COLS = ["Signal", "Verdict", "Why", "Lead", "Raw r", "Partial r", "Cycle", "Leads?",
-                "Smoothing", "Holds", "Episode", "History", "Lead type", "q", "N"]
+                "Smoothing", "Holds", "Episode", "History", "Lead type", "q", "CI", "N"]
 
 
 def _g(row, *names, default=None):
@@ -762,7 +768,7 @@ def _cycle_cell(row):
     if s == "survives":
         return "survives"
     if s.startswith("partly"):
-        return "partly"
+        return "partly survives"
     if s == "cycle-driven":
         return "cycle-driven"
     if s.startswith("not cycle"):
@@ -805,17 +811,28 @@ def _episode_cell(row):
     return "✅" if str(ep).strip().lower() in ("yes", "true", "1") else "❌ NO"
 
 
+def _ci_cell(row):
+    """The bootstrap-CI robustness check: ✅ when the 95% CI excludes zero, ❌ NO when it spans
+    zero (the correlation could be nothing), n/a when no CI was computed."""
+    lo = _as_float(_g(row, "ci95_low"))
+    hi = _as_float(_g(row, "ci95_high"))
+    if lo is None or hi is None:
+        return "n/a"
+    return "❌ NO" if lo <= 0 <= hi else "✅"
+
+
 def compose_reason(raw, lead, lead_class, survival, partial, n=None, short=False,
                    smoothing_ok=None, holds_ok=None, episode_ok=None,
                    q=None, ci_lo=None, ci_hi=None, verdict=None):
     """One plain-language binding reason, first match wins (weak → co-mover → reversed → gate
-    fails → short-sample → cycle-driven → moderate → not-significant → else confirmed lead). A
+    fails → short-sample → moderate → not-significant → cycle-driven → else confirmed lead). A
     CO-MOVER or REVERSED row that is ALSO cycle-driven (partial |r| < 0.20 with a real drop from
     raw, i.e. its survival reads 'cycle-driven') gets ', and cycle-driven (partial X)' appended —
-    parallel to how a forward lead reads 'strong but cycle-driven'. A strong forward lead that
-    cleared the gates and cycle but is not CONFIRMED failed the FDR significance test (q ≥ 0.05)
-    or its bootstrap CI spans zero — so it reads 'strong but not significant', not 'confirmed
-    lead'."""
+    parallel to how a forward lead reads 'strong but cycle-driven'. Significance is checked BEFORE
+    cycle-dependence to match the verdict precedence: a strong forward lead that cleared the gates
+    but fails the FDR test (q ≥ 0.05) or whose bootstrap CI spans zero is NOT SIGNIFICANT (could be
+    chance) — a more fundamental doubt than riding the cycle — so it reads 'strong but not
+    significant', not 'cycle-driven' or 'confirmed lead'."""
     lc = str(lead_class or "").strip().lower()
     surv = str(survival or "").strip().lower()
     cyc = ""
@@ -839,16 +856,19 @@ def compose_reason(raw, lead, lead_class, survival, partial, n=None, short=False
         return "episode-driven"
     if short:
         return f"short-sample (only {n} months)" if n is not None else "short-sample"
-    if surv == "cycle-driven":
-        return f"cycle-driven (partial {partial:+.2f})" if partial is not None else "cycle-driven"
     if raw is not None and abs(raw) < 0.50:
         return f"moderate (raw {raw:+.2f})"
-    # strong forward lead (|r| >= 0.50) that cleared the gates and cycle but isn't CONFIRMED:
-    # the remaining CONFIRMED conditions are FDR significance and a CI that excludes zero.
+    # Strong forward lead (|r| >= 0.50) that cleared the gates. Grade by the SAME precedence as the
+    # verdict: significance (the correlation could be chance) is a deeper doubt than cycle-
+    # dependence, which in turn outranks a clean CONFIRMED. So the significance checks come first.
     if q is not None and q >= CFG.SIG_ALPHA:
         return f"strong but not significant (q={q:.2f})"
     if ci_lo is not None and ci_hi is not None and ci_lo <= 0 <= ci_hi:
         return "strong but CI spans zero"
+    if verdict is not None and str(verdict).strip().upper() == "NOT SIGNIFICANT":
+        return "strong but not significant"     # forces/blocs carry no q in the row
+    if surv == "cycle-driven":
+        return f"cycle-driven (partial {partial:+.2f})" if partial is not None else "cycle-driven"
     if verdict is not None and str(verdict).strip().upper() != "CONFIRMED":
         return "strong but not robust"          # forces/blocs carry no q in the row
     return "confirmed lead"
@@ -914,6 +934,7 @@ def compare_frame(df: pd.DataFrame, name_col: str) -> pd.DataFrame:
             "History": ("❌ NO" if short else ("✅" if has_short_col or n is not None else "—")),
             "Lead type": _lead_type_cell(r),
             "q": (f"{q:.3f}" if q is not None else "—"),
+            "CI": _ci_cell(r),
             "N": (n if n is not None else "—"),
         })
     return pd.DataFrame(rows, columns=COMPARE_COLS)
@@ -938,8 +959,26 @@ def style_compare(cf: pd.DataFrame):
         return _shout_css("fail", bold=True)   # every disqualifying reason shouts red
 
     def sty_cycle(v):
-        return {"survives": _shout_css("pass"), "partly": _shout_css("warn"),
+        return {"survives": _shout_css("pass"), "partly survives": _shout_css("warn"),
                 "cycle-driven": _shout_css("fail", bold=True), "weak": _shout_css("muted")}.get(v, "")
+
+    def sty_rawr(v):
+        # tier the correlation strength: strong (good) green, moderate amber, weak grey
+        x = _as_float(v)
+        if x is None:
+            return ""
+        if abs(x) >= 0.50:
+            return _shout_css("pass")
+        if abs(x) >= 0.30:
+            return _shout_css("warn")
+        return _shout_css("muted")
+
+    def sty_q(v):
+        # the significance metric: FDR q < 0.05 is significant (green), q >= 0.05 not (red)
+        x = _as_float(v)
+        if x is None:
+            return ""
+        return _shout_css("pass") if x < CFG.SIG_ALPHA else _shout_css("fail", bold=True)
 
     def sty_gate(v):
         s = str(v)
@@ -963,20 +1002,28 @@ def style_compare(cf: pd.DataFrame):
             return _shout_css("warn")
         return ""
 
-    def sty_partial(v):
-        x = _as_float(v)
-        if x is None:
-            return ""
-        return _shout_css("pass") if abs(x) >= 0.20 else _shout_css("fail", bold=True)
+    def sty_partial_row(row):
+        # Color the partial by the row's SURVIVAL (its Cycle cell), not by |partial| alone — so a
+        # sign-flipped or dropped partial that reads 'cycle-driven' shows red, never a false green.
+        out = [""] * len(row)
+        if "Partial r" not in row.index or _as_float(row.get("Partial r")) is None:
+            return out
+        kind = {"survives": "pass", "partly": "warn",
+                "cycle-driven": "fail", "weak": "muted"}.get(str(row.get("Cycle", "")))
+        if kind:
+            out[list(row.index).index("Partial r")] = _shout_css(kind, bold=(kind == "fail"))
+        return out
 
     sty = cf.style
     sty = sty.map(sty_verdict, subset=["Verdict"])
     sty = sty.map(sty_why, subset=["Why"])
     sty = sty.map(sty_cycle, subset=["Cycle"])
-    sty = sty.map(sty_gate, subset=["Smoothing", "Holds", "Episode", "History"])
+    sty = sty.map(sty_gate, subset=["Smoothing", "Holds", "Episode", "History", "CI"])
     sty = sty.map(sty_leads, subset=["Leads?"])
     sty = sty.map(sty_leadtype, subset=["Lead type"])
-    sty = sty.map(sty_partial, subset=["Partial r"])
+    sty = sty.map(sty_rawr, subset=["Raw r"])
+    sty = sty.map(sty_q, subset=["q"])
+    sty = sty.apply(sty_partial_row, axis=1)
     return sty.hide(axis="index")
 
 
@@ -1144,8 +1191,8 @@ def main():
 
     st.markdown(header_tiles_html(board), unsafe_allow_html=True)
     _summed = int(sum(int((board["verdict"] == k).sum()) for _, k in VERDICT_TILES))
-    st.caption(f"Every screened signal lands in exactly one verdict — the nine verdict tiles "
-               f"sum to **{_summed}** = the {len(board)} signals tested.")
+    st.caption(f"Every screened signal lands in exactly one verdict — the {len(VERDICT_TILES)} "
+               f"verdict tiles sum to **{_summed}** = the {len(board)} signals tested.")
 
     tab_screen, tab_corr, tab_leadlag, tab_compare = st.tabs(
         ["🔬 Screen", "🔗 Correlation", "🗺️ Lead-lag map", "🏆 Compare"])
@@ -1462,9 +1509,10 @@ def main():
         legend = "  ".join(
             f"<span style='background:{VERDICT_BG.get(v,'#fff')};color:{VERDICT_COLORS.get(v,'#000')};"
             f"padding:2px 8px;border-radius:4px;font-weight:600'>{v}</span>"
-            for v in ["CONFIRMED", "STRONG BUT CYCLE-DRIVEN", "CO-MOVER (not a lead)",
-                      "CO-MOVER (cycle-driven)", "SHORT-SAMPLE (unverified)",
-                      "PARTIAL / INCONCLUSIVE", "STRONG / NOT ROBUST", "REVERSED", "REJECTED"])
+            for v in ["CONFIRMED", "STRONG BUT CYCLE-DRIVEN", "STRONG / NOT ROBUST",
+                      "NOT SIGNIFICANT", "PARTIAL / INCONCLUSIVE", "SHORT-SAMPLE (unverified)",
+                      "CO-MOVER (not a lead)", "CO-MOVER (cycle-driven)", "REVERSED",
+                      "REVERSED (cycle-driven)", "REJECTED"])
         st.markdown(legend, unsafe_allow_html=True)
 
         st.divider()
