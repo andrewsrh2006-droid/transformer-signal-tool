@@ -1,0 +1,157 @@
+force,tier,size,tightness_min_pairwise_r,sign_purity,n_pos,n_neg,usable,status,members
+Industrial activity complex,TIGHT,15,0.711,1.0,0,15,yes,usable,Industrial production: manufacturing; Capacity utilization: manufacturing; Manufacturing: Durable Goods: Fabricated Met; Manufacturing: Durable Goods: Machinery; Manufacturing: Durable Goods: Electrical Equ; Manufacturing; Durable Goods Materials: Durable Goods Mater; Materials; Manufacturing: Durable Goods: Machinery; Manufacturing: Durable Goods: Electrical Equ; Capacity Utilization: Manufacturing Excludin; Capacity Utilization: Total Excluding Comput; Industrial Production: Total Index; Industrial Production: Total Index; Industrial Production: Final Products
+Inflation expectations complex,TIGHT,14,0.7528,1.0,14,0,yes,usable,10-Year Treasury yield; Market Yield on U.S. Treasury Securities at; Market Yield on U.S. Treasury Securities at; Market Yield on U.S. Treasury Securities at; 10-Year Expected Inflation; 11-Year Expected Inflation; 12-Year Expected Inflation; 13-Year Expected Inflation; 14-Year Expected Inflation; 15-Year Expected Inflation; 16-Year Expected Inflation; 17-Year Expected Inflation; 18-Year Expected Inflation; 19-Year Expected Inflation
+Metals complex,TIGHT,13,0.7505,1.0,13,0,yes,usable,Copper PPI; Global copper price; Metals and Metal Products: Nonferrous Metals; Metals and Metal Products: Nonferrous Metal; Metals and Metal Products: Primary Nonferrou; Metals and Metal Products: Nonferrous Scrap; Metals and Metal Products: Secondary Nonferr; Producer Price Index by Commodity: Metals an; Producer Price Index by Commodity: Metals an; Producer Price Index by Commodity: Metals an; Import Price Index; Global price of Metal index; Global price of Industrial Materials index
+Energy & import prices complex,TIGHT,12,0.7292,1.0,12,0,yes,usable,WTI crude oil; Refined petroleum products PPI; Import: Industrial Supplies & Materials; Brent Crude; WTI Crude; Fuels and Related Products and Power: Crude; Fuels and Related Products and Power: Natura; Import Price Index; Import Price Index; Import Price Index; Global price of Energy index; Global Price Index of All Commodities
+Machinery & metals complex,TIGHT,10,0.7133,1.0,10,0,yes,usable,"Electrical machinery & equip. PPI; Metals and Metal Products: Hardware; Metals and Metal Products: Hardware, Not Els; Metals and Metal Products: Hand and Edge Too; Machinery and Equipment; Machinery and Equipment: Construction Machin; Machinery and Equipment: Metalworking Machin; Machinery and Equipment: General Purpose Mac; Machinery and Equipment: Special Industry Ma; Machinery and Equipment: Miscellaneous Machi"
+Construction complex,TIGHT,8,0.8606,1.0,0,8,yes,usable,Authorized in Permit-Issuing Places: Total U; Authorized in Permit-Issuing Places: Single-; Started: Total Units; Started: Single-Family Units; New Privately-Owned Housing Units Authorized; New Privately-Owned Housing Units Authorized; New Privately-Owned Housing Units Started: S; New Privately-Owned Housing Units Started: T
+Non-ferrous metals complex,TIGHT,8,0.7387,1.0,8,0,yes,usable,Nonferrous wire & cable PPI; Import: Ind. Supplies & Materials; Import: Ind. Supplies & Materials; Metals and Metal Products; Metals and Metal Products: Nonferrous Mill S; Import Price Index; Import Price Index; Import Price Index
+Other & energy complex,TIGHT,7,0.7067,1.0,7,0,yes,usable,Electric power PPI; Chemicals and Allied Products: Other Chemica; Fuels and Related Products and Power: Reside; Producer Price Index by Commodity: Fuels and; Producer Price Index by Commodity: Fuels and; Producer Price Index by Industry: Electric P; Producer Price Index by Industry: Electric P
+Orders/demand complex,TIGHT,6,0.7083,1.0,6,0,yes,usable,New orders: electrical equipment; New Orders: Machinery; New Orders: Fabricated Metal Products; New Orders: Durable Goods; New Orders: Total Manufacturing; New Orders: Nondefense Capital Goods Excludi
+Energy & import prices complex,TIGHT,6,0.7498,1.0,6,0,yes,usable,"Natural gas PPI; Natural Gas, US Henry Hub Gas; Fuels and Related Products and Power: Gas Fu; Fuels and Related Products and Power: Utilit; Import Price Index; Import Price Index"
+Regional-Fed survey complex,TIGHT,5,0.8398,1.0,5,0,yes,usable,Future General Activity; Future New Orders; Future General Activity; Diffusion Index for; Future General Activity; Percent Reporting I; Future General Activity; Percent Reporting I
+Industrial activity & macro complex,TIGHT,5,0.8637,0.8,4,1,yes,usable,Manufacturing employment; Employment: electrical-equip mfg; Primary Metal Manufacturing; Fabricated Metal Product Manufacturing; Machinery Manufacturing
+Rates complex,TIGHT,5,0.8514,1.0,0,5,yes,usable,10-Year Treasury Constant Maturity Minus 3-M; Moody's Seasoned Aaa Corporate Bond Minus Fe; Moody's Seasoned Baa Corporate Bond Minus Fe; 10-Year Treasury Constant Maturity Minus Fed; 5-Year Treasury Constant Maturity Minus Fede
+Metals & machinery complex,TIGHT,5,0.7324,1.0,5,0,yes,usable,Metals and Metal Products: Metal Containers; Metals and Metal Products: Miscellaneous Met; Metals and Metal Products: Metal Cans and Ca; Machinery and Equipment: Agricultural Machin; Machinery and Equipment: Agricultural Machin
+Industrial activity complex,TIGHT,4,0.8336,0.75,1,3,yes,usable,New Orders: Primary Metals; Manufacturing: Durable Goods: Primary Metal; Manufacturing: Durable Goods: Iron and Steel; Manufacturing: Durable Goods: Primary Metal
+Regional-Fed survey complex,TIGHT,4,0.8233,1.0,0,4,yes,usable,Current Work Hours; Diffusion Index for Fede; Current Work Hours; Diffusion Index for Fede; Current Work Hours; Percent Reporting Increa; Current Work Hours; Percent Reporting Increa
+Regional-Fed survey complex,TIGHT,4,0.7583,1.0,4,0,yes,usable,Current Work Hours; Percent Reporting Decrea; Current Work Hours; Percent Reporting Decrea; Current General Activity; Percent Reporting; Current General Activity; Percent Reporting
+Regional-Fed survey complex,TIGHT,4,0.8628,1.0,4,0,yes,usable,Future Work Hours; Diffusion Index for Feder; Future Work Hours; Diffusion Index for Feder; Future Work Hours; Percent Reporting Increas; Future Work Hours; Percent Reporting Increas
+Credit & rates complex,TIGHT,4,0.7515,0.75,1,3,yes,usable,Baa Corporate Bond Yield Relative to Yield o; Aaa Corporate Bond Yield Relative to Yield o; Moody's Seasoned Aaa Corporate Bond Yield Re; Moody's Seasoned Baa Corporate Bond Yield Re
+Regional-Fed survey complex,TIGHT,4,0.8677,1.0,0,4,yes,usable,Future Capital Expenditures; Future Capital Expenditures; Diffusion Index; Future Capital Expenditures; Percent Reporti; Future Capital Expenditures; Percent Reporti
+Rates & credit complex,TIGHT,4,0.7958,1.0,4,0,yes,usable,"10-Year Constant Maturity, Quoted on an Inve; 30-Year Fixed Rate Mortgage Average; Baa Corporate Bond Yield; Aaa Corporate Bond Yield"
+Rates complex,TIGHT,4,0.7215,1.0,4,0,yes,usable,"2-Year Constant Maturity, Quoted on an Inves; 1-Year Constant Maturity, Quoted on an Inves; 3-Month Treasury Bill Secondary Market Rate,; Market Yield on U.S. Treasury Securities at"
+Other complex,TIGHT,4,0.7924,1.0,0,4,yes,usable,Industrial production: utilities; Industrial Production: Utilities: Electric a; Capacity Utilization: Utilities: Electric an; Capacity Utilization: Utilities: Electric Po
+Import prices complex,TIGHT,4,0.7816,1.0,4,0,yes,usable,Import Price Index; Import Price Index; Import Price Index; Import Price Index
+Freight & energy/commodity complex,TIGHT,4,0.7908,1.0,4,0,yes,usable,"Truck Transportation; Transportation Services: Truck Transportatio; Coal, Australia; Total Manufacturing Industries"
+Freight complex,TIGHT,4,0.8095,1.0,4,0,yes,usable,Producer Price Index by Industry: Pipeline T; Producer Price Index by Industry: Pipeline T; Producer Price Index by Industry: Pipeline T; Producer Price Index by Industry: Pipeline T
+Regional-Fed survey complex,TIGHT,4,0.8383,1.0,0,4,yes,usable,Future Prices Paid; Current Prices Paid; Current Prices Received; Current Prices Paid
+Orders/demand complex,TIGHT,4,0.8511,1.0,0,4,yes,usable,Current Unfilled Orders; Current Unfilled Orders; Diffusion Index for; Current Unfilled Orders; Percent Reporting I; Current Unfilled Orders; Percent Reporting I
+Orders/demand complex,TIGHT,4,0.9066,1.0,4,0,yes,usable,Future Unfilled Orders; Diffusion Index for; Future Unfilled Orders; Diffusion Index for; Future Unfilled Orders; Percent Reporting In; Future Unfilled Orders; Percent Reporting In
+Orders/demand & regional-Fed survey complex,TIGHT,4,0.7951,1.0,0,4,yes,usable,Future Unfilled Orders; Percent Reporting De; Future Unfilled Orders; Percent Reporting De; Future General Activity; Percent Reporting D; Future General Activity; Percent Reporting D
+Import prices complex,TIGHT,4,0.8025,1.0,4,0,yes,usable,Chemicals and Allied Products; Import Price Index; Import Price Index; Import Price Index
+Plastics & materials complex,TIGHT,4,0.8086,1.0,4,0,yes,usable,Plastic products PPI; Rubber and Plastic Products; Rubber and Plastic Products: Plastic Constru; Rubber and Plastic Products: Unsupported Pla
+Steel complex,TIGHT,4,0.8931,1.0,4,0,yes,usable,Iron & steel PPI; Cold-rolled steel sheet; Steel mill products PPI; Producer Price Index by Commodity: Metals an
+Other complex,TIGHT,4,0.7526,1.0,4,0,yes,usable,Metals and Metal Products: Foundry and Forge; Producer Price Index by Commodity: Metals an; Producer Price Index by Commodity: Metals an; Producer Price Index by Commodity: Metals an
+Chemicals & metals complex,TIGHT,4,0.8066,1.0,4,0,yes,usable,Metals and Metal Products: Heating Equipment; Chemicals and Allied Products: Paints and Al; Chemicals and Allied Products: Prepared Pain; Machinery and Equipment: Miscellaneous Const
+Metals complex,TIGHT,4,0.869,1.0,4,0,yes,usable,"Metals and Metal Products: Fabricated Struct; Metals and Metal Products: Barrels, Drums, P; Producer Price Index by Commodity: Metals an; Producer Price Index by Commodity: Metals an"
+Regional-Fed survey complex,TIGHT,3,0.913,1.0,0,3,yes,usable,Current General Activity; Current New Orders; Current General Activity; Diffusion Index fo
+Other complex,TIGHT,3,0.7259,1.0,0,3,yes,usable,Industrial Production: Consumer Goods; Industrial Production: Durable Consumer Good; Industrial Production: Durable Consumer Good
+Freight complex,TIGHT,3,0.7734,1.0,3,0,yes,usable,Producer Price Index by Industry: Scheduled; Producer Price Index by Industry: Scheduled; Producer Price Index by Industry: Scheduled
+Freight complex,TIGHT,3,0.9994,1.0,3,0,yes,usable,Producer Price Index by Industry: Deep Sea F; Producer Price Index by Industry: Deep Sea F; Producer Price Index by Industry: Deep Sea F
+Freight complex,TIGHT,3,0.9998,1.0,3,0,yes,usable,Producer Price Index by Industry: Refined Pe; Producer Price Index by Industry: Refined Pe; Producer Price Index by Industry: Refined Pe
+Construction complex,TIGHT,3,0.71,1.0,0,3,yes,usable,New Privately-Owned Housing Units Authorized; New Privately-Owned Housing Units Started: U; New Privately-Owned Housing Units Authorized
+Rates complex,TIGHT,3,0.881,0.6667,1,2,yes,usable,1-Year Treasury Constant Maturity Minus Fede; 3-Month Treasury Bill Minus Federal Funds Ra; 6-Month Treasury Bill Minus Federal Funds Ra
+Energy complex,TIGHT,3,0.9953,1.0,3,0,yes,usable,Fuels and Related Products and Power: Coal; Fuels and Related Products and Power: Bitumi; Fuels and Related Products and Power: Coal
+Chemicals complex,TIGHT,3,0.8848,1.0,3,0,yes,usable,Chemicals and Allied Products: Industrial Ch; Chemicals and Allied Products: Plastic Resin; Chemicals and Allied Products: Basic Organic
+Plastics & materials complex,TIGHT,3,0.8084,1.0,3,0,yes,usable,"Rubber and Plastic Products: Rubber and Rubb; Rubber and Plastic Products: Tires, Tubes, T; Rubber and Plastic Products: Miscellaneous R"
+Other & metals complex,TIGHT,3,0.9643,1.0,3,0,yes,usable,Metals and Metal Products: Plumbing Fixtures; Producer Price Index by Commodity: Metals an; Producer Price Index by Commodity: Metals an
+Orders/demand complex,TIGHT,2,0.9234,1.0,2,0,yes,usable,Manufacturers' Unfilled Orders: Iron and Ste; Manufacturers' Unfilled Orders: Primary Meta
+Orders/demand complex,TIGHT,2,0.7126,1.0,2,0,yes,usable,"Unfilled Orders: Electrical Equipment, Appli; Manufacturers' Unfilled Orders: Fabricated M"
+Regional-Fed survey complex,TIGHT,2,0.9974,1.0,2,0,yes,usable,Current Work Hours; Percent Reporting No Cha; Current Work Hours; Percent Reporting No Cha
+Regional-Fed survey complex,TIGHT,2,0.9971,1.0,2,0,yes,usable,Future Work Hours; Percent Reporting Decreas; Future Work Hours; Percent Reporting Decreas
+Regional-Fed survey complex,TIGHT,2,0.9948,1.0,2,0,yes,usable,Future Work Hours; Percent Reporting No Chan; Future Work Hours; Percent Reporting No Chan
+Other complex,TIGHT,2,0.9795,1.0,2,0,yes,usable,Industrial Capacity: Utilities: Electric and; Industrial Capacity: Utilities: Electric Pow
+Other complex,TIGHT,2,0.9312,1.0,0,2,yes,usable,Industrial Capacity: Manufacturing Excluding; Industrial Capacity: Total Excluding Compute
+Regional-Fed survey complex,TIGHT,2,0.723,1.0,0,2,yes,usable,Future Capital Expenditures; Current Employment
+Regional-Fed survey complex,TIGHT,2,0.9973,1.0,2,0,yes,usable,Future Capital Expenditures; Percent Reporti; Future Capital Expenditures; Percent Reporti
+Regional-Fed survey complex,TIGHT,2,0.9956,1.0,2,0,yes,usable,Future Capital Expenditures; Percent Reporti; Future Capital Expenditures; Percent Reporti
+Dollar complex,TIGHT,2,0.9596,1.0,0,2,yes,usable,Nominal Broad U.S. Dollar Index; Nominal Advanced Foreign Economies U.S. Doll
+Regional-Fed survey complex,TIGHT,2,0.9352,1.0,0,2,yes,usable,Current General Business Conditions; Current New Orders
+Regional-Fed survey complex,TIGHT,2,0.9664,1.0,2,0,yes,usable,Future General Activity; Percent Reporting N; Future General Activity; Percent Reporting N
+Other complex,TIGHT,2,0.9906,1.0,0,2,yes,usable,Industrial Production: Durable Consumer Good; Industrial Production: Durable Consumer Good
+Other complex,TIGHT,2,0.9892,1.0,0,2,yes,usable,Industrial Production: Durable Goods Materia; Industrial Production: Durable Goods Materia
+Industrial activity complex,TIGHT,2,0.8635,1.0,0,2,yes,usable,"Mining: Mining; Energy, Total"
+Import prices complex,TIGHT,2,0.7791,1.0,2,0,yes,usable,Import Price Index; Import Price Index
+Import prices complex,TIGHT,2,0.7643,1.0,2,0,yes,usable,Import Price Index; Import Price Index
+Import prices complex,TIGHT,2,0.9214,1.0,2,0,yes,usable,Import Price Index; Import Price Index
+Import prices complex,TIGHT,2,0.7265,0.5,1,1,yes,usable,Import Price Index; Import Price Index
+Orders/demand complex,TIGHT,2,0.8718,1.0,2,0,yes,usable,Total Business: Inventories to Sales Ratio; Manufacturers: Inventories to Sales Ratio
+Regional-Fed survey complex,TIGHT,2,0.9984,1.0,0,2,yes,usable,Future Employment; Diffusion Index for Feder; Future Employment; Diffusion Index for Feder
+Regional-Fed survey complex,TIGHT,2,0.998,1.0,2,0,yes,usable,Future Employment; Percent Reporting Decreas; Future Employment; Percent Reporting Decreas
+Non-ferrous metals complex,TIGHT,2,0.9208,1.0,2,0,yes,usable,Global aluminum price; Producer Price Index by Commodity: Metals an
+Freight complex,TIGHT,2,0.993,1.0,0,2,yes,usable,Producer Price Index by Industry: Scheduled; Producer Price Index by Industry: Scheduled
+Construction complex,TIGHT,2,0.9765,1.0,0,2,yes,usable,New Privately-Owned Housing Units Authorized; New Privately-Owned Housing Units Authorized
+Regional-Fed survey complex,TIGHT,2,0.8088,1.0,0,2,yes,usable,Future Prices Paid; Future Prices Received
+Energy/commodity complex,TIGHT,2,0.7879,1.0,2,0,yes,usable,Rubber; Global price of Agr. Raw Material Index
+Non-ferrous metals complex,TIGHT,2,0.9591,0.5,1,1,yes,usable,Global zinc price; Import: Zinc
+Rates complex,TIGHT,2,1.0,1.0,2,0,yes,usable,10-Year Treasury Constant Maturity Minus 2-Y; 10-Year Treasury Constant Maturity Minus 2-Y
+Inflation expectations complex,TIGHT,2,0.8852,1.0,2,0,yes,usable,"10-Year Breakeven Inflation Rate; 5-Year, 5-Year Forward Inflation Expectation"
+Construction complex,TIGHT,2,0.7658,1.0,2,0,yes,usable,Manufacturing; Nonresidential
+Construction & industrial activity complex,TIGHT,2,0.7978,1.0,0,2,yes,usable,Total Construction; Construction
+Orders/demand complex,TIGHT,2,0.8832,1.0,2,0,yes,usable,Current Unfilled Orders; Percent Reporting D; Current Unfilled Orders; Percent Reporting D
+Orders/demand complex,TIGHT,2,0.9959,1.0,2,0,yes,usable,Current Unfilled Orders; Percent Reporting N; Current Unfilled Orders; Percent Reporting N
+Orders/demand complex,TIGHT,2,0.9931,1.0,2,0,yes,usable,Future Unfilled Orders; Percent Reporting No; Future Unfilled Orders; Percent Reporting No
+Energy & machinery complex,TIGHT,2,0.751,1.0,2,0,yes,usable,Fuels and Related Products and Power: Anthra; Machinery and Equipment: Parts for Construct
+Chemicals complex,TIGHT,2,0.7737,1.0,2,0,yes,usable,Chemicals and Allied Products: Fats and Oils; Global price of Food index
+Chemicals complex,TIGHT,2,0.7881,1.0,2,0,yes,usable,Chemicals and Allied Products: Agricultural; Chemicals and Allied Products: Basic Inorgan
+Steel complex,TIGHT,2,0.9993,1.0,2,0,yes,usable,Iron & steel scrap PPI; Producer Price Index by Commodity: Metals an
+Other complex,TIGHT,2,1.0,1.0,2,0,yes,usable,Producer Price Index by Commodity: Metals an; Producer Price Index by Commodity: Metals an
+Metals complex,TIGHT,2,0.9994,1.0,2,0,yes,usable,Metals and Metal Products: Nonferrous Foundr; Producer Price Index by Commodity: Metals an
+Machinery complex,TIGHT,2,0.8559,1.0,2,0,yes,usable,"Machinery and Equipment: Tractors and Attach; Machinery and Equipment: Off-Highway, Equipm"
+Machinery complex,TIGHT,2,0.7448,1.0,2,0,yes,usable,"Machinery and Equipment: Power Cranes, Dragl; Machinery and Equipment: Mixers, Pavers, and"
+Manufacturers' Unfilled Orders: Ferrous Meta,TIGHT,1,,1.0,1,0,yes,usable,Manufacturers' Unfilled Orders: Ferrous Meta
+Manufacturers' Unfilled Orders: Construction,TIGHT,1,,1.0,1,0,yes,usable,Manufacturers' Unfilled Orders: Construction
+"Manufacturers' Unfilled Orders: Mining, Oil,",TIGHT,1,,1.0,1,0,yes,usable,"Manufacturers' Unfilled Orders: Mining, Oil,"
+Manufacturers' Unfilled Orders: Industrial M,TIGHT,1,,1.0,1,0,yes,usable,Manufacturers' Unfilled Orders: Industrial M
+Manufacturers' Unfilled Orders: Photographic,TIGHT,1,,1.0,1,0,yes,usable,Manufacturers' Unfilled Orders: Photographic
+"Manufacturers' Unfilled Orders: Ventilation,",TIGHT,1,,1.0,1,0,yes,usable,"Manufacturers' Unfilled Orders: Ventilation,"
+New Orders: Computers and Electronic Product,TIGHT,1,,1.0,1,0,yes,usable,New Orders: Computers and Electronic Product
+Unfilled Orders: Total Manufacturing,TIGHT,1,,1.0,1,0,yes,usable,Unfilled Orders: Total Manufacturing
+New Orders: Nondefense Capital Goods,TIGHT,1,,1.0,1,0,yes,usable,New Orders: Nondefense Capital Goods
+Industrial Capacity: Utilities: Natural Gas,TIGHT,1,,1.0,0,1,yes,usable,Industrial Capacity: Utilities: Natural Gas
+Industrial Capacity: Manufacturing: Durable,TIGHT,1,,1.0,0,1,yes,usable,Industrial Capacity: Manufacturing: Durable
+Capacity Utilization: Utilities: Natural Gas,TIGHT,1,,1.0,0,1,yes,usable,Capacity Utilization: Utilities: Natural Gas
+Capacity Utilization: Manufacturing: Durable,TIGHT,1,,1.0,1,0,yes,usable,Capacity Utilization: Manufacturing: Durable
+Oil and Gas Extraction,TIGHT,1,,1.0,1,0,yes,usable,Oil and Gas Extraction
+Current Delivery Time,TIGHT,1,,1.0,0,1,yes,usable,Current Delivery Time
+Current Delivery Time,TIGHT,1,,1.0,0,1,yes,usable,Current Delivery Time
+1-Year Expected Inflation,TIGHT,1,,1.0,1,0,yes,usable,1-Year Expected Inflation
+Federal Funds Effective Rate,TIGHT,1,,1.0,1,0,yes,usable,Federal Funds Effective Rate
+Current General Activity; Percent Reporting,TIGHT,1,,1.0,1,0,yes,usable,Current General Activity; Percent Reporting
+Current General Activity; Percent Reporting,TIGHT,1,,1.0,1,0,yes,usable,Current General Activity; Percent Reporting
+Current General Activity; Percent Reporting,TIGHT,1,,1.0,1,0,yes,usable,Current General Activity; Percent Reporting
+New Privately-Owned Housing Units Started: U,TIGHT,1,,1.0,0,1,yes,usable,New Privately-Owned Housing Units Started: U
+Import Price Index (End Use): Meat Products,TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+Import Price Index (End Use): Fruits and Fro,TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+Import Price Index (End Use): Vegetables,TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+Import Price Index (End Use): Fish and Shell,TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+Import Price Index (End Use): Paper and Pape,TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+Import Price Index (End Use): Lumber and Oth,TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+Import Price Index (End Use): Other Precious,TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+"Import Price Index (End Use): Nondurables, M",TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+"Import Price Index (End Use): Furniture, Hou",TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+"Import Price Index (End Use): Toys, Games, a",TIGHT,1,,1.0,1,0,yes,usable,Import Price Index
+Inflation Expectation,TIGHT,1,,1.0,1,0,yes,usable,Inflation Expectation
+Future New Orders,TIGHT,1,,1.0,0,1,yes,usable,Future New Orders
+Total Public Construction Spending: Power,TIGHT,1,,1.0,1,0,yes,usable,Total Public Construction Spending: Power
+Producer Price Index by Industry: Carbon and,TIGHT,1,,1.0,1,0,yes,usable,Producer Price Index by Industry: Carbon and
+Producer Price Index by Industry: Scheduled,TIGHT,1,,1.0,0,1,yes,usable,Producer Price Index by Industry: Scheduled
+Producer Price Index by Industry: Pipeline T,TIGHT,1,,1.0,1,0,yes,usable,Producer Price Index by Industry: Pipeline T
+Producer Price Index by Industry: Couriers a,TIGHT,1,,1.0,1,0,yes,usable,Producer Price Index by Industry: Couriers a
+Iron Ore,TIGHT,1,,1.0,1,0,yes,usable,Iron Ore
+Global lead price,TIGHT,1,,1.0,1,0,yes,usable,Global lead price
+Global nickel price,TIGHT,1,,1.0,1,0,yes,usable,Global nickel price
+Global tin price,TIGHT,1,,1.0,1,0,yes,usable,Global tin price
+Uranium,TIGHT,1,,1.0,1,0,yes,usable,Uranium
+Retailers: Inventories to Sales Ratio,TIGHT,1,,1.0,0,1,yes,usable,Retailers: Inventories to Sales Ratio
+5-Year Breakeven Inflation Rate,TIGHT,1,,1.0,1,0,yes,usable,5-Year Breakeven Inflation Rate
+Construction spending: power,TIGHT,1,,1.0,1,0,yes,usable,Construction spending: power
+Residential,TIGHT,1,,1.0,0,1,yes,usable,Residential
+Consumer Sentiment,TIGHT,1,,1.0,0,1,yes,usable,Consumer Sentiment
+Finished lubricants PPI,TIGHT,1,,1.0,1,0,yes,usable,Finished lubricants PPI
+Fuels and Related Products and Power: Asphal,TIGHT,1,,1.0,1,0,yes,usable,Fuels and Related Products and Power: Asphal
+Chemicals and Allied Products: Paint Materia,TIGHT,1,,1.0,1,0,yes,usable,Chemicals and Allied Products: Paint Materia
+Chemicals and Allied Products: Drugs and Pha,TIGHT,1,,1.0,1,0,yes,usable,Chemicals and Allied Products: Drugs and Pha
+Rubber and Plastic Products: Synthetic Rubbe,TIGHT,1,,1.0,1,0,yes,usable,Rubber and Plastic Products: Synthetic Rubbe
+Rubber and Plastic Products: Laminated Plast,TIGHT,1,,1.0,1,0,yes,usable,Rubber and Plastic Products: Laminated Plast
+Iron ores PPI,TIGHT,1,,1.0,1,0,yes,usable,Iron ores PPI
+Producer Price Index by Commodity: Metals an,TIGHT,1,,1.0,1,0,yes,usable,Producer Price Index by Commodity: Metals an
+Producer Price Index by Commodity: Metals an,TIGHT,1,,1.0,1,0,yes,usable,Producer Price Index by Commodity: Metals an
+Producer Price Index by Commodity for Metals,TIGHT,1,,1.0,1,0,yes,usable,Producer Price Index by Commodity for Metals
+Steel wire PPI,TIGHT,1,,1.0,1,0,yes,usable,Steel wire PPI
+Aluminum mill shapes PPI,TIGHT,1,,1.0,1,0,yes,usable,Aluminum mill shapes PPI
+Metals and Metal Products: Nonferrous Forge,TIGHT,1,,1.0,1,0,yes,usable,Metals and Metal Products: Nonferrous Forge
+Metals and Metal Products: Vitreous China Pl,TIGHT,1,,1.0,1,0,yes,usable,Metals and Metal Products: Vitreous China Pl
+Machinery and Equipment: Electronic Computer,TIGHT,1,,1.0,1,0,yes,usable,Machinery and Equipment: Electronic Computer
+Machinery and Equipment: Miscellaneous Instr,TIGHT,1,,1.0,1,0,yes,usable,Machinery and Equipment: Miscellaneous Instr

@@ -1,0 +1,2286 @@
+{
+  "method": "complete linkage",
+  "distance": "1 - r",
+  "cut_r": 0.7,
+  "leaf_order": [
+    "T10YIE",
+    "T5YIFR",
+    "CEFDISA066MSFRBNY",
+    "NECDFSA066MSFRBPHI",
+    "PPFDISA066MSFRBNY",
+    "PPCDISA066MSFRBNY",
+    "PPCDFSA066MSFRBPHI",
+    "PRCDFSA066MSFRBPHI",
+    "T5YIE",
+    "PPFDFSA066MSFRBPHI",
+    "PRFDFSA066MSFRBPHI",
+    "CEFDFSA066MSFRBPHI",
+    "CEFDFNA066MNFRBPHI",
+    "CEFINA156MNFRBPHI",
+    "CEFISA156MSFRBPHI",
+    "IR130",
+    "AWCDFNA066MNFRBPHI",
+    "AWCDFSA066MSFRBPHI",
+    "AWCINA156MNFRBPHI",
+    "AWCISA156MSFRBPHI",
+    "GACDISA066MSFRBNY",
+    "NOCDISA066MSFRBNY",
+    "NOCDFSA066MSFRBPHI",
+    "GACDFSA066MSFRBPHI",
+    "GACDFNA066MNFRBPHI",
+    "UOCDFSA066MSFRBPHI",
+    "UOCDFNA066MNFRBPHI",
+    "UOCINA156MNFRBPHI",
+    "UOCISA156MSFRBPHI",
+    "DTCDFSA066MSFRBPHI",
+    "DTCDISA066MSFRBNY",
+    "PERMIT24NSA",
+    "PERMIT24",
+    "TLRESCONS",
+    "HOUST1F",
+    "HOUST1FNSA",
+    "PERMIT1",
+    "PERMIT1NSA",
+    "HOUST",
+    "HOUSTNSA",
+    "PERMIT",
+    "PERMITNSA",
+    "HOUST2F",
+    "HOUST5F",
+    "PERMIT5NSA",
+    "PERMIT5",
+    "GACINA156MNFRBPHI",
+    "GACISA156MSFRBPHI",
+    "UMCSENT",
+    "IPB51110N",
+    "IPB51000N",
+    "IPB51100N",
+    "AWFDFNA066MNFRBPHI",
+    "AWFDFSA066MSFRBPHI",
+    "AWFINA156MNFRBPHI",
+    "AWFISA156MSFRBPHI",
+    "UOFDFNA066MNFRBPHI",
+    "UOFDFSA066MSFRBPHI",
+    "UOFINA156MNFRBPHI",
+    "UOFISA156MSFRBPHI",
+    "GAFINA156MNFRBPHI",
+    "GAFISA156MSFRBPHI",
+    "NOFDFSA066MSFRBPHI",
+    "GAFDFSA066MSFRBPHI",
+    "GAFDFNA066MNFRBPHI",
+    "NOFDISA066MSFRBNY",
+    "NEFDFNA066MNFRBPHI",
+    "NEFDFSA066MSFRBPHI",
+    "A33GUO",
+    "PLEADUSDM",
+    "PURANUSDM",
+    "WPU115",
+    "CAPG2212S",
+    "TB3SMFFM",
+    "T1YFFM",
+    "TB6SMFFM",
+    "T10Y2Y",
+    "T10Y2YM",
+    "AAAFFM",
+    "BAAFFM",
+    "T10Y3M",
+    "T10YFFM",
+    "T5YFFM",
+    "PIORECRUSDM",
+    "PCU486110486110312",
+    "PCU486110486110",
+    "PCU4861104861103",
+    "PCU486110486110P",
+    "WPU101505",
+    "WPU10150501",
+    "WPU065",
+    "WPU0613",
+    "WPU101502",
+    "WPU10150211",
+    "WPU1015",
+    "WPU101504",
+    "A33DUO",
+    "AMTMUO",
+    "CES1021100001",
+    "PCU486110486110311",
+    "PCU4811124811122",
+    "BAA10Y",
+    "BAA10YM",
+    "AAA10Y",
+    "AAA10YM",
+    "WPU063",
+    "PCU3359913359910",
+    "WPU1052",
+    "WPU104",
+    "WPU1041",
+    "WPU117",
+    "WPU114",
+    "WPU116",
+    "WPU11",
+    "WPU113",
+    "WPU1042",
+    "WPU112",
+    "WPU119",
+    "RETAILIRSA",
+    "DTWEXBGS",
+    "DTWEXAFEGS",
+    "UOCDNA156MNFRBPHI",
+    "UOCDSA156MSFRBPHI",
+    "CEFDNA156MNFRBPHI",
+    "CEFDSA156MSFRBPHI",
+    "ISRATIO",
+    "MNFCTRIRSA",
+    "AWCDNA156MNFRBPHI",
+    "AWCDSA156MSFRBPHI",
+    "GACDNA156MNFRBPHI",
+    "GACDSA156MSFRBPHI",
+    "IR00130",
+    "PCU486910486910",
+    "PCU4869104869101",
+    "PCU486910486910P",
+    "TLMFGCONS",
+    "TLNRESCONS",
+    "MICH",
+    "EXPINF1YR",
+    "IR",
+    "IR1",
+    "PALLFNFINDEXM",
+    "WPU0532",
+    "WPU056",
+    "WTISPLC",
+    "POILWTIUSDM",
+    "POILBREUSDM",
+    "IR10000",
+    "IR100",
+    "WPU057",
+    "PNRGINDEXM",
+    "IR01000",
+    "WPU101707",
+    "WPU1017",
+    "WPU101",
+    "WPS101",
+    "WPU102501",
+    "WPU066",
+    "WPU061",
+    "WPU0614",
+    "WPU1026",
+    "WPU1025",
+    "IR1EXFUEL",
+    "IR1EXPET",
+    "IR1DUR",
+    "IR14",
+    "WPU10",
+    "IR15",
+    "WPU0721",
+    "WPU07",
+    "WPU072",
+    "WPU0722",
+    "WPU06",
+    "IR12",
+    "IR150",
+    "IR151",
+    "PCOALAUUSDM",
+    "PCUOMFGOMFG",
+    "PCU484484",
+    "WPU3012",
+    "WPU101705",
+    "WPU1032",
+    "WPS1074",
+    "WPU107",
+    "WPS107",
+    "WPU1016",
+    "A33CUO",
+    "PNGASUSUSDM",
+    "WPU055",
+    "IR101",
+    "IR10110",
+    "WPU0531",
+    "WPU053",
+    "PCU4811124811121",
+    "PCU481112481112P",
+    "PCU4921104921102",
+    "WPU0711",
+    "WPU058",
+    "PNICKUSDM",
+    "PZINCUSDM",
+    "IR14260",
+    "IR14280",
+    "PRUBBUSDM",
+    "PRAWMINDEXM",
+    "PALUMUSDM",
+    "WPS102302",
+    "IR142",
+    "WPU1023",
+    "WPS1023",
+    "PMETAINDEXM",
+    "PINDUINDEXM",
+    "WPUSI019011",
+    "PCOPPUSDM",
+    "WPU1021",
+    "WPU1024",
+    "WPU102",
+    "WPS102",
+    "WPU1022",
+    "PPICMM",
+    "A31AUO",
+    "A31SUO",
+    "A31SNO",
+    "IPG3311A2S",
+    "IPG331S",
+    "CAPUTLG331S",
+    "WPU064",
+    "PFOODINDEXM",
+    "PTINUSDM",
+    "WPU1012",
+    "WPS1012",
+    "IR0",
+    "IR000",
+    "IR00100",
+    "A31CUO",
+    "GAFDNA156MNFRBPHI",
+    "GAFDSA156MSFRBPHI",
+    "UOFDNA156MNFRBPHI",
+    "UOFDSA156MSFRBPHI",
+    "NEFDNA156MNFRBPHI",
+    "NEFDSA156MSFRBPHI",
+    "AWFDNA156MNFRBPHI",
+    "AWFDSA156MSFRBPHI",
+    "WPU10150227",
+    "A33HUO",
+    "A35SUO",
+    "A32SUO",
+    "IPB51121N",
+    "IPB51121S",
+    "TTLCONS",
+    "USCONS",
+    "IR00120",
+    "IR41120",
+    "IR21",
+    "IR2",
+    "IR41",
+    "IR4",
+    "IR41000",
+    "IR21120",
+    "IR302NAPT",
+    "IR3",
+    "IR300",
+    "IR40",
+    "IR40000",
+    "IR40020",
+    "CAPUTLG2212S",
+    "IPUTIL",
+    "IPG2211A2N",
+    "CAPUTLG2211A2S",
+    "CAPUTLG2211S",
+    "CES3133100001",
+    "CES3133200001",
+    "CES3133300001",
+    "MANEMP",
+    "CES3133500001",
+    "IPMINE",
+    "IPB50089S",
+    "IR11",
+    "A33EUO",
+    "ANDENO",
+    "IPB50002N",
+    "INDPRO",
+    "IPB50001N",
+    "IPMAN",
+    "IPGMFN",
+    "CAPUTLX50HTKS",
+    "MCUMFN",
+    "CAPUTLX4HTK2S",
+    "IPG332S",
+    "IPDMAT",
+    "IPMAT",
+    "IPG333S",
+    "CAPUTLG333S",
+    "IPG335S",
+    "CAPUTLG335S",
+    "A35SNO",
+    "DGORDER",
+    "AMTMNO",
+    "A32SNO",
+    "A33SNO",
+    "NEWORDER",
+    "A34SNO",
+    "CAPUTLHITEK2S",
+    "WPU0512",
+    "WPU051",
+    "WPU0513",
+    "WPU0541",
+    "WPU054",
+    "WPU0542",
+    "PCU22112222112242",
+    "WPU067",
+    "WPU0543",
+    "PCU22112222112243",
+    "PCU483111483111",
+    "PCU4831114831115",
+    "PCU483111483111P",
+    "PCU4811114811112",
+    "PCU481111481111",
+    "PCU4811114811111",
+    "WPU0713",
+    "WPU071",
+    "WPU0712",
+    "WPU1011",
+    "WPU0576",
+    "WPU0622",
+    "WPU103",
+    "WPU1031",
+    "WPU108",
+    "WPU111",
+    "WPU1114",
+    "WPU0723",
+    "WPU062",
+    "WPU0621",
+    "WPU106",
+    "WPU112J",
+    "WPU1028",
+    "WPS1028",
+    "WPS1054",
+    "WPU105",
+    "WPS105",
+    "DFII10",
+    "BAA",
+    "MORTGAGE30US",
+    "AAA",
+    "EXPINF18YR",
+    "EXPINF19YR",
+    "EXPINF16YR",
+    "EXPINF17YR",
+    "EXPINF10YR",
+    "EXPINF11YR",
+    "EXPINF14YR",
+    "EXPINF15YR",
+    "EXPINF12YR",
+    "EXPINF13YR",
+    "GS5",
+    "GS20",
+    "GS10",
+    "GS7",
+    "WPU112A",
+    "WPU112D",
+    "WPU112B",
+    "WPU112C",
+    "FEDFUNDS",
+    "GS2",
+    "GS3",
+    "GS1",
+    "TB3MS",
+    "WPU0511",
+    "WPU112K",
+    "WPU101506",
+    "WPU1027",
+    "WPU118",
+    "CAPHITEK2S",
+    "IPB53122S",
+    "IPB53122N",
+    "AWCNNA156MNFRBPHI",
+    "AWCNSA156MSFRBPHI",
+    "GACNNA156MNFRBPHI",
+    "UOCNNA156MNFRBPHI",
+    "UOCNSA156MSFRBPHI",
+    "UOFNNA156MNFRBPHI",
+    "UOFNSA156MSFRBPHI",
+    "AWFNNA156MNFRBPHI",
+    "AWFNSA156MSFRBPHI",
+    "GAFNNA156MNFRBPHI",
+    "GAFNSA156MSFRBPHI",
+    "CAPG2211A2S",
+    "CAPG2211S",
+    "CAPX4HTK2S",
+    "CAPX50HTKS",
+    "CEFNNA156MNFRBPHI",
+    "CEFNSA156MSFRBPHI",
+    "TLPWRCONS",
+    "PBPWRCONS"
+  ],
+  "clusters": {
+    "1": [
+      {
+        "fred_id": "IPMAN",
+        "label": "Industrial production: manufacturing"
+      },
+      {
+        "fred_id": "MCUMFN",
+        "label": "Capacity utilization: manufacturing"
+      },
+      {
+        "fred_id": "IPG332S",
+        "label": "Manufacturing: Durable Goods: Fabricated Met"
+      },
+      {
+        "fred_id": "IPG333S",
+        "label": "Manufacturing: Durable Goods: Machinery (NAI"
+      },
+      {
+        "fred_id": "IPG335S",
+        "label": "Manufacturing: Durable Goods: Electrical Equ"
+      },
+      {
+        "fred_id": "IPGMFN",
+        "label": "Manufacturing (NAICS)"
+      },
+      {
+        "fred_id": "IPDMAT",
+        "label": "Durable Goods Materials: Durable Goods Mater"
+      },
+      {
+        "fred_id": "IPMAT",
+        "label": "Materials"
+      },
+      {
+        "fred_id": "CAPUTLG333S",
+        "label": "Manufacturing: Durable Goods: Machinery (NAI"
+      },
+      {
+        "fred_id": "CAPUTLG335S",
+        "label": "Manufacturing: Durable Goods: Electrical Equ"
+      },
+      {
+        "fred_id": "CAPUTLX4HTK2S",
+        "label": "Capacity Utilization: Manufacturing Excludin"
+      },
+      {
+        "fred_id": "CAPUTLX50HTKS",
+        "label": "Capacity Utilization: Total Excluding Comput"
+      },
+      {
+        "fred_id": "INDPRO",
+        "label": "Industrial Production: Total Index"
+      },
+      {
+        "fred_id": "IPB50001N",
+        "label": "Industrial Production: Total Index"
+      },
+      {
+        "fred_id": "IPB50002N",
+        "label": "Industrial Production: Final Products"
+      }
+    ],
+    "2": [
+      {
+        "fred_id": "GS10",
+        "label": "10-Year Treasury yield"
+      },
+      {
+        "fred_id": "GS20",
+        "label": "Market Yield on U.S. Treasury Securities at"
+      },
+      {
+        "fred_id": "GS5",
+        "label": "Market Yield on U.S. Treasury Securities at"
+      },
+      {
+        "fred_id": "GS7",
+        "label": "Market Yield on U.S. Treasury Securities at"
+      },
+      {
+        "fred_id": "EXPINF10YR",
+        "label": "10-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF11YR",
+        "label": "11-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF12YR",
+        "label": "12-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF13YR",
+        "label": "13-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF14YR",
+        "label": "14-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF15YR",
+        "label": "15-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF16YR",
+        "label": "16-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF17YR",
+        "label": "17-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF18YR",
+        "label": "18-Year Expected Inflation"
+      },
+      {
+        "fred_id": "EXPINF19YR",
+        "label": "19-Year Expected Inflation"
+      }
+    ],
+    "3": [
+      {
+        "fred_id": "WPUSI019011",
+        "label": "Copper PPI"
+      },
+      {
+        "fred_id": "PCOPPUSDM",
+        "label": "Global copper price"
+      },
+      {
+        "fred_id": "WPU102",
+        "label": "Metals and Metal Products: Nonferrous Metals"
+      },
+      {
+        "fred_id": "WPU1021",
+        "label": "Metals and Metal Products: Nonferrous Metal"
+      },
+      {
+        "fred_id": "WPU1022",
+        "label": "Metals and Metal Products: Primary Nonferrou"
+      },
+      {
+        "fred_id": "WPU1023",
+        "label": "Metals and Metal Products: Nonferrous Scrap"
+      },
+      {
+        "fred_id": "WPU1024",
+        "label": "Metals and Metal Products: Secondary Nonferr"
+      },
+      {
+        "fred_id": "PPICMM",
+        "label": "Producer Price Index by Commodity: Metals an"
+      },
+      {
+        "fred_id": "WPS102",
+        "label": "Producer Price Index by Commodity: Metals an"
+      },
+      {
+        "fred_id": "WPS1023",
+        "label": "Producer Price Index by Commodity: Metals an"
+      },
+      {
+        "fred_id": "IR142",
+        "label": "Import Price Index (End Use): Major Nonferro"
+      },
+      {
+        "fred_id": "PMETAINDEXM",
+        "label": "Global price of Metal index"
+      },
+      {
+        "fred_id": "PINDUINDEXM",
+        "label": "Global price of Industrial Materials index"
+      }
+    ],
+    "4": [
+      {
+        "fred_id": "WTISPLC",
+        "label": "WTI crude oil"
+      },
+      {
+        "fred_id": "WPU057",
+        "label": "Refined petroleum products PPI"
+      },
+      {
+        "fred_id": "IR1",
+        "label": "Import: Industrial Supplies & Materials"
+      },
+      {
+        "fred_id": "POILBREUSDM",
+        "label": "Brent Crude"
+      },
+      {
+        "fred_id": "POILWTIUSDM",
+        "label": "WTI Crude"
+      },
+      {
+        "fred_id": "WPU056",
+        "label": "Fuels and Related Products and Power: Crude"
+      },
+      {
+        "fred_id": "WPU0532",
+        "label": "Fuels and Related Products and Power: Natura"
+      },
+      {
+        "fred_id": "IR10000",
+        "label": "Import Price Index (End Use): Crude Oil"
+      },
+      {
+        "fred_id": "IR100",
+        "label": "Import Price Index (End Use): Petroleum Prod"
+      },
+      {
+        "fred_id": "IR",
+        "label": "Import Price Index (End Use): All Commoditie"
+      },
+      {
+        "fred_id": "PNRGINDEXM",
+        "label": "Global price of Energy index"
+      },
+      {
+        "fred_id": "PALLFNFINDEXM",
+        "label": "Global Price Index of All Commodities"
+      }
+    ],
+    "5": [
+      {
+        "fred_id": "WPU117",
+        "label": "Electrical machinery & equip. PPI"
+      },
+      {
+        "fred_id": "WPU104",
+        "label": "Metals and Metal Products: Hardware"
+      },
+      {
+        "fred_id": "WPU1041",
+        "label": "Metals and Metal Products: Hardware, Not Els"
+      },
+      {
+        "fred_id": "WPU1042",
+        "label": "Metals and Metal Products: Hand and Edge Too"
+      },
+      {
+        "fred_id": "WPU11",
+        "label": "Machinery and Equipment"
+      },
+      {
+        "fred_id": "WPU112",
+        "label": "Machinery and Equipment: Construction Machin"
+      },
+      {
+        "fred_id": "WPU113",
+        "label": "Machinery and Equipment: Metalworking Machin"
+      },
+      {
+        "fred_id": "WPU114",
+        "label": "Machinery and Equipment: General Purpose Mac"
+      },
+      {
+        "fred_id": "WPU116",
+        "label": "Machinery and Equipment: Special Industry Ma"
+      },
+      {
+        "fred_id": "WPU119",
+        "label": "Machinery and Equipment: Miscellaneous Machi"
+      }
+    ],
+    "6": [
+      {
+        "fred_id": "PERMIT",
+        "label": "Authorized in Permit-Issuing Places: Total U"
+      },
+      {
+        "fred_id": "PERMIT1",
+        "label": "Authorized in Permit-Issuing Places: Single-"
+      },
+      {
+        "fred_id": "HOUST",
+        "label": "Started: Total Units"
+      },
+      {
+        "fred_id": "HOUST1F",
+        "label": "Started: Single-Family Units"
+      },
+      {
+        "fred_id": "PERMIT1NSA",
+        "label": "New Privately-Owned Housing Units Authorized"
+      },
+      {
+        "fred_id": "PERMITNSA",
+        "label": "New Privately-Owned Housing Units Authorized"
+      },
+      {
+        "fred_id": "HOUST1FNSA",
+        "label": "New Privately-Owned Housing Units Started: S"
+      },
+      {
+        "fred_id": "HOUSTNSA",
+        "label": "New Privately-Owned Housing Units Started: T"
+      }
+    ],
+    "7": [
+      {
+        "fred_id": "WPU1026",
+        "label": "Nonferrous wire & cable PPI"
+      },
+      {
+        "fred_id": "IR1EXFUEL",
+        "label": "Import: Ind. Supplies & Materials (ex-fuel)"
+      },
+      {
+        "fred_id": "IR1DUR",
+        "label": "Import: Ind. Supplies & Materials (durable)"
+      },
+      {
+        "fred_id": "WPU10",
+        "label": "Metals and Metal Products"
+      },
+      {
+        "fred_id": "WPU1025",
+        "label": "Metals and Metal Products: Nonferrous Mill S"
+      },
+      {
+        "fred_id": "IR15",
+        "label": "Import Price Index (End Use): Finished Metal"
+      },
+      {
+        "fred_id": "IR14",
+        "label": "Import Price Index (End Use): Unfinished Met"
+      },
+      {
+        "fred_id": "IR1EXPET",
+        "label": "Import Price Index (End Use): Industrial Sup"
+      }
+    ],
+    "8": [
+      {
+        "fred_id": "WPU054",
+        "label": "Electric power PPI"
+      },
+      {
+        "fred_id": "WPU067",
+        "label": "Chemicals and Allied Products: Other Chemica"
+      },
+      {
+        "fred_id": "WPU0541",
+        "label": "Fuels and Related Products and Power: Reside"
+      },
+      {
+        "fred_id": "WPU0542",
+        "label": "Producer Price Index by Commodity: Fuels and"
+      },
+      {
+        "fred_id": "WPU0543",
+        "label": "Producer Price Index by Commodity: Fuels and"
+      },
+      {
+        "fred_id": "PCU22112222112243",
+        "label": "Producer Price Index by Industry: Electric P"
+      },
+      {
+        "fred_id": "PCU22112222112242",
+        "label": "Producer Price Index by Industry: Electric P"
+      }
+    ],
+    "9": [
+      {
+        "fred_id": "A35SNO",
+        "label": "New orders: electrical equipment"
+      },
+      {
+        "fred_id": "A33SNO",
+        "label": "New Orders: Machinery"
+      },
+      {
+        "fred_id": "A32SNO",
+        "label": "New Orders: Fabricated Metal Products"
+      },
+      {
+        "fred_id": "DGORDER",
+        "label": "New Orders: Durable Goods"
+      },
+      {
+        "fred_id": "AMTMNO",
+        "label": "New Orders: Total Manufacturing"
+      },
+      {
+        "fred_id": "NEWORDER",
+        "label": "New Orders: Nondefense Capital Goods Excludi"
+      }
+    ],
+    "10": [
+      {
+        "fred_id": "WPU0531",
+        "label": "Natural gas PPI"
+      },
+      {
+        "fred_id": "PNGASUSUSDM",
+        "label": "Natural Gas, US Henry Hub Gas"
+      },
+      {
+        "fred_id": "WPU053",
+        "label": "Fuels and Related Products and Power: Gas Fu"
+      },
+      {
+        "fred_id": "WPU055",
+        "label": "Fuels and Related Products and Power: Utilit"
+      },
+      {
+        "fred_id": "IR101",
+        "label": "Import Price Index (End Use): Fuels, N.e.s."
+      },
+      {
+        "fred_id": "IR10110",
+        "label": "Import Price Index (End Use): Natural Gas"
+      }
+    ],
+    "11": [
+      {
+        "fred_id": "GAFDFSA066MSFRBPHI",
+        "label": "Future General Activity"
+      },
+      {
+        "fred_id": "NOFDFSA066MSFRBPHI",
+        "label": "Future New Orders"
+      },
+      {
+        "fred_id": "GAFDFNA066MNFRBPHI",
+        "label": "Future General Activity; Diffusion Index for"
+      },
+      {
+        "fred_id": "GAFINA156MNFRBPHI",
+        "label": "Future General Activity; Percent Reporting I"
+      },
+      {
+        "fred_id": "GAFISA156MSFRBPHI",
+        "label": "Future General Activity; Percent Reporting I"
+      }
+    ],
+    "12": [
+      {
+        "fred_id": "MANEMP",
+        "label": "Manufacturing employment"
+      },
+      {
+        "fred_id": "CES3133500001",
+        "label": "Employment: electrical-equip mfg"
+      },
+      {
+        "fred_id": "CES3133100001",
+        "label": "Primary Metal Manufacturing"
+      },
+      {
+        "fred_id": "CES3133200001",
+        "label": "Fabricated Metal Product Manufacturing"
+      },
+      {
+        "fred_id": "CES3133300001",
+        "label": "Machinery Manufacturing"
+      }
+    ],
+    "13": [
+      {
+        "fred_id": "T10Y3M",
+        "label": "10-Year Treasury Constant Maturity Minus 3-M"
+      },
+      {
+        "fred_id": "AAAFFM",
+        "label": "Moody's Seasoned Aaa Corporate Bond Minus Fe"
+      },
+      {
+        "fred_id": "BAAFFM",
+        "label": "Moody's Seasoned Baa Corporate Bond Minus Fe"
+      },
+      {
+        "fred_id": "T10YFFM",
+        "label": "10-Year Treasury Constant Maturity Minus Fed"
+      },
+      {
+        "fred_id": "T5YFFM",
+        "label": "5-Year Treasury Constant Maturity Minus Fede"
+      }
+    ],
+    "14": [
+      {
+        "fred_id": "WPU103",
+        "label": "Metals and Metal Products: Metal Containers"
+      },
+      {
+        "fred_id": "WPU108",
+        "label": "Metals and Metal Products: Miscellaneous Met"
+      },
+      {
+        "fred_id": "WPU1031",
+        "label": "Metals and Metal Products: Metal Cans and Ca"
+      },
+      {
+        "fred_id": "WPU111",
+        "label": "Machinery and Equipment: Agricultural Machin"
+      },
+      {
+        "fred_id": "WPU1114",
+        "label": "Machinery and Equipment: Agricultural Machin"
+      }
+    ],
+    "15": [
+      {
+        "fred_id": "A31SNO",
+        "label": "New Orders: Primary Metals"
+      },
+      {
+        "fred_id": "IPG331S",
+        "label": "Manufacturing: Durable Goods: Primary Metal"
+      },
+      {
+        "fred_id": "IPG3311A2S",
+        "label": "Manufacturing: Durable Goods: Iron and Steel"
+      },
+      {
+        "fred_id": "CAPUTLG331S",
+        "label": "Manufacturing: Durable Goods: Primary Metal"
+      }
+    ],
+    "16": [
+      {
+        "fred_id": "AWCDFNA066MNFRBPHI",
+        "label": "Current Work Hours; Diffusion Index for Fede"
+      },
+      {
+        "fred_id": "AWCDFSA066MSFRBPHI",
+        "label": "Current Work Hours; Diffusion Index for Fede"
+      },
+      {
+        "fred_id": "AWCINA156MNFRBPHI",
+        "label": "Current Work Hours; Percent Reporting Increa"
+      },
+      {
+        "fred_id": "AWCISA156MSFRBPHI",
+        "label": "Current Work Hours; Percent Reporting Increa"
+      }
+    ],
+    "17": [
+      {
+        "fred_id": "AWCDNA156MNFRBPHI",
+        "label": "Current Work Hours; Percent Reporting Decrea"
+      },
+      {
+        "fred_id": "AWCDSA156MSFRBPHI",
+        "label": "Current Work Hours; Percent Reporting Decrea"
+      },
+      {
+        "fred_id": "GACDNA156MNFRBPHI",
+        "label": "Current General Activity; Percent Reporting"
+      },
+      {
+        "fred_id": "GACDSA156MSFRBPHI",
+        "label": "Current General Activity; Percent Reporting"
+      }
+    ],
+    "18": [
+      {
+        "fred_id": "AWFDFNA066MNFRBPHI",
+        "label": "Future Work Hours; Diffusion Index for Feder"
+      },
+      {
+        "fred_id": "AWFDFSA066MSFRBPHI",
+        "label": "Future Work Hours; Diffusion Index for Feder"
+      },
+      {
+        "fred_id": "AWFINA156MNFRBPHI",
+        "label": "Future Work Hours; Percent Reporting Increas"
+      },
+      {
+        "fred_id": "AWFISA156MSFRBPHI",
+        "label": "Future Work Hours; Percent Reporting Increas"
+      }
+    ],
+    "19": [
+      {
+        "fred_id": "BAA10Y",
+        "label": "Baa Corporate Bond Yield Relative to Yield o"
+      },
+      {
+        "fred_id": "AAA10Y",
+        "label": "Aaa Corporate Bond Yield Relative to Yield o"
+      },
+      {
+        "fred_id": "AAA10YM",
+        "label": "Moody's Seasoned Aaa Corporate Bond Yield Re"
+      },
+      {
+        "fred_id": "BAA10YM",
+        "label": "Moody's Seasoned Baa Corporate Bond Yield Re"
+      }
+    ],
+    "20": [
+      {
+        "fred_id": "CEFDFSA066MSFRBPHI",
+        "label": "Future Capital Expenditures"
+      },
+      {
+        "fred_id": "CEFDFNA066MNFRBPHI",
+        "label": "Future Capital Expenditures; Diffusion Index"
+      },
+      {
+        "fred_id": "CEFINA156MNFRBPHI",
+        "label": "Future Capital Expenditures; Percent Reporti"
+      },
+      {
+        "fred_id": "CEFISA156MSFRBPHI",
+        "label": "Future Capital Expenditures; Percent Reporti"
+      }
+    ],
+    "21": [
+      {
+        "fred_id": "DFII10",
+        "label": "10-Year Constant Maturity, Quoted on an Inve"
+      },
+      {
+        "fred_id": "MORTGAGE30US",
+        "label": "30-Year Fixed Rate Mortgage Average"
+      },
+      {
+        "fred_id": "BAA",
+        "label": "Baa Corporate Bond Yield"
+      },
+      {
+        "fred_id": "AAA",
+        "label": "Aaa Corporate Bond Yield"
+      }
+    ],
+    "22": [
+      {
+        "fred_id": "GS2",
+        "label": "2-Year Constant Maturity, Quoted on an Inves"
+      },
+      {
+        "fred_id": "GS1",
+        "label": "1-Year Constant Maturity, Quoted on an Inves"
+      },
+      {
+        "fred_id": "TB3MS",
+        "label": "3-Month Treasury Bill Secondary Market Rate,"
+      },
+      {
+        "fred_id": "GS3",
+        "label": "Market Yield on U.S. Treasury Securities at"
+      }
+    ],
+    "23": [
+      {
+        "fred_id": "IPUTIL",
+        "label": "Industrial production: utilities"
+      },
+      {
+        "fred_id": "IPG2211A2N",
+        "label": "Industrial Production: Utilities: Electric a"
+      },
+      {
+        "fred_id": "CAPUTLG2211A2S",
+        "label": "Capacity Utilization: Utilities: Electric an"
+      },
+      {
+        "fred_id": "CAPUTLG2211S",
+        "label": "Capacity Utilization: Utilities: Electric Po"
+      }
+    ],
+    "24": [
+      {
+        "fred_id": "IR21",
+        "label": "Import Price Index (End Use): Nonelectrical"
+      },
+      {
+        "fred_id": "IR41",
+        "label": "Import Price Index (End Use): Durables, Manu"
+      },
+      {
+        "fred_id": "IR2",
+        "label": "Import Price Index (End Use): Capital Goods,"
+      },
+      {
+        "fred_id": "IR4",
+        "label": "Import Price Index (End Use): Consumer Goods"
+      }
+    ],
+    "25": [
+      {
+        "fred_id": "PCU484484",
+        "label": "Truck Transportation"
+      },
+      {
+        "fred_id": "WPU3012",
+        "label": "Transportation Services: Truck Transportatio"
+      },
+      {
+        "fred_id": "PCOALAUUSDM",
+        "label": "Coal, Australia"
+      },
+      {
+        "fred_id": "PCUOMFGOMFG",
+        "label": "Total Manufacturing Industries"
+      }
+    ],
+    "26": [
+      {
+        "fred_id": "PCU486110486110",
+        "label": "Producer Price Index by Industry: Pipeline T"
+      },
+      {
+        "fred_id": "PCU4861104861103",
+        "label": "Producer Price Index by Industry: Pipeline T"
+      },
+      {
+        "fred_id": "PCU486110486110312",
+        "label": "Producer Price Index by Industry: Pipeline T"
+      },
+      {
+        "fred_id": "PCU486110486110P",
+        "label": "Producer Price Index by Industry: Pipeline T"
+      }
+    ],
+    "27": [
+      {
+        "fred_id": "PPFDISA066MSFRBNY",
+        "label": "Future Prices Paid"
+      },
+      {
+        "fred_id": "PPCDFSA066MSFRBPHI",
+        "label": "Current Prices Paid"
+      },
+      {
+        "fred_id": "PRCDFSA066MSFRBPHI",
+        "label": "Current Prices Received"
+      },
+      {
+        "fred_id": "PPCDISA066MSFRBNY",
+        "label": "Current Prices Paid"
+      }
+    ],
+    "28": [
+      {
+        "fred_id": "UOCDFSA066MSFRBPHI",
+        "label": "Current Unfilled Orders"
+      },
+      {
+        "fred_id": "UOCDFNA066MNFRBPHI",
+        "label": "Current Unfilled Orders; Diffusion Index for"
+      },
+      {
+        "fred_id": "UOCINA156MNFRBPHI",
+        "label": "Current Unfilled Orders; Percent Reporting I"
+      },
+      {
+        "fred_id": "UOCISA156MSFRBPHI",
+        "label": "Current Unfilled Orders; Percent Reporting I"
+      }
+    ],
+    "29": [
+      {
+        "fred_id": "UOFDFNA066MNFRBPHI",
+        "label": "Future Unfilled Orders; Diffusion Index for"
+      },
+      {
+        "fred_id": "UOFDFSA066MSFRBPHI",
+        "label": "Future Unfilled Orders; Diffusion Index for"
+      },
+      {
+        "fred_id": "UOFINA156MNFRBPHI",
+        "label": "Future Unfilled Orders; Percent Reporting In"
+      },
+      {
+        "fred_id": "UOFISA156MSFRBPHI",
+        "label": "Future Unfilled Orders; Percent Reporting In"
+      }
+    ],
+    "30": [
+      {
+        "fred_id": "UOFDNA156MNFRBPHI",
+        "label": "Future Unfilled Orders; Percent Reporting De"
+      },
+      {
+        "fred_id": "UOFDSA156MSFRBPHI",
+        "label": "Future Unfilled Orders; Percent Reporting De"
+      },
+      {
+        "fred_id": "GAFDNA156MNFRBPHI",
+        "label": "Future General Activity; Percent Reporting D"
+      },
+      {
+        "fred_id": "GAFDSA156MSFRBPHI",
+        "label": "Future General Activity; Percent Reporting D"
+      }
+    ],
+    "31": [
+      {
+        "fred_id": "WPU06",
+        "label": "Chemicals and Allied Products"
+      },
+      {
+        "fred_id": "IR150",
+        "label": "Import Price Index (End Use): Iron and Steel"
+      },
+      {
+        "fred_id": "IR151",
+        "label": "Import Price Index (End Use): Iron and Steel"
+      },
+      {
+        "fred_id": "IR12",
+        "label": "Import Price Index (End Use): Agricultural P"
+      }
+    ],
+    "32": [
+      {
+        "fred_id": "WPU072",
+        "label": "Plastic products PPI"
+      },
+      {
+        "fred_id": "WPU07",
+        "label": "Rubber and Plastic Products"
+      },
+      {
+        "fred_id": "WPU0721",
+        "label": "Rubber and Plastic Products: Plastic Constru"
+      },
+      {
+        "fred_id": "WPU0722",
+        "label": "Rubber and Plastic Products: Unsupported Pla"
+      }
+    ],
+    "33": [
+      {
+        "fred_id": "WPU101",
+        "label": "Iron & steel PPI"
+      },
+      {
+        "fred_id": "WPU101707",
+        "label": "Cold-rolled steel sheet (GOES proxy)"
+      },
+      {
+        "fred_id": "WPU1017",
+        "label": "Steel mill products PPI"
+      },
+      {
+        "fred_id": "WPS101",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "34": [
+      {
+        "fred_id": "WPU1015",
+        "label": "Metals and Metal Products: Foundry and Forge"
+      },
+      {
+        "fred_id": "WPU101502",
+        "label": "Producer Price Index by Commodity: Metals an"
+      },
+      {
+        "fred_id": "WPU101504",
+        "label": "Producer Price Index by Commodity: Metals an"
+      },
+      {
+        "fred_id": "WPU10150211",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "35": [
+      {
+        "fred_id": "WPU106",
+        "label": "Metals and Metal Products: Heating Equipment"
+      },
+      {
+        "fred_id": "WPU062",
+        "label": "Chemicals and Allied Products: Paints and Al"
+      },
+      {
+        "fred_id": "WPU0621",
+        "label": "Chemicals and Allied Products: Prepared Pain"
+      },
+      {
+        "fred_id": "WPU112J",
+        "label": "Machinery and Equipment: Miscellaneous Const"
+      }
+    ],
+    "36": [
+      {
+        "fred_id": "WPU107",
+        "label": "Metals and Metal Products: Fabricated Struct"
+      },
+      {
+        "fred_id": "WPU1032",
+        "label": "Metals and Metal Products: Barrels, Drums, P"
+      },
+      {
+        "fred_id": "WPS107",
+        "label": "Producer Price Index by Commodity: Metals an"
+      },
+      {
+        "fred_id": "WPS1074",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "37": [
+      {
+        "fred_id": "GACDFSA066MSFRBPHI",
+        "label": "Current General Activity"
+      },
+      {
+        "fred_id": "NOCDFSA066MSFRBPHI",
+        "label": "Current New Orders"
+      },
+      {
+        "fred_id": "GACDFNA066MNFRBPHI",
+        "label": "Current General Activity; Diffusion Index fo"
+      }
+    ],
+    "38": [
+      {
+        "fred_id": "IPB51000N",
+        "label": "Industrial Production: Consumer Goods"
+      },
+      {
+        "fred_id": "IPB51100N",
+        "label": "Industrial Production: Durable Consumer Good"
+      },
+      {
+        "fred_id": "IPB51110N",
+        "label": "Industrial Production: Durable Consumer Good"
+      }
+    ],
+    "39": [
+      {
+        "fred_id": "PCU481111481111",
+        "label": "Producer Price Index by Industry: Scheduled"
+      },
+      {
+        "fred_id": "PCU4811114811111",
+        "label": "Producer Price Index by Industry: Scheduled"
+      },
+      {
+        "fred_id": "PCU4811114811112",
+        "label": "Producer Price Index by Industry: Scheduled"
+      }
+    ],
+    "40": [
+      {
+        "fred_id": "PCU483111483111",
+        "label": "Producer Price Index by Industry: Deep Sea F"
+      },
+      {
+        "fred_id": "PCU4831114831115",
+        "label": "Producer Price Index by Industry: Deep Sea F"
+      },
+      {
+        "fred_id": "PCU483111483111P",
+        "label": "Producer Price Index by Industry: Deep Sea F"
+      }
+    ],
+    "41": [
+      {
+        "fred_id": "PCU486910486910",
+        "label": "Producer Price Index by Industry: Refined Pe"
+      },
+      {
+        "fred_id": "PCU4869104869101",
+        "label": "Producer Price Index by Industry: Refined Pe"
+      },
+      {
+        "fred_id": "PCU486910486910P",
+        "label": "Producer Price Index by Industry: Refined Pe"
+      }
+    ],
+    "42": [
+      {
+        "fred_id": "PERMIT5NSA",
+        "label": "New Privately-Owned Housing Units Authorized"
+      },
+      {
+        "fred_id": "HOUST5F",
+        "label": "New Privately-Owned Housing Units Started: U"
+      },
+      {
+        "fred_id": "PERMIT5",
+        "label": "New Privately-Owned Housing Units Authorized"
+      }
+    ],
+    "43": [
+      {
+        "fred_id": "T1YFFM",
+        "label": "1-Year Treasury Constant Maturity Minus Fede"
+      },
+      {
+        "fred_id": "TB3SMFFM",
+        "label": "3-Month Treasury Bill Minus Federal Funds Ra"
+      },
+      {
+        "fred_id": "TB6SMFFM",
+        "label": "6-Month Treasury Bill Minus Federal Funds Ra"
+      }
+    ],
+    "44": [
+      {
+        "fred_id": "WPU051",
+        "label": "Fuels and Related Products and Power: Coal"
+      },
+      {
+        "fred_id": "WPU0512",
+        "label": "Fuels and Related Products and Power: Bitumi"
+      },
+      {
+        "fred_id": "WPU0513",
+        "label": "Fuels and Related Products and Power: Coal"
+      }
+    ],
+    "45": [
+      {
+        "fred_id": "WPU061",
+        "label": "Chemicals and Allied Products: Industrial Ch"
+      },
+      {
+        "fred_id": "WPU066",
+        "label": "Chemicals and Allied Products: Plastic Resin"
+      },
+      {
+        "fred_id": "WPU0614",
+        "label": "Chemicals and Allied Products: Basic Organic"
+      }
+    ],
+    "46": [
+      {
+        "fred_id": "WPU071",
+        "label": "Rubber and Plastic Products: Rubber and Rubb"
+      },
+      {
+        "fred_id": "WPU0712",
+        "label": "Rubber and Plastic Products: Tires, Tubes, T"
+      },
+      {
+        "fred_id": "WPU0713",
+        "label": "Rubber and Plastic Products: Miscellaneous R"
+      }
+    ],
+    "47": [
+      {
+        "fred_id": "WPU105",
+        "label": "Metals and Metal Products: Plumbing Fixtures"
+      },
+      {
+        "fred_id": "WPS105",
+        "label": "Producer Price Index by Commodity: Metals an"
+      },
+      {
+        "fred_id": "WPS1054",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "48": [
+      {
+        "fred_id": "A31AUO",
+        "label": "Manufacturers' Unfilled Orders: Iron and Ste"
+      },
+      {
+        "fred_id": "A31SUO",
+        "label": "Manufacturers' Unfilled Orders: Primary Meta"
+      }
+    ],
+    "49": [
+      {
+        "fred_id": "A35SUO",
+        "label": "Unfilled Orders: Electrical Equipment, Appli"
+      },
+      {
+        "fred_id": "A32SUO",
+        "label": "Manufacturers' Unfilled Orders: Fabricated M"
+      }
+    ],
+    "50": [
+      {
+        "fred_id": "AWCNNA156MNFRBPHI",
+        "label": "Current Work Hours; Percent Reporting No Cha"
+      },
+      {
+        "fred_id": "AWCNSA156MSFRBPHI",
+        "label": "Current Work Hours; Percent Reporting No Cha"
+      }
+    ],
+    "51": [
+      {
+        "fred_id": "AWFDNA156MNFRBPHI",
+        "label": "Future Work Hours; Percent Reporting Decreas"
+      },
+      {
+        "fred_id": "AWFDSA156MSFRBPHI",
+        "label": "Future Work Hours; Percent Reporting Decreas"
+      }
+    ],
+    "52": [
+      {
+        "fred_id": "AWFNNA156MNFRBPHI",
+        "label": "Future Work Hours; Percent Reporting No Chan"
+      },
+      {
+        "fred_id": "AWFNSA156MSFRBPHI",
+        "label": "Future Work Hours; Percent Reporting No Chan"
+      }
+    ],
+    "53": [
+      {
+        "fred_id": "CAPG2211A2S",
+        "label": "Industrial Capacity: Utilities: Electric and"
+      },
+      {
+        "fred_id": "CAPG2211S",
+        "label": "Industrial Capacity: Utilities: Electric Pow"
+      }
+    ],
+    "54": [
+      {
+        "fred_id": "CAPX4HTK2S",
+        "label": "Industrial Capacity: Manufacturing Excluding"
+      },
+      {
+        "fred_id": "CAPX50HTKS",
+        "label": "Industrial Capacity: Total Excluding Compute"
+      }
+    ],
+    "55": [
+      {
+        "fred_id": "CEFDISA066MSFRBNY",
+        "label": "Future Capital Expenditures"
+      },
+      {
+        "fred_id": "NECDFSA066MSFRBPHI",
+        "label": "Current Employment"
+      }
+    ],
+    "56": [
+      {
+        "fred_id": "CEFDNA156MNFRBPHI",
+        "label": "Future Capital Expenditures; Percent Reporti"
+      },
+      {
+        "fred_id": "CEFDSA156MSFRBPHI",
+        "label": "Future Capital Expenditures; Percent Reporti"
+      }
+    ],
+    "57": [
+      {
+        "fred_id": "CEFNNA156MNFRBPHI",
+        "label": "Future Capital Expenditures; Percent Reporti"
+      },
+      {
+        "fred_id": "CEFNSA156MSFRBPHI",
+        "label": "Future Capital Expenditures; Percent Reporti"
+      }
+    ],
+    "58": [
+      {
+        "fred_id": "DTWEXBGS",
+        "label": "Nominal Broad U.S. Dollar Index"
+      },
+      {
+        "fred_id": "DTWEXAFEGS",
+        "label": "Nominal Advanced Foreign Economies U.S. Doll"
+      }
+    ],
+    "59": [
+      {
+        "fred_id": "GACDISA066MSFRBNY",
+        "label": "Current General Business Conditions"
+      },
+      {
+        "fred_id": "NOCDISA066MSFRBNY",
+        "label": "Current New Orders"
+      }
+    ],
+    "60": [
+      {
+        "fred_id": "GAFNNA156MNFRBPHI",
+        "label": "Future General Activity; Percent Reporting N"
+      },
+      {
+        "fred_id": "GAFNSA156MSFRBPHI",
+        "label": "Future General Activity; Percent Reporting N"
+      }
+    ],
+    "61": [
+      {
+        "fred_id": "IPB51121N",
+        "label": "Industrial Production: Durable Consumer Good"
+      },
+      {
+        "fred_id": "IPB51121S",
+        "label": "Industrial Production: Durable Consumer Good"
+      }
+    ],
+    "62": [
+      {
+        "fred_id": "IPB53122S",
+        "label": "Industrial Production: Durable Goods Materia"
+      },
+      {
+        "fred_id": "IPB53122N",
+        "label": "Industrial Production: Durable Goods Materia"
+      }
+    ],
+    "63": [
+      {
+        "fred_id": "IPMINE",
+        "label": "Mining: Mining (NAICS = 21)"
+      },
+      {
+        "fred_id": "IPB50089S",
+        "label": "Energy, Total"
+      }
+    ],
+    "64": [
+      {
+        "fred_id": "IR0",
+        "label": "Import Price Index (End Use): Foods, Feeds,"
+      },
+      {
+        "fred_id": "IR000",
+        "label": "Import Price Index (End Use): Green Coffee,"
+      }
+    ],
+    "65": [
+      {
+        "fred_id": "IR21120",
+        "label": "Import Price Index (End Use): Metal Working"
+      },
+      {
+        "fred_id": "IR302NAPT",
+        "label": "Import Price Index (End Use): Automotive Par"
+      }
+    ],
+    "66": [
+      {
+        "fred_id": "IR3",
+        "label": "Import Price Index (End Use): Automotive Veh"
+      },
+      {
+        "fred_id": "IR300",
+        "label": "Import Price Index (End Use): Passenger Cars"
+      }
+    ],
+    "67": [
+      {
+        "fred_id": "IR40000",
+        "label": "Import Price Index (End Use): Apparel, House"
+      },
+      {
+        "fred_id": "IR40020",
+        "label": "Import Price Index (End Use): Apparel, Texti"
+      }
+    ],
+    "68": [
+      {
+        "fred_id": "ISRATIO",
+        "label": "Total Business: Inventories to Sales Ratio"
+      },
+      {
+        "fred_id": "MNFCTRIRSA",
+        "label": "Manufacturers: Inventories to Sales Ratio"
+      }
+    ],
+    "69": [
+      {
+        "fred_id": "NEFDFNA066MNFRBPHI",
+        "label": "Future Employment; Diffusion Index for Feder"
+      },
+      {
+        "fred_id": "NEFDFSA066MSFRBPHI",
+        "label": "Future Employment; Diffusion Index for Feder"
+      }
+    ],
+    "70": [
+      {
+        "fred_id": "NEFDNA156MNFRBPHI",
+        "label": "Future Employment; Percent Reporting Decreas"
+      },
+      {
+        "fred_id": "NEFDSA156MSFRBPHI",
+        "label": "Future Employment; Percent Reporting Decreas"
+      }
+    ],
+    "71": [
+      {
+        "fred_id": "PALUMUSDM",
+        "label": "Global aluminum price"
+      },
+      {
+        "fred_id": "WPS102302",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "72": [
+      {
+        "fred_id": "PCU4811124811121",
+        "label": "Producer Price Index by Industry: Scheduled"
+      },
+      {
+        "fred_id": "PCU481112481112P",
+        "label": "Producer Price Index by Industry: Scheduled"
+      }
+    ],
+    "73": [
+      {
+        "fred_id": "PERMIT24NSA",
+        "label": "New Privately-Owned Housing Units Authorized"
+      },
+      {
+        "fred_id": "PERMIT24",
+        "label": "New Privately-Owned Housing Units Authorized"
+      }
+    ],
+    "74": [
+      {
+        "fred_id": "PPFDFSA066MSFRBPHI",
+        "label": "Future Prices Paid"
+      },
+      {
+        "fred_id": "PRFDFSA066MSFRBPHI",
+        "label": "Future Prices Received"
+      }
+    ],
+    "75": [
+      {
+        "fred_id": "PRUBBUSDM",
+        "label": "Rubber"
+      },
+      {
+        "fred_id": "PRAWMINDEXM",
+        "label": "Global price of Agr. Raw Material Index"
+      }
+    ],
+    "76": [
+      {
+        "fred_id": "PZINCUSDM",
+        "label": "Global zinc price"
+      },
+      {
+        "fred_id": "IR14260",
+        "label": "Import: Zinc"
+      }
+    ],
+    "77": [
+      {
+        "fred_id": "T10Y2Y",
+        "label": "10-Year Treasury Constant Maturity Minus 2-Y"
+      },
+      {
+        "fred_id": "T10Y2YM",
+        "label": "10-Year Treasury Constant Maturity Minus 2-Y"
+      }
+    ],
+    "78": [
+      {
+        "fred_id": "T10YIE",
+        "label": "10-Year Breakeven Inflation Rate"
+      },
+      {
+        "fred_id": "T5YIFR",
+        "label": "5-Year, 5-Year Forward Inflation Expectation"
+      }
+    ],
+    "79": [
+      {
+        "fred_id": "TLMFGCONS",
+        "label": "Manufacturing"
+      },
+      {
+        "fred_id": "TLNRESCONS",
+        "label": "Nonresidential"
+      }
+    ],
+    "80": [
+      {
+        "fred_id": "TTLCONS",
+        "label": "Total Construction"
+      },
+      {
+        "fred_id": "USCONS",
+        "label": "Construction"
+      }
+    ],
+    "81": [
+      {
+        "fred_id": "UOCDNA156MNFRBPHI",
+        "label": "Current Unfilled Orders; Percent Reporting D"
+      },
+      {
+        "fred_id": "UOCDSA156MSFRBPHI",
+        "label": "Current Unfilled Orders; Percent Reporting D"
+      }
+    ],
+    "82": [
+      {
+        "fred_id": "UOCNNA156MNFRBPHI",
+        "label": "Current Unfilled Orders; Percent Reporting N"
+      },
+      {
+        "fred_id": "UOCNSA156MSFRBPHI",
+        "label": "Current Unfilled Orders; Percent Reporting N"
+      }
+    ],
+    "83": [
+      {
+        "fred_id": "UOFNNA156MNFRBPHI",
+        "label": "Future Unfilled Orders; Percent Reporting No"
+      },
+      {
+        "fred_id": "UOFNSA156MSFRBPHI",
+        "label": "Future Unfilled Orders; Percent Reporting No"
+      }
+    ],
+    "84": [
+      {
+        "fred_id": "WPU0511",
+        "label": "Fuels and Related Products and Power: Anthra"
+      },
+      {
+        "fred_id": "WPU112K",
+        "label": "Machinery and Equipment: Parts for Construct"
+      }
+    ],
+    "85": [
+      {
+        "fred_id": "WPU064",
+        "label": "Chemicals and Allied Products: Fats and Oils"
+      },
+      {
+        "fred_id": "PFOODINDEXM",
+        "label": "Global price of Food index"
+      }
+    ],
+    "86": [
+      {
+        "fred_id": "WPU065",
+        "label": "Chemicals and Allied Products: Agricultural"
+      },
+      {
+        "fred_id": "WPU0613",
+        "label": "Chemicals and Allied Products: Basic Inorgan"
+      }
+    ],
+    "87": [
+      {
+        "fred_id": "WPU1012",
+        "label": "Iron & steel scrap PPI"
+      },
+      {
+        "fred_id": "WPS1012",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "88": [
+      {
+        "fred_id": "WPU101505",
+        "label": "Producer Price Index by Commodity: Metals an"
+      },
+      {
+        "fred_id": "WPU10150501",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "89": [
+      {
+        "fred_id": "WPU1028",
+        "label": "Metals and Metal Products: Nonferrous Foundr"
+      },
+      {
+        "fred_id": "WPS1028",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "90": [
+      {
+        "fred_id": "WPU112A",
+        "label": "Machinery and Equipment: Tractors and Attach"
+      },
+      {
+        "fred_id": "WPU112D",
+        "label": "Machinery and Equipment: Off-Highway, Equipm"
+      }
+    ],
+    "91": [
+      {
+        "fred_id": "WPU112B",
+        "label": "Machinery and Equipment: Power Cranes, Dragl"
+      },
+      {
+        "fred_id": "WPU112C",
+        "label": "Machinery and Equipment: Mixers, Pavers, and"
+      }
+    ],
+    "92": [
+      {
+        "fred_id": "A31CUO",
+        "label": "Manufacturers' Unfilled Orders: Ferrous Meta"
+      }
+    ],
+    "93": [
+      {
+        "fred_id": "A33CUO",
+        "label": "Manufacturers' Unfilled Orders: Construction"
+      }
+    ],
+    "94": [
+      {
+        "fred_id": "A33DUO",
+        "label": "Manufacturers' Unfilled Orders: Mining, Oil,"
+      }
+    ],
+    "95": [
+      {
+        "fred_id": "A33EUO",
+        "label": "Manufacturers' Unfilled Orders: Industrial M"
+      }
+    ],
+    "96": [
+      {
+        "fred_id": "A33GUO",
+        "label": "Manufacturers' Unfilled Orders: Photographic"
+      }
+    ],
+    "97": [
+      {
+        "fred_id": "A33HUO",
+        "label": "Manufacturers' Unfilled Orders: Ventilation,"
+      }
+    ],
+    "98": [
+      {
+        "fred_id": "A34SNO",
+        "label": "New Orders: Computers and Electronic Product"
+      }
+    ],
+    "99": [
+      {
+        "fred_id": "AMTMUO",
+        "label": "Unfilled Orders: Total Manufacturing"
+      }
+    ],
+    "100": [
+      {
+        "fred_id": "ANDENO",
+        "label": "New Orders: Nondefense Capital Goods"
+      }
+    ],
+    "101": [
+      {
+        "fred_id": "CAPG2212S",
+        "label": "Industrial Capacity: Utilities: Natural Gas"
+      }
+    ],
+    "102": [
+      {
+        "fred_id": "CAPHITEK2S",
+        "label": "Industrial Capacity: Manufacturing: Durable"
+      }
+    ],
+    "103": [
+      {
+        "fred_id": "CAPUTLG2212S",
+        "label": "Capacity Utilization: Utilities: Natural Gas"
+      }
+    ],
+    "104": [
+      {
+        "fred_id": "CAPUTLHITEK2S",
+        "label": "Capacity Utilization: Manufacturing: Durable"
+      }
+    ],
+    "105": [
+      {
+        "fred_id": "CES1021100001",
+        "label": "Oil and Gas Extraction"
+      }
+    ],
+    "106": [
+      {
+        "fred_id": "DTCDFSA066MSFRBPHI",
+        "label": "Current Delivery Time"
+      }
+    ],
+    "107": [
+      {
+        "fred_id": "DTCDISA066MSFRBNY",
+        "label": "Current Delivery Time"
+      }
+    ],
+    "108": [
+      {
+        "fred_id": "EXPINF1YR",
+        "label": "1-Year Expected Inflation"
+      }
+    ],
+    "109": [
+      {
+        "fred_id": "FEDFUNDS",
+        "label": "Federal Funds Effective Rate"
+      }
+    ],
+    "110": [
+      {
+        "fred_id": "GACINA156MNFRBPHI",
+        "label": "Current General Activity; Percent Reporting"
+      }
+    ],
+    "111": [
+      {
+        "fred_id": "GACISA156MSFRBPHI",
+        "label": "Current General Activity; Percent Reporting"
+      }
+    ],
+    "112": [
+      {
+        "fred_id": "GACNNA156MNFRBPHI",
+        "label": "Current General Activity; Percent Reporting"
+      }
+    ],
+    "113": [
+      {
+        "fred_id": "HOUST2F",
+        "label": "New Privately-Owned Housing Units Started: U"
+      }
+    ],
+    "114": [
+      {
+        "fred_id": "IR00100",
+        "label": "Import Price Index (End Use): Meat Products"
+      }
+    ],
+    "115": [
+      {
+        "fred_id": "IR00120",
+        "label": "Import Price Index (End Use): Fruits and Fro"
+      }
+    ],
+    "116": [
+      {
+        "fred_id": "IR00130",
+        "label": "Import Price Index (End Use): Vegetables"
+      }
+    ],
+    "117": [
+      {
+        "fred_id": "IR01000",
+        "label": "Import Price Index (End Use): Fish and Shell"
+      }
+    ],
+    "118": [
+      {
+        "fred_id": "IR11",
+        "label": "Import Price Index (End Use): Paper and Pape"
+      }
+    ],
+    "119": [
+      {
+        "fred_id": "IR130",
+        "label": "Import Price Index (End Use): Lumber and Oth"
+      }
+    ],
+    "120": [
+      {
+        "fred_id": "IR14280",
+        "label": "Import Price Index (End Use): Other Precious"
+      }
+    ],
+    "121": [
+      {
+        "fred_id": "IR40",
+        "label": "Import Price Index (End Use): Nondurables, M"
+      }
+    ],
+    "122": [
+      {
+        "fred_id": "IR41000",
+        "label": "Import Price Index (End Use): Furniture, Hou"
+      }
+    ],
+    "123": [
+      {
+        "fred_id": "IR41120",
+        "label": "Import Price Index (End Use): Toys, Games, a"
+      }
+    ],
+    "124": [
+      {
+        "fred_id": "MICH",
+        "label": "Inflation Expectation"
+      }
+    ],
+    "125": [
+      {
+        "fred_id": "NOFDISA066MSFRBNY",
+        "label": "Future New Orders"
+      }
+    ],
+    "126": [
+      {
+        "fred_id": "PBPWRCONS",
+        "label": "Total Public Construction Spending: Power"
+      }
+    ],
+    "127": [
+      {
+        "fred_id": "PCU3359913359910",
+        "label": "Producer Price Index by Industry: Carbon and"
+      }
+    ],
+    "128": [
+      {
+        "fred_id": "PCU4811124811122",
+        "label": "Producer Price Index by Industry: Scheduled"
+      }
+    ],
+    "129": [
+      {
+        "fred_id": "PCU486110486110311",
+        "label": "Producer Price Index by Industry: Pipeline T"
+      }
+    ],
+    "130": [
+      {
+        "fred_id": "PCU4921104921102",
+        "label": "Producer Price Index by Industry: Couriers a"
+      }
+    ],
+    "131": [
+      {
+        "fred_id": "PIORECRUSDM",
+        "label": "Iron Ore"
+      }
+    ],
+    "132": [
+      {
+        "fred_id": "PLEADUSDM",
+        "label": "Global lead price"
+      }
+    ],
+    "133": [
+      {
+        "fred_id": "PNICKUSDM",
+        "label": "Global nickel price"
+      }
+    ],
+    "134": [
+      {
+        "fred_id": "PTINUSDM",
+        "label": "Global tin price"
+      }
+    ],
+    "135": [
+      {
+        "fred_id": "PURANUSDM",
+        "label": "Uranium"
+      }
+    ],
+    "136": [
+      {
+        "fred_id": "RETAILIRSA",
+        "label": "Retailers: Inventories to Sales Ratio"
+      }
+    ],
+    "137": [
+      {
+        "fred_id": "T5YIE",
+        "label": "5-Year Breakeven Inflation Rate"
+      }
+    ],
+    "138": [
+      {
+        "fred_id": "TLPWRCONS",
+        "label": "Construction spending: power"
+      }
+    ],
+    "139": [
+      {
+        "fred_id": "TLRESCONS",
+        "label": "Residential"
+      }
+    ],
+    "140": [
+      {
+        "fred_id": "UMCSENT",
+        "label": "Consumer Sentiment"
+      }
+    ],
+    "141": [
+      {
+        "fred_id": "WPU0576",
+        "label": "Finished lubricants PPI"
+      }
+    ],
+    "142": [
+      {
+        "fred_id": "WPU058",
+        "label": "Fuels and Related Products and Power: Asphal"
+      }
+    ],
+    "143": [
+      {
+        "fred_id": "WPU0622",
+        "label": "Chemicals and Allied Products: Paint Materia"
+      }
+    ],
+    "144": [
+      {
+        "fred_id": "WPU063",
+        "label": "Chemicals and Allied Products: Drugs and Pha"
+      }
+    ],
+    "145": [
+      {
+        "fred_id": "WPU0711",
+        "label": "Rubber and Plastic Products: Synthetic Rubbe"
+      }
+    ],
+    "146": [
+      {
+        "fred_id": "WPU0723",
+        "label": "Rubber and Plastic Products: Laminated Plast"
+      }
+    ],
+    "147": [
+      {
+        "fred_id": "WPU1011",
+        "label": "Iron ores PPI"
+      }
+    ],
+    "148": [
+      {
+        "fred_id": "WPU10150227",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "149": [
+      {
+        "fred_id": "WPU101506",
+        "label": "Producer Price Index by Commodity: Metals an"
+      }
+    ],
+    "150": [
+      {
+        "fred_id": "WPU1016",
+        "label": "Producer Price Index by Commodity for Metals"
+      }
+    ],
+    "151": [
+      {
+        "fred_id": "WPU101705",
+        "label": "Steel wire PPI"
+      }
+    ],
+    "152": [
+      {
+        "fred_id": "WPU102501",
+        "label": "Aluminum mill shapes PPI"
+      }
+    ],
+    "153": [
+      {
+        "fred_id": "WPU1027",
+        "label": "Metals and Metal Products: Nonferrous Forge"
+      }
+    ],
+    "154": [
+      {
+        "fred_id": "WPU1052",
+        "label": "Metals and Metal Products: Vitreous China Pl"
+      }
+    ],
+    "155": [
+      {
+        "fred_id": "WPU115",
+        "label": "Machinery and Equipment: Electronic Computer"
+      }
+    ],
+    "156": [
+      {
+        "fred_id": "WPU118",
+        "label": "Machinery and Equipment: Miscellaneous Instr"
+      }
+    ]
+  }
+}

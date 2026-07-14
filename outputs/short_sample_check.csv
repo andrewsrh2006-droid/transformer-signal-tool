@@ -1,0 +1,3 @@
+signal,fred_id,usable_n,sample_start,lead_months,signal_r,bench_r_same_window,bench_r_full_history,window_inflation,signal_beats_benchmark,window_artifact,long_corroborators,base_verdict,final_verdict,decision
+Import: Copper,IR14220,80,2018-12-01,10,0.857,0.8804,0.5257,0.3547,-0.0234,yes,Copper PPI; Global copper price; Import Price Index (End Use): Major Nonferro; Global price of Metal index; Global price of Industrial Materials index,STRONG / NOT ROBUST,SHORT-SAMPLE (unverified),downgraded: window artifact
+Transportation Services: Truck Transportatio,WPU3012,190,2010-06-01,2,0.8143,0.6962,0.5257,0.1705,0.1181,no,(none),STRONG / NOT ROBUST,SHORT-SAMPLE (unverified),downgraded: no long corroboration

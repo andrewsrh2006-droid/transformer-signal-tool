@@ -1,0 +1,17 @@
+{
+  "signal": {
+    "n_groups": 393,
+    "mean_abs_r": null,
+    "n_cousins": null
+  },
+  "tight": {
+    "n_groups": 15,
+    "mean_abs_r": 0.6549,
+    "n_cousins": 55
+  },
+  "loose": {
+    "n_groups": 9,
+    "mean_abs_r": 0.7078,
+    "n_cousins": 14
+  }
+}

@@ -1,0 +1,30 @@
+# --- Secrets / credentials — never commit ---
+# The FRED API key is only ever read from the FRED_API_KEY environment variable.
+.env
+*.env
+*.key
+.streamlit/secrets.toml
+
+# --- Python caches ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Local tooling / editor state (not needed for deploy) ---
+.claude/
+
+# --- Scratch / local-only ---
+scratchpad/
+*.log

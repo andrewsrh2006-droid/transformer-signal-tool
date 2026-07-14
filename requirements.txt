@@ -1,0 +1,10 @@
+# Runtime dependencies for the Streamlit dashboard (app.py).
+# The dashboard itself needs only streamlit, pandas, numpy and plotly.
+# scipy and matplotlib are used by the offline regeneration pipeline
+# (run_pipeline.py / signal_tool/cluster.py) that produces the committed outputs.
+streamlit>=1.40
+pandas>=2.0
+numpy>=1.24
+plotly>=5.18
+scipy>=1.10
+matplotlib>=3.7

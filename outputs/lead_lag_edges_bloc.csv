@@ -1,0 +1,24 @@
+source_id,target_id,source,target,lag,r,gain,n
+Metals complex,Plastics & materials & freight complex,Metals complex,Plastics & materials & freight complex,6,0.7656,0.2616,185
+Metals complex,Import prices & chemicals complex,Metals complex,Import prices & chemicals complex,2,0.8321,0.051,254
+Metals complex,Steel complex,Metals complex,Steel complex,5,0.8362,0.2134,96
+Metals complex,Orders/demand complex,Metals complex,Orders/demand complex,3,0.7551,0.089,254
+Metals complex,PCU335311335311,Metals complex,Transformer PPI,6,0.6118,0.1895,251
+Energy & import prices complex,PCU335311335311,Energy & import prices complex,Transformer PPI,3,0.5857,0.0935,391
+Import prices & chemicals complex,Plastics & materials & freight complex,Import prices & chemicals complex,Plastics & materials & freight complex,3,0.8994,0.0979,188
+Import prices & chemicals complex,PCU335311335311,Import prices & chemicals complex,Transformer PPI,4,0.7095,0.1029,277
+Steel complex,Plastics & materials & freight complex,Steel complex,Plastics & materials & freight complex,4,0.91,0.1165,96
+Steel complex,PCU335311335311,Steel complex,Transformer PPI,6,0.9281,0.2948,95
+Steel & inflation expectations complex,Energy & import prices complex,Steel & inflation expectations complex,Energy & import prices complex,4,0.8056,0.1009,84
+Steel & inflation expectations complex,Plastics & materials & freight complex,Steel & inflation expectations complex,Plastics & materials & freight complex,8,0.9121,0.4038,80
+Steel & inflation expectations complex,Steel complex,Steel & inflation expectations complex,Steel complex,3,0.9407,0.159,86
+Steel & inflation expectations complex,Orders/demand complex,Steel & inflation expectations complex,Orders/demand complex,5,0.8645,0.1779,84
+Steel & inflation expectations complex,PCU335311335311,Steel & inflation expectations complex,Transformer PPI,9,0.9265,0.6421,80
+Orders/demand complex,PCU335311335311,Orders/demand complex,Transformer PPI,3,0.5761,0.0607,398
+Chemicals complex,Plastics & materials & freight complex,Chemicals complex,Plastics & materials & freight complex,4,0.8132,0.1081,187
+Chemicals complex,Steel complex,Chemicals complex,Steel complex,2,0.8771,0.0535,99
+Chemicals complex,PCU335311335311,Chemicals complex,Transformer PPI,5,0.513,0.0951,396
+Global tin price,Plastics & materials & freight complex,Global tin price,Plastics & materials & freight complex,5,0.8081,0.2895,186
+Global tin price,Import prices & chemicals complex,Global tin price,Import prices & chemicals complex,2,0.7969,0.0647,279
+Global tin price,Steel complex,Global tin price,Steel complex,2,0.859,0.0545,99
+Global tin price,PCU335311335311,Global tin price,Transformer PPI,6,0.5924,0.1973,395

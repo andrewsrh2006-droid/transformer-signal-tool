@@ -1,0 +1,41 @@
+source_id,target_id,source,target,lag,r,gain,n
+Metals complex,Import prices complex,Metals complex,Import prices complex,5,0.6359,0.2517,251
+Metals complex,Steel complex,Metals complex,Steel complex,5,0.8048,0.2343,96
+Metals complex,Chemicals complex,Metals complex,Chemicals complex,2,0.6731,0.0517,255
+Metals complex,Orders/demand complex (2),Metals complex,Orders/demand complex (2),3,0.7295,0.1005,254
+Metals complex,Aluminum mill shapes PPI,Metals complex,Aluminum mill shapes PPI,2,0.7506,0.0583,255
+Metals complex,PCU335311335311,Metals complex,Transformer PPI,6,0.5768,0.1918,251
+Energy & import prices complex,Import prices complex,Energy & import prices complex,Import prices complex,2,0.7479,0.0707,358
+Energy & import prices complex,Plastics & materials complex,Energy & import prices complex,Plastics & materials complex,3,0.7073,0.1315,391
+Energy & import prices complex,PCU335311335311,Energy & import prices complex,Transformer PPI,3,0.5857,0.0935,391
+Non-ferrous metals complex,Import prices complex,Non-ferrous metals complex,Import prices complex,2,0.8498,0.0597,279
+Non-ferrous metals complex,Plastics & materials complex,Non-ferrous metals complex,Plastics & materials complex,4,0.7512,0.1098,277
+Non-ferrous metals complex,PCU335311335311,Non-ferrous metals complex,Transformer PPI,4,0.7305,0.1137,277
+Orders/demand complex,Import prices complex,Orders/demand complex,Import prices complex,3,0.6511,0.0692,357
+Orders/demand complex,Plastics & materials complex,Orders/demand complex,Plastics & materials complex,4,0.5472,0.0915,396
+Industrial activity complex,Import prices complex,Industrial activity complex,Import prices complex,3,0.6885,0.125,357
+Industrial activity complex,Plastics & materials complex,Industrial activity complex,Plastics & materials complex,4,0.5109,0.1446,396
+Steel complex,Plastics & materials complex,Steel complex,Plastics & materials complex,4,0.8576,0.1481,236
+Steel complex,PCU335311335311,Steel complex,Transformer PPI,7,0.8637,0.3418,233
+Orders/demand complex (2),PCU335311335311,Orders/demand complex (2),Transformer PPI,3,0.5761,0.0607,398
+Non-ferrous metals complex (2),Import prices complex,Non-ferrous metals complex (2),Import prices complex,3,0.7135,0.1193,357
+Non-ferrous metals complex (2),Plastics & materials complex,Non-ferrous metals complex (2),Plastics & materials complex,4,0.6832,0.157,397
+Non-ferrous metals complex (2),Aluminum mill shapes PPI,Non-ferrous metals complex (2),Aluminum mill shapes PPI,2,0.8662,0.0668,399
+Non-ferrous metals complex (2),PCU335311335311,Non-ferrous metals complex (2),Transformer PPI,5,0.5807,0.1602,396
+Chemicals complex (2),Import prices complex,Chemicals complex (2),Import prices complex,3,0.7993,0.1029,357
+Chemicals complex (2),Plastics & materials complex,Chemicals complex (2),Plastics & materials complex,5,0.5993,0.1455,396
+Chemicals complex (2),PCU335311335311,Chemicals complex (2),Transformer PPI,5,0.513,0.0951,396
+Steel complex (2),Orders/demand complex,Steel complex (2),Orders/demand complex,4,0.6253,0.0537,145
+Steel complex (2),Import prices complex,Steel complex (2),Import prices complex,4,0.8008,0.149,164
+Steel complex (2),Plastics & materials complex,Steel complex (2),Plastics & materials complex,6,0.8032,0.3094,335
+Steel complex (2),Steel complex,Steel complex (2),Steel complex,3,0.7685,0.0928,225
+Steel complex (2),Chemicals complex,Steel complex (2),Chemicals complex,5,0.6437,0.2435,325
+Steel complex (2),Orders/demand complex (2),Steel complex (2),Orders/demand complex (2),2,0.7865,0.0628,147
+Steel complex (2),Aluminum mill shapes PPI,Steel complex (2),Aluminum mill shapes PPI,4,0.7172,0.1339,337
+Steel complex (2),PCU335311335311,Steel complex (2),Transformer PPI,9,0.6594,0.4718,332
+Global tin price,Import prices complex,Global tin price,Import prices complex,4,0.7831,0.1874,356
+Global tin price,Plastics & materials complex,Global tin price,Plastics & materials complex,6,0.5836,0.2492,395
+Global tin price,Chemicals complex,Global tin price,Chemicals complex,3,0.6996,0.0708,398
+Global tin price,Aluminum mill shapes PPI,Global tin price,Aluminum mill shapes PPI,2,0.6038,0.0541,399
+Global tin price,PCU335311335311,Global tin price,Transformer PPI,6,0.5924,0.1973,395
+Aluminum mill shapes PPI,PCU335311335311,Aluminum mill shapes PPI,Transformer PPI,4,0.6149,0.0914,697
