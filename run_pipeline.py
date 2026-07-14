@@ -394,6 +394,7 @@ def run_force_cycle_control(levels, hclusters, board, control_df, label_by_id, m
                 "smoothing_pass": br.get("smoothing_pass", ""),
                 "holds_pass": br.get("holds_pass", ""),
                 "is_comover": br.get("is_comover", ""),
+                "lead_class": br.get("lead_class", ""),
                 "verdict": br["verdict"], "status": "scored", "n": int(br["n"])})
             if mid in confirmed_ids:              # lead-bearing singleton is also a matrix/lead-lag node
                 nm, _i = name, 2
@@ -452,6 +453,7 @@ def run_force_cycle_control(levels, hclusters, board, control_df, label_by_id, m
             "holds_pass": "yes" if t["gates"]["holds_gate"]["pass"] else "no",
             "episode_pass": "yes" if t["gates"]["episode_gate"]["pass"] else "no",
             "is_comover": "yes" if t["sharp"]["is_comover"] else "no",
+            "lead_class": t["sharp"].get("lead_class", ""),
             "verdict": v, "status": "scored", "n": t["n"]})
 
     sdf = pd.DataFrame(scored).sort_values("partial_r_ctrl_market", ascending=False,
@@ -553,6 +555,7 @@ def run_force_splits(levels, hclusters, tier_by_key, inter, sign_by_id, label_by
             "lead_months": test["lag"], "peak_r": round(test["r"], 4),
             "r_lag0": test["sharp"]["r_lag0"], "lead_gain": test["sharp"]["lead_gain"],
             "is_comover": "yes" if test["sharp"]["is_comover"] else "no",
+            "lead_class": test["sharp"].get("lead_class", ""),
             "partial_r_ctrl_market": test["cc"]["partial_r"], "survival": test["cc"]["survival"],
             "perm_p": round(test["perm"]["p_value"], 4), "perm_q_splitfamily": round(q, 4) if q is not None else None,
             "ci95_low": test["boot"]["ci_low"], "ci95_high": test["boot"]["ci_high"],
@@ -795,6 +798,7 @@ def main():
             "measured_lead_months": peak_lag, "peak_r": round(peak_r, 4),
             "r_lag0": sharp["r_lag0"], "lead_gain": sharp["lead_gain"],
             "is_comover": "yes" if sharp["is_comover"] else "no",
+            "lead_class": sharp.get("lead_class", ""),
             "ci95_low": boot["ci_low"], "ci95_high": boot["ci_high"],
             "perm_p": round(perm["p_value"], 4) if perm["p_value"] == perm["p_value"] else None,
             "perm_q": round(s["q"], 4),

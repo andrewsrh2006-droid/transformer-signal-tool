@@ -76,23 +76,48 @@ def r_at_lag(cand: np.ndarray, out: np.ndarray, k: int) -> tuple:
     return pearson(a, b), a.size
 
 
-def lead_sharpness(curve: dict, peak, min_lead: int = 1, min_gain: float = 0.05) -> dict:
-    """Distinguish a true LEAD from a contemporaneous CO-MOVER.
+# A negative peak this close to lag 0, whose |r| barely beats lag 0 (gain below `min_gain`),
+# is contemporaneous noise, not a genuine reversal — the SAME band leaderboard.verdict uses to
+# call such a peak a CO-MOVER rather than REVERSED. Keeping the label on this band aligned with
+# the verdict avoids a row reading verdict "CO-MOVER" but label "lags" at the same time.
+COMOVER_MAX_LAG = 2
 
-    Compares |r| at the peak lag with |r| at lag 0. A signal that only correlates because
-    it moves *with* the outcome (not ahead of it) will peak at or near lag 0, or its peak
-    will barely beat lag 0. FDR does not catch these — a co-mover can be wildly significant.
 
-    Flags `is_comover` = True when the peak does not lead (lag < min_lead) OR the peak's
-    |r| exceeds lag-0 |r| by less than `min_gain`.
+def lead_sharpness(curve: dict, peak, min_lead: int = 1, min_gain: float = 0.05,
+                   comover_max_lag: int = COMOVER_MAX_LAG) -> dict:
+    """Classify a peak by WHERE it sits relative to lag 0. Three mutually exclusive cases:
+
+      * ``true lead`` — the peak leads (lag >= +1) AND its |r| beats lag-0 |r| by >= min_gain.
+      * ``co-mover``  — the peak sits within +-`comover_max_lag` of lag 0 with a negligible
+                        gain (< min_gain): it moves *with* the outcome, not ahead of it. FDR
+                        does not catch these — a co-mover can be wildly significant.
+      * ``lags``      — the peak is a genuine NEGATIVE lead (lag <= -1 and either beyond the
+                        +-`comover_max_lag` band or with a real gain): the OUTCOME moves first
+                        and the candidate trails it. A reversed laggard, never a co-mover; its
+                        verdict (REVERSED) is decided in leaderboard.verdict on the same band.
+
+    `is_comover` is True for the ``co-mover`` case ONLY. Previously it also tripped on any
+    peak below the min lead, which lumped negative-lag laggards in with contemporaneous
+    co-movers; that is fixed here so only genuine near-lag-0 signals carry the flag.
     """
     if peak is None:
-        return {"r_lag0": None, "lead_gain": None, "is_comover": True}
+        return {"r_lag0": None, "lead_gain": None, "is_comover": False,
+                "lead_class": "undetermined"}
     peak_lag, peak_r = peak[0], peak[1]
     r0 = curve.get(0, (float("nan"),))[0]
     if r0 is None or np.isnan(r0):
-        return {"r_lag0": None, "lead_gain": None, "is_comover": True}
+        return {"r_lag0": None, "lead_gain": None, "is_comover": False,
+                "lead_class": "undetermined"}
     gain = abs(peak_r) - abs(r0)
-    is_comover = (peak_lag < min_lead) or (gain < min_gain)
+    if peak_lag <= -1:
+        # contemporaneous (near lag 0 AND barely beats it) -> co-mover; otherwise a real reversal
+        if abs(peak_lag) <= comover_max_lag and gain < min_gain:
+            lead_class = "co-mover"
+        else:
+            lead_class = "lags"                  # outcome leads the candidate: negative lead
+    elif peak_lag >= min_lead and gain >= min_gain:
+        lead_class = "true lead"                 # leads forward and clearly beats lag 0
+    else:
+        lead_class = "co-mover"                  # at/near lag 0, barely beats it
     return {"r_lag0": round(float(r0), 4), "lead_gain": round(float(gain), 4),
-            "is_comover": bool(is_comover)}
+            "is_comover": lead_class == "co-mover", "lead_class": lead_class}

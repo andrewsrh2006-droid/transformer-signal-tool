@@ -68,6 +68,40 @@ VERDICT_BG = {
     "REJECTED": "#ffebe9",
 }
 
+# One tile per verdict, in the order the screen funnels them (best → rejected). The header and
+# the Compare-tab tally strip both render from this list, so their counts always agree.
+VERDICT_TILES = [
+    ("✅ Confirmed", "CONFIRMED"),
+    ("🌀 Strong but cycle-driven", "STRONG BUT CYCLE-DRIVEN"),
+    ("⚠️ Strong/not robust", "STRONG / NOT ROBUST"),
+    ("⚠️ Partial", "PARTIAL / INCONCLUSIVE"),
+    ("↔️ Co-mover", "CO-MOVER (not a lead)"),
+    ("❌ Reversed", "REVERSED"),
+    ("⏳ Short-sample", "SHORT-SAMPLE (unverified)"),
+    ("❌ Rejected", "REJECTED"),
+]
+
+# Cell shout-palette for the Compare transparency table (fg, bg). Failures use red, passes green,
+# soft-fails amber — so a verdict is legible from the row alone, no drill-down needed.
+_SHOUT = {
+    "pass":  ("#1a7f37", "#dafbe1"),
+    "fail":  ("#cf222e", "#ffebe9"),
+    "warn":  ("#9a6700", "#fff8c5"),
+    "muted": ("#57606a", "transparent"),
+}
+
+
+def verdict_strip_html(board) -> str:
+    """A compact one-line verdict tally (same counts as the header tiles), colored per verdict."""
+    vc = board["verdict"].value_counts()
+    chips = [f"<span style='background:#eaeef2;color:#24292f;padding:2px 9px;border-radius:5px;"
+             f"font-weight:600'>{len(board)} tested</span>"]
+    for label, key in VERDICT_TILES:
+        chips.append(
+            f"<span style='background:{VERDICT_BG.get(key, '#fff')};color:{VERDICT_COLORS.get(key, '#000')};"
+            f"padding:2px 9px;border-radius:5px;font-weight:600'>{label} {int(vc.get(key, 0))}</span>")
+    return "<div style='display:flex;flex-wrap:wrap;gap:6px;font-size:0.86rem'>" + "".join(chips) + "</div>"
+
 st.set_page_config(page_title="Transformer leading-signal dashboard",
                    page_icon="⚡", layout="wide")
 
@@ -438,7 +472,12 @@ def render_screen_panel(a: dict, verdict=None, perm_q=None, extra_short=None):
     surv_icon = {"survives": "✅", "partly survives": "◐", "cycle-driven": "⚠️",
                  "not cycle-driven (weak on its own)": "○"}.get(surv, "")
     d1, d2, d3 = st.columns(3)
-    d1.markdown(f"**Lead-sharpness:** {'⚠️ co-mover' if sh.get('is_comover') else '✅ true lead'}  \n"
+    _lc = sh.get("lead_class") or ("co-mover" if sh.get("is_comover") else "true lead")
+    _lc_disp = {"true lead": "✅ true lead",
+                "co-mover": "⚠️ co-mover",
+                "lags": "↩️ lags / negative lead (outcome moves first)",
+                "undetermined": "—"}.get(_lc, "—")
+    d1.markdown(f"**Lead-sharpness:** {_lc_disp}  \n"
                 f"r@0={sh.get('r_lag0')} · gain={sh.get('lead_gain')}")
     d2.markdown(f"**Market-control survival:** {surv_icon}  \nvs commodity cycle: **{surv}**")
     if verdict is not None:
@@ -624,64 +663,185 @@ def style_board(board: pd.DataFrame):
     return sty.hide(axis="index")
 
 
-# ---------------------------------------------------------- Compare (identical columns)
-# ONE column layout shared by the signal and force Compare tables, so rows line up 1:1.
-COMPARE_COLS = ["Item", "Verdict", "Lead (mo)", "Raw r", "Partial r (∣mkt)", "Leads?",
-                "Survives smoothing", "Holds over time", "Real lead / co-mover", "n"]
+# ---------------------------------------------------------- Compare (full transparency)
+# ONE column layout shared by the signal and force tables so rows line up 1:1. Every column
+# that drives a verdict is visible and failures shout in color — no drill-down needed.
+COMPARE_COLS = ["Signal", "Verdict", "Why", "Lead", "Raw r", "Partial r", "Cycle", "Leads?",
+                "Smoothing", "Holds", "Episode", "History", "Lead type", "q", "N"]
 
 
-def _yn(v):
-    s = str(v).strip().lower()
-    return "✅" if s in ("yes", "true", "1") else ("—" if s in ("no", "false", "0", "", "nan") else "?")
+def _g(row, *names, default=None):
+    for n in names:
+        if n in row and pd.notna(row[n]):
+            return row[n]
+    return default
 
 
-def _fmt_r(x):
+def _as_float(x):
     try:
-        return f"{float(x):+.2f}"
+        return float(x)
     except (TypeError, ValueError):
+        return None
+
+
+def _as_int(x):
+    try:
+        return int(float(x))
+    except (TypeError, ValueError):
+        return None
+
+
+def _gate_cell(row, col):
+    """A robustness gate: ✅ when it passes, a shouting ❌ NO when it fails, — when not run."""
+    v = _g(row, col, default=None)
+    if v is None:
         return "—"
+    return "✅" if str(v).strip().lower() in ("yes", "true", "1") else "❌ NO"
+
+
+def _cycle_cell(row):
+    s = str(_g(row, "survival_vs_cycle", "survival", default="")).strip().lower()
+    if s == "survives":
+        return "survives"
+    if s.startswith("partly"):
+        return "partly"
+    if s == "cycle-driven":
+        return "cycle-driven"
+    if s.startswith("not cycle"):
+        return "weak"
+    return "—"
+
+
+def _lead_type_cell(row):
+    lc = str(_g(row, "lead_class", default="")).strip().lower()
+    if lc in ("true lead", "co-mover", "lags"):
+        return lc
+    lead = _as_int(_g(row, "measured_lead_months", "lead_months"))
+    is_como = str(_g(row, "is_comover", default="")).lower() in ("yes", "true", "1")
+    if lead is not None and lead <= -3:
+        return "lags"
+    return "co-mover" if is_como else "true lead"
+
+
+def _why_reason(row):
+    """One plain-language binding reason, first match wins (weak → co-mover → reversed →
+    gate fails → short-sample → cycle-driven → moderate → else confirmed lead)."""
+    raw = _as_float(_g(row, "peak_r", "raw_r"))
+    lead = _as_int(_g(row, "measured_lead_months", "lead_months"))
+    lc = str(_g(row, "lead_class", default="")).strip().lower()
+    surv = str(_g(row, "survival_vs_cycle", "survival", default="")).strip().lower()
+    partial = _as_float(_g(row, "partial_r_ctrl_market"))
+    n = _as_int(_g(row, "n"))
+    short = str(_g(row, "short_sample", default="")).lower() in ("yes", "true", "1")
+
+    def fails(col):
+        v = _g(row, col, default=None)
+        return v is not None and str(v).strip().lower() in ("no", "false", "0")
+
+    if raw is not None and abs(raw) < 0.30:
+        return f"too weak (raw {raw:+.2f})"
+    if lc == "co-mover":
+        return "co-mover"
+    if lc == "lags":
+        return f"reversed (outcome leads by {abs(lead)} mo)" if lead is not None else "reversed (outcome leads first)"
+    if fails("smoothing_pass"):
+        return "fails smoothing"
+    if fails("holds_pass"):
+        return "one-era only"
+    if fails("episode_pass"):
+        return "episode-driven"
+    if short:
+        return f"short-sample (only {n} months)" if n is not None else "short-sample"
+    if surv == "cycle-driven":
+        return f"cycle-driven (partial {partial:+.2f})" if partial is not None else "cycle-driven"
+    if raw is not None and abs(raw) < 0.50:
+        return f"moderate (raw {raw:+.2f})"
+    return "confirmed lead"
 
 
 def compare_frame(df: pd.DataFrame, name_col: str) -> pd.DataFrame:
-    """Map a signal-board OR force-board frame onto the identical Compare layout."""
-    def g(row, *names, default=None):
-        for n in names:
-            if n in row and pd.notna(row[n]):
-                return row[n]
-        return default
+    """Map a signal-board OR force-board frame onto the identical transparency layout."""
     rows = []
     for _, r in df.iterrows():
-        lead = g(r, "measured_lead_months", "lead_months")
-        try:
-            lead_i = int(float(lead)) if lead is not None and pd.notna(lead) else None
-        except (TypeError, ValueError):
-            lead_i = None
-        n = g(r, "n")
+        lead = _as_int(_g(r, "measured_lead_months", "lead_months"))
+        raw = _as_float(_g(r, "peak_r", "raw_r"))
+        partial = _as_float(_g(r, "partial_r_ctrl_market"))
+        q = _as_float(_g(r, "perm_q"))
+        n = _as_int(_g(r, "n"))
+        short = str(_g(r, "short_sample", default="")).lower() in ("yes", "true", "1")
+        has_short_col = _g(r, "short_sample", default=None) is not None
         rows.append({
-            "Item": r[name_col],
-            "Verdict": g(r, "verdict", default="—"),
-            "Lead (mo)": (f"{lead_i:+d}" if lead_i is not None else "—"),
-            "Raw r": _fmt_r(g(r, "peak_r", "raw_r")),
-            "Partial r (∣mkt)": _fmt_r(g(r, "partial_r_ctrl_market")),
-            "Leads?": ("✅" if (lead_i is not None and lead_i >= 1) else "—"),
-            "Survives smoothing": _yn(g(r, "smoothing_pass", default="")),
-            "Holds over time": _yn(g(r, "holds_pass", default="")),
-            "Real lead / co-mover": ("co-mover" if str(g(r, "is_comover", default="")).lower()
-                                     in ("yes", "true", "1") else "real lead"),
-            "n": (int(float(n)) if n is not None and pd.notna(n) else "—"),
+            "Signal": r[name_col],
+            "Verdict": _g(r, "verdict", default="—"),
+            "Why": _why_reason(r),
+            "Lead": (f"{lead:+d}" if lead is not None else "—"),
+            "Raw r": (f"{raw:+.2f}" if raw is not None else "—"),
+            "Partial r": (f"{partial:+.2f}" if partial is not None else "—"),
+            "Cycle": _cycle_cell(r),
+            "Leads?": ("✅" if (lead is not None and lead >= 1) else "—"),
+            "Smoothing": _gate_cell(r, "smoothing_pass"),
+            "Holds": _gate_cell(r, "holds_pass"),
+            "Episode": _gate_cell(r, "episode_pass"),
+            "History": ("❌ NO" if short else ("✅" if has_short_col or n is not None else "—")),
+            "Lead type": _lead_type_cell(r),
+            "q": (f"{q:.3f}" if q is not None else "—"),
+            "N": (n if n is not None else "—"),
         })
     return pd.DataFrame(rows, columns=COMPARE_COLS)
 
 
+def _shout_css(kind, bold=False):
+    fg, bg = _SHOUT[kind]
+    weight = ";font-weight:700" if bold else ""
+    return f"color:{fg}{weight}" if bg == "transparent" else f"color:{fg};background-color:{bg}{weight}"
+
+
 def style_compare(cf: pd.DataFrame):
-    def cv(v):
-        c = VERDICT_COLORS.get(v, "#57606a")
-        bg = VERDICT_BG.get(v, "#ffffff")
-        return f"color:{c}; background-color:{bg}; font-weight:600"
-    def cm(v):
-        return "color:#0969da" if v == "co-mover" else "color:#1a7f37;font-weight:600"
-    return (cf.style.map(cv, subset=["Verdict"])
-            .map(cm, subset=["Real lead / co-mover"]).hide(axis="index"))
+    def sty_verdict(v):
+        return f"color:{VERDICT_COLORS.get(v, '#57606a')};background-color:{VERDICT_BG.get(v, '#fff')};font-weight:600"
+
+    def sty_why(v):
+        s = str(v)
+        if s == "confirmed lead":
+            return _shout_css("pass", bold=True)
+        if s == "co-mover" or s.startswith("moderate"):
+            return _shout_css("warn")
+        return _shout_css("fail", bold=True)  # every disqualifying reason shouts red
+
+    def sty_cycle(v):
+        return {"survives": _shout_css("pass"), "partly": _shout_css("warn"),
+                "cycle-driven": _shout_css("fail", bold=True), "weak": _shout_css("muted")}.get(v, "")
+
+    def sty_gate(v):
+        if "NO" in str(v):
+            return _shout_css("fail", bold=True)
+        return _shout_css("pass") if v == "✅" else ""
+
+    def sty_leads(v):
+        return _shout_css("pass") if v == "✅" else ""
+
+    def sty_leadtype(v):
+        if v == "true lead":
+            return _shout_css("pass")
+        if v in ("co-mover", "lags"):
+            return _shout_css("warn")
+        return ""
+
+    def sty_partial(v):
+        x = _as_float(v)
+        if x is None:
+            return ""
+        return _shout_css("pass") if abs(x) >= 0.20 else _shout_css("fail", bold=True)
+
+    sty = cf.style
+    sty = sty.map(sty_verdict, subset=["Verdict"])
+    sty = sty.map(sty_why, subset=["Why"])
+    sty = sty.map(sty_cycle, subset=["Cycle"])
+    sty = sty.map(sty_gate, subset=["Smoothing", "Holds", "Episode", "History"])
+    sty = sty.map(sty_leads, subset=["Leads?"])
+    sty = sty.map(sty_leadtype, subset=["Lead type"])
+    sty = sty.map(sty_partial, subset=["Partial r"])
+    return sty.hide(axis="index")
 
 
 # ---------------------------------------------------------------- Lead-lag map helpers
@@ -826,29 +986,16 @@ def main():
 
     clusters_json, ctrl_df, force_df = load_analysis()
 
-    # Headline metrics — the two things that matter: independent forces, and true leads.
-    n_leads = int((board["verdict"] == "CONFIRMED").sum())
-    n_como = int((board["verdict"] == "CO-MOVER (not a lead)").sum())
-    n_short = int((board["verdict"] == "SHORT-SAMPLE (unverified)").sum())
-    n_forces = len(clusters_json["clusters"]) if clusters_json else len(MTX.find_clusters(inter, CFG.CLUSTER_R))
-    top = board[board["verdict"] == "CONFIRMED"]
-    top = top.iloc[0] if len(top) else board.iloc[0]
-    c1, c2, c3, c4, c5 = st.columns(5)
-    c1.metric("Signals tested", len(board))
-    c2.metric("Independent forces", n_forces,
-              help="Average-linkage clusters at |r|≥0.70 — each counts as ONE witness.")
-    c3.metric("Genuine forward leads", n_leads,
-              help="CONFIRMED: strong, FDR-significant, robust, the peak clearly beats lag 0, "
-                   "AND it retains partial |r|≥0.20 after the broad commodity cycle is removed. "
-                   "A strong lead that fails only the cycle test is 'STRONG BUT CYCLE-DRIVEN', "
-                   "not counted here.")
-    c4.metric("Co-movers (not leads)", n_como,
-              help="Strong & significant but the peak barely beats lag 0 — moves WITH "
-                   "transformers, not ahead of them.")
-    c5.metric("Short-sample (quarantined)", n_short,
-              help="Usable sample too short (n<150 or start after 2010); correlation may be "
-                   "inflated by the 2020-22 cycle. Excluded from CONFIRMED unless a long "
-                   "series corroborates the same force and it isn't a window artifact.")
+    # Headline metrics — one tile per verdict, straight off the verdict column. They sum to the
+    # signals-tested total. (The independent-force count now lives on the Correlation tab.)
+    vc = board["verdict"].value_counts()
+    tiles = [("Signals tested", None)] + VERDICT_TILES
+    cols = st.columns(len(tiles))
+    for col, (label, key) in zip(cols, tiles):
+        col.metric(label, len(board) if key is None else int(vc.get(key, 0)))
+    _summed = int(sum(int(vc.get(k, 0)) for _, k in VERDICT_TILES))
+    st.caption(f"Every screened signal lands in exactly one verdict — the eight verdict tiles "
+               f"sum to **{_summed}** = the {len(board)} signals tested.")
 
     tab_screen, tab_corr, tab_leadlag, tab_compare, tab_groups = st.tabs(
         ["🔬 Screen", "🔗 Correlation", "🗺️ Lead-lag map", "🏆 Compare", "🌳 Groups"])
@@ -899,6 +1046,12 @@ def main():
 
         st.divider()
         st.subheader("🔸 Tight-force level — inter-force correlation (the cousin check)")
+        if force_df is not None and "n_signals" in force_df:
+            _sf = force_df[force_df.get("status", "scored") == "scored"] if "status" in force_df else force_df
+            _tm = int((_sf["n_signals"] > 1).sum())
+            _ts = int((_sf["n_signals"] == 1).sum())
+            st.markdown(f"**{len(_sf)} tight forces** — {_tm} multi-signal clusters + {_ts} singletons "
+                        "(each singleton is a force of size 1 = one independent witness).")
         fm = load_force_matrix()
         if fm is None or len(fm) < 2:
             st.info("Run the pipeline to generate `force_correlation_matrix.csv`.")
@@ -912,6 +1065,12 @@ def main():
 
         st.divider()
         st.subheader("🔶 Loose-bloc level — inter-bloc correlation (most independent, coarser)")
+        _blb = load_bloc_leaderboard()
+        if _blb is not None and "n_signals" in _blb:
+            _bs = _blb[_blb.get("status", "scored") == "scored"] if "status" in _blb else _blb
+            _lm = int((_bs["n_signals"] > 1).sum())
+            _lk = int((_bs["n_signals"] == 1).sum())
+            st.markdown(f"**{len(_bs)} loose blocs** — {_lm} clusters + {_lk} singletons.")
         bm = load_bloc_matrix()
         if bm is None or len(bm) < 2:
             st.info("Run the pipeline to generate `bloc_correlation_matrix.csv`.")
@@ -1097,9 +1256,11 @@ def main():
     # ==================== COMPARE — identical columns, signal ↔ force ====================
     with tab_compare:
         st.caption(LAYER_REMINDER)
-        st.markdown("All three tables share **one identical column layout** so rows line up "
-                    "one-to-one: identity → verdict → lead → raw r → partial r → leads? → the two "
-                    "gates → real-lead/co-mover → sample size.")
+        st.markdown(verdict_strip_html(board), unsafe_allow_html=True)
+        st.markdown("Every column that drives a verdict is on the table and **failures shout in "
+                    "color** — a plain-language **Why** gives the one binding reason, gates show "
+                    "✅ or a red **❌ NO**, and Cycle flags cycle-driven rows. No verdict needs the "
+                    "row opened. All three tables share the identical layout so rows line up 1:1.")
         render_ladder_note()
 
         st.divider()

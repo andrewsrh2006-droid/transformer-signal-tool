@@ -10,7 +10,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2648,
       "lead_gain": 0.2609,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -320,7 +321,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5235,
       "lead_gain": 0.0914,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -668,7 +670,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5461,
       "lead_gain": 0.1236,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -1004,7 +1007,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2126,
       "lead_gain": 0.2735,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -1327,7 +1331,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3119,
       "lead_gain": 0.2145,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -1599,7 +1604,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4095,
       "lead_gain": 0.1491,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -1885,7 +1891,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3927,
       "lead_gain": 0.0197,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -2193,7 +2200,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4314,
       "lead_gain": 0.1564,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -2538,7 +2546,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5902,
       "lead_gain": 0.0047,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -2866,7 +2875,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0397,
       "lead_gain": 0.1636,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -3085,7 +3095,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0421,
       "lead_gain": 0.0756,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -3304,7 +3315,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4873,
       "lead_gain": 0.2261,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -3629,7 +3641,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4871,
       "lead_gain": 0.1883,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -3960,7 +3973,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5945,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -4302,7 +4316,8 @@
     "lead_sharpness": {
       "r_lag0": 0.505,
       "lead_gain": 0.0265,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -4604,7 +4619,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3445,
       "lead_gain": 0.1241,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -4909,7 +4925,8 @@
     "lead_sharpness": {
       "r_lag0": 0.205,
       "lead_gain": 0.146,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -5221,7 +5238,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3951,
       "lead_gain": 0.1973,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -5525,7 +5543,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5524,
       "lead_gain": 0.1081,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -5871,7 +5890,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4692,
       "lead_gain": 0.0153,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -6195,7 +6215,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5437,
       "lead_gain": 0.0804,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -6533,7 +6554,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7588,
       "lead_gain": 0.0212,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -6848,7 +6870,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3514,
       "lead_gain": 0.0287,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -7200,7 +7223,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6026,
       "lead_gain": 0.0015,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -7523,7 +7547,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1219,
       "lead_gain": 0.1904,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -7737,7 +7762,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1025,
       "lead_gain": 0.204,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -7951,7 +7977,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4756,
       "lead_gain": 0.022,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -8253,7 +8280,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0416,
       "lead_gain": 0.3648,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -8417,7 +8445,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3152,
       "lead_gain": 0.0069,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -8703,7 +8732,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4689,
       "lead_gain": 0.0112,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -9045,7 +9075,8 @@
     "lead_sharpness": {
       "r_lag0": -0.31,
       "lead_gain": 0.004,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -9269,7 +9300,8 @@
     "lead_sharpness": {
       "r_lag0": -0.323,
       "lead_gain": 0.0174,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -9493,7 +9525,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2941,
       "lead_gain": 0.011,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -9717,7 +9750,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2931,
       "lead_gain": 0.0351,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -9941,7 +9975,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0823,
       "lead_gain": 0.4419,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -10105,7 +10140,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3043,
       "lead_gain": 0.3494,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -10269,7 +10305,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2628,
       "lead_gain": 0.3378,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -10433,7 +10470,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1156,
       "lead_gain": 0.1344,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -10607,7 +10645,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0173,
       "lead_gain": 0.4684,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -10771,7 +10810,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4832,
       "lead_gain": 0.004,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -11060,7 +11100,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6508,
       "lead_gain": 0.0038,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -11365,7 +11406,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2168,
       "lead_gain": 0.0182,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -11677,7 +11719,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3651,
       "lead_gain": 0.0438,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -11981,7 +12024,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3909,
       "lead_gain": 0.0774,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -12285,7 +12329,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4187,
       "lead_gain": 0.1297,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -12562,7 +12607,8 @@
     "lead_sharpness": {
       "r_lag0": 0.261,
       "lead_gain": 0.1048,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -12853,7 +12899,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3111,
       "lead_gain": 0.0734,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -13159,7 +13206,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4845,
       "lead_gain": 0.0647,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -13450,7 +13498,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3805,
       "lead_gain": 0.0402,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -13753,7 +13802,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0137,
       "lead_gain": 0.381,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -13932,7 +13982,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0281,
       "lead_gain": 0.3117,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -14111,7 +14162,8 @@
     "lead_sharpness": {
       "r_lag0": 0.062,
       "lead_gain": 0.4846,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -14288,7 +14340,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1835,
       "lead_gain": 0.1099,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -14492,7 +14545,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1029,
       "lead_gain": 0.1152,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -14691,7 +14745,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2883,
       "lead_gain": 0.2357,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -14855,7 +14910,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6716,
       "lead_gain": 0.0259,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -15165,7 +15221,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4888,
       "lead_gain": 0.0577,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -15483,7 +15540,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2963,
       "lead_gain": 0.231,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -15707,7 +15765,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5217,
       "lead_gain": 0.0422,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -16001,7 +16060,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3879,
       "lead_gain": 0.1208,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -16255,7 +16315,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0356,
       "lead_gain": 0.2184,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -16443,7 +16504,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1135,
       "lead_gain": 0.1263,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -16636,7 +16698,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4429,
       "lead_gain": 0.0909,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -16890,7 +16953,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4541,
       "lead_gain": 0.0091,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -17210,7 +17274,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2192,
       "lead_gain": 0.2489,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -17504,7 +17569,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1033,
       "lead_gain": 0.1334,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -17780,7 +17846,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1907,
       "lead_gain": 0.1345,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -18057,7 +18124,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3969,
       "lead_gain": 0.0435,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -18377,7 +18445,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1924,
       "lead_gain": 0.0973,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -18716,7 +18785,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1596,
       "lead_gain": 0.2119,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -18872,7 +18942,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0421,
       "lead_gain": 0.2911,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -19028,7 +19099,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2752,
       "lead_gain": 0.0031,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -19255,7 +19327,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5413,
       "lead_gain": 0.0591,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -19554,7 +19627,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6127,
       "lead_gain": 0.0637,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -19792,7 +19866,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5262,
       "lead_gain": 0.1094,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -20067,7 +20142,8 @@
     "lead_sharpness": {
       "r_lag0": 0.36,
       "lead_gain": 0.0972,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -20216,7 +20292,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0904,
       "lead_gain": 0.7666,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -20367,7 +20444,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7844,
       "lead_gain": 0.0199,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -20629,7 +20707,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7847,
       "lead_gain": 0.0296,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -20879,7 +20958,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0182,
       "lead_gain": 0.1811,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -21098,7 +21178,8 @@
     "lead_sharpness": {
       "r_lag0": -0.027,
       "lead_gain": 0.182,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -21317,7 +21398,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0182,
       "lead_gain": 0.254,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -21536,7 +21618,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0388,
       "lead_gain": 0.2866,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -21755,7 +21838,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1929,
       "lead_gain": 0.0743,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -21974,7 +22058,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2498,
       "lead_gain": 0.1806,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -22138,7 +22223,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1615,
       "lead_gain": 0.2561,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -22302,7 +22388,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1009,
       "lead_gain": 0.2819,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -22466,7 +22553,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2029,
       "lead_gain": 0.0075,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -22685,7 +22773,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2012,
       "lead_gain": 0.0192,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -22904,7 +22993,8 @@
     "lead_sharpness": {
       "r_lag0": -0.002,
       "lead_gain": 0.4072,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -23123,7 +23213,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0047,
       "lead_gain": 0.4169,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -23342,7 +23433,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2346,
       "lead_gain": 0.138,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -23561,7 +23653,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2592,
       "lead_gain": 0.0319,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -23780,7 +23873,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1087,
       "lead_gain": 0.1475,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -23999,7 +24093,8 @@
     "lead_sharpness": {
       "r_lag0": -0.145,
       "lead_gain": 0.2236,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -24163,7 +24258,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1251,
       "lead_gain": 0.2423,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -24327,7 +24423,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2008,
       "lead_gain": 0.2508,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -24491,7 +24588,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0251,
       "lead_gain": 0.5225,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -24655,7 +24753,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4457,
       "lead_gain": 0.0862,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -24950,7 +25049,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1596,
       "lead_gain": 0.242,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -25137,7 +25237,8 @@
     "lead_sharpness": {
       "r_lag0": 0.315,
       "lead_gain": 0.0133,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -25442,7 +25543,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4385,
       "lead_gain": 0.1084,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -25738,7 +25840,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7048,
       "lead_gain": 0.0306,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -26026,7 +26129,8 @@
     "lead_sharpness": {
       "r_lag0": 0.321,
       "lead_gain": 0.019,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -26299,7 +26403,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1117,
       "lead_gain": 0.1237,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -26520,7 +26625,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2091,
       "lead_gain": 0.0541,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -26739,7 +26845,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0454,
       "lead_gain": 0.2278,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -26953,7 +27060,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0085,
       "lead_gain": 0.237,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -27167,7 +27275,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0839,
       "lead_gain": 0.2034,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -27381,7 +27490,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1545,
       "lead_gain": 0.1423,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -27595,7 +27705,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0773,
       "lead_gain": 0.178,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -27809,7 +27920,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1219,
       "lead_gain": 0.1891,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -28023,7 +28135,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1316,
       "lead_gain": 0.1677,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -28247,7 +28360,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1637,
       "lead_gain": 0.1266,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -28466,7 +28580,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1025,
       "lead_gain": 0.1648,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -28690,7 +28805,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0347,
       "lead_gain": 0.2792,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -28914,7 +29030,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0554,
       "lead_gain": 0.2048,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -29133,7 +29250,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1385,
       "lead_gain": 0.1086,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -29347,7 +29465,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3403,
       "lead_gain": 0.0149,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -29633,7 +29752,8 @@
     "lead_sharpness": {
       "r_lag0": 0.284,
       "lead_gain": 0.0066,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -29926,7 +30046,8 @@
     "lead_sharpness": {
       "r_lag0": 0.349,
       "lead_gain": 0.0236,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -30204,7 +30325,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3574,
       "lead_gain": 0.1131,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -30418,7 +30540,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1808,
       "lead_gain": 0.0944,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -30642,7 +30765,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7814,
       "lead_gain": 0.0201,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -30923,7 +31047,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6403,
       "lead_gain": 0.1362,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -31237,7 +31362,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3572,
       "lead_gain": 0.2478,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -31551,7 +31677,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7286,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -31883,7 +32010,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7551,
       "lead_gain": 0.0033,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -32201,7 +32329,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6238,
       "lead_gain": 0.0007,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -32543,7 +32672,8 @@
     "lead_sharpness": {
       "r_lag0": 0.8154,
       "lead_gain": 0.0041,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -32863,7 +32993,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7754,
       "lead_gain": 0.0234,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -33188,7 +33319,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7321,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -33516,7 +33648,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7365,
       "lead_gain": 0.0043,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -33829,7 +33962,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5397,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -34145,7 +34279,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2765,
       "lead_gain": 0.1246,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -34458,7 +34593,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3032,
       "lead_gain": 0.2394,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -34779,7 +34915,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1135,
       "lead_gain": 0.3712,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -35017,7 +35154,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2884,
       "lead_gain": 0.2511,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -35325,7 +35463,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4649,
       "lead_gain": 0.1888,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -35657,7 +35796,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5113,
       "lead_gain": 0.0106,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -35953,7 +36093,8 @@
     "lead_sharpness": {
       "r_lag0": 0.628,
       "lead_gain": 0.0041,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -36278,7 +36419,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6888,
       "lead_gain": 0.0059,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -36604,7 +36746,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6694,
       "lead_gain": 0.0191,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -36941,7 +37084,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7909,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -37274,7 +37418,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5594,
       "lead_gain": 0.0169,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -37594,7 +37739,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3883,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -37915,7 +38061,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6971,
       "lead_gain": 0.0265,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -38236,7 +38383,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6723,
       "lead_gain": 0.0377,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -38556,7 +38704,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7523,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -38869,7 +39018,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2627,
       "lead_gain": 0.0216,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -39187,7 +39337,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1761,
       "lead_gain": 0.2467,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -39452,7 +39603,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6889,
       "lead_gain": 0.0046,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -39772,7 +39924,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5202,
       "lead_gain": 0.0826,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -40113,7 +40266,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6898,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -40443,7 +40597,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6402,
       "lead_gain": 0.0464,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -40742,7 +40897,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5758,
       "lead_gain": 0.049,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -41057,7 +41213,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7828,
       "lead_gain": 0.0063,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -41377,7 +41534,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5414,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -41716,7 +41874,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7836,
       "lead_gain": 0.0115,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -42048,7 +42207,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6885,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -42371,7 +42531,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4721,
       "lead_gain": 0.0097,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -42722,7 +42883,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6382,
       "lead_gain": 0.0001,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -43048,7 +43210,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7007,
       "lead_gain": 0.0115,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -43362,7 +43525,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6413,
       "lead_gain": 0.0581,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -43701,7 +43865,8 @@
     "lead_sharpness": {
       "r_lag0": 0.718,
       "lead_gain": 0.0268,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -44014,7 +44179,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6123,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -44339,7 +44505,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5613,
       "lead_gain": 0.0104,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -44671,7 +44838,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3983,
       "lead_gain": 0.0502,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -45020,7 +45188,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3915,
       "lead_gain": 0.0053,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -45325,7 +45494,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4244,
       "lead_gain": 0.0965,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -45627,7 +45797,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5077,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -45940,7 +46111,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6205,
       "lead_gain": 0.0424,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -46245,7 +46417,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5451,
       "lead_gain": 0.0097,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -46567,7 +46740,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5613,
       "lead_gain": 0.0104,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -46899,7 +47073,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4037,
       "lead_gain": 0.1316,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -47232,7 +47407,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5946,
       "lead_gain": 0.1364,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -47432,7 +47608,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6565,
       "lead_gain": 0.0106,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -47746,7 +47923,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7423,
       "lead_gain": 0.018,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -48059,7 +48237,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6436,
       "lead_gain": 0.0235,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -48375,7 +48554,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6243,
       "lead_gain": 0.006,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -48698,7 +48878,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7498,
       "lead_gain": 0.0083,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -49016,7 +49197,8 @@
     "lead_sharpness": {
       "r_lag0": 0.416,
       "lead_gain": 0.0017,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -49309,7 +49491,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6899,
       "lead_gain": 0.0055,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -49628,7 +49811,8 @@
     "lead_sharpness": {
       "r_lag0": 0.407,
       "lead_gain": 0.1912,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -49827,7 +50011,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6144,
       "lead_gain": 0.0441,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -50137,7 +50322,8 @@
     "lead_sharpness": {
       "r_lag0": 0.8194,
       "lead_gain": 0.0433,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -50382,7 +50568,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5188,
       "lead_gain": 0.1577,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -50551,7 +50738,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4419,
       "lead_gain": 0.1666,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -50720,7 +50908,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6705,
       "lead_gain": 0.0324,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -51014,7 +51203,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3318,
       "lead_gain": 0.2542,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -51183,7 +51373,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7859,
       "lead_gain": 0.0201,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -51429,7 +51620,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2982,
       "lead_gain": 0.0246,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -51692,7 +51884,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3109,
       "lead_gain": 0.2293,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -52012,7 +52205,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5436,
       "lead_gain": 0.2367,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -52308,7 +52502,8 @@
     "lead_sharpness": {
       "r_lag0": 0.336,
       "lead_gain": 0.2696,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -52591,7 +52786,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6255,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -52921,7 +53117,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7895,
       "lead_gain": 0.0143,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -53221,7 +53418,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1877,
       "lead_gain": 0.4716,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -53447,7 +53645,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1057,
       "lead_gain": 0.3415,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -53666,7 +53865,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1195,
       "lead_gain": 0.2278,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -53924,7 +54124,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4849,
       "lead_gain": 0.005,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -54236,7 +54437,8 @@
     "lead_sharpness": {
       "r_lag0": 0.7686,
       "lead_gain": 0.0419,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -54523,7 +54725,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4932,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -54822,7 +55025,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5535,
       "lead_gain": 0.0281,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -55114,7 +55318,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1696,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -55423,7 +55628,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6767,
       "lead_gain": 0.0052,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -55725,7 +55931,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4867,
       "lead_gain": 0.033,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -56013,7 +56220,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3784,
       "lead_gain": 0.1575,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -56306,7 +56514,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3784,
       "lead_gain": 0.1575,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -56599,7 +56808,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5793,
       "lead_gain": 0.0372,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -56892,7 +57102,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4239,
       "lead_gain": 0.0319,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -57226,7 +57437,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3298,
       "lead_gain": 0.005,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -57560,7 +57772,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4655,
       "lead_gain": 0.0092,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -57890,7 +58103,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3156,
       "lead_gain": 0.0006,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -58180,7 +58394,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2732,
       "lead_gain": 0.0265,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -58407,7 +58622,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4221,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -58724,7 +58940,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2701,
       "lead_gain": 0.0335,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -59054,7 +59271,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2846,
       "lead_gain": 0.018,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -59384,7 +59602,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0903,
       "lead_gain": 0.2153,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -59578,7 +59797,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3753,
       "lead_gain": 0.0743,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -59913,7 +60133,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4376,
       "lead_gain": 0.0761,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -60230,7 +60451,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4078,
       "lead_gain": 0.0011,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -60539,7 +60761,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0456,
       "lead_gain": 0.4427,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -60746,7 +60969,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6579,
       "lead_gain": 0.063,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -61046,7 +61270,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5503,
       "lead_gain": 0.0936,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -61359,7 +61584,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6109,
       "lead_gain": 0.0216,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -61668,7 +61894,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0176,
       "lead_gain": 0.1662,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -61857,7 +62084,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2481,
       "lead_gain": 0.0503,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -62056,7 +62284,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0917,
       "lead_gain": 0.1388,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -62250,7 +62479,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2983,
       "lead_gain": 0.0581,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -62479,7 +62709,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2211,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -62796,7 +63027,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0649,
       "lead_gain": 0.1791,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -62985,7 +63217,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4153,
       "lead_gain": 0.0215,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -63310,7 +63543,8 @@
     "lead_sharpness": {
       "r_lag0": 0.395,
       "lead_gain": 0.022,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -63635,7 +63869,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4783,
       "lead_gain": 0.1179,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -63931,7 +64166,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3661,
       "lead_gain": 0.1692,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -64241,7 +64477,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1637,
       "lead_gain": 0.1738,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -64472,7 +64709,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3146,
       "lead_gain": 0.019,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -64801,7 +65039,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4659,
       "lead_gain": 0.0565,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -65114,7 +65353,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2655,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -65429,7 +65669,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5542,
       "lead_gain": 0.0419,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -65733,7 +65974,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5933,
       "lead_gain": 0.0559,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -66028,7 +66270,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3988,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -66345,7 +66588,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6892,
       "lead_gain": 0.0117,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -66632,7 +66876,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1504,
       "lead_gain": 0.0823,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -66821,7 +67066,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1506,
       "lead_gain": 0.0513,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -67010,7 +67256,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0579,
       "lead_gain": 0.058,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -67196,7 +67443,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1216,
       "lead_gain": 0.1491,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -67385,7 +67633,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1518,
       "lead_gain": 0.1287,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -67559,7 +67808,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0727,
       "lead_gain": 0.5838,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -67748,7 +67998,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0414,
       "lead_gain": 0.6749,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -67922,7 +68173,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0419,
       "lead_gain": 0.6744,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -68096,7 +68348,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2022,
       "lead_gain": 0.0598,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -68280,7 +68533,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0521,
       "lead_gain": 0.1328,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -68468,7 +68722,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1963,
       "lead_gain": 0.0754,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -68652,7 +68907,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6198,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -68950,7 +69206,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4953,
       "lead_gain": 0.0115,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -69247,7 +69504,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4878,
       "lead_gain": 0.0112,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -69544,7 +69802,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4878,
       "lead_gain": 0.0112,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -69841,7 +70100,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5011,
       "lead_gain": 0.0387,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -70127,7 +70387,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4451,
       "lead_gain": 0.0274,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -70413,7 +70674,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5612,
       "lead_gain": 0.0664,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -70676,7 +70938,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2576,
       "lead_gain": 0.0324,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -70895,7 +71158,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2997,
       "lead_gain": 0.0136,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -71216,7 +71480,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3523,
       "lead_gain": 0.024,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -71529,7 +71794,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1848,
       "lead_gain": 0.035,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -71748,7 +72014,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1856,
       "lead_gain": 0.0341,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -71967,7 +72234,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0943,
       "lead_gain": 0.0543,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -72186,7 +72454,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0958,
       "lead_gain": 0.0534,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -72405,7 +72674,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0611,
       "lead_gain": 0.2265,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -72624,7 +72894,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0615,
       "lead_gain": 0.2271,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -72843,7 +73114,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1105,
       "lead_gain": 0.2037,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -73062,7 +73334,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1118,
       "lead_gain": 0.2032,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -73281,7 +73554,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0004,
       "lead_gain": 0.2157,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -73500,7 +73774,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0011,
       "lead_gain": 0.2158,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -73719,7 +73994,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1306,
       "lead_gain": 0.0236,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -73938,7 +74214,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1306,
       "lead_gain": 0.0266,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -74157,7 +74434,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4832,
       "lead_gain": 0.0638,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -74463,7 +74741,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2783,
       "lead_gain": 0.0086,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -74774,7 +75053,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5354,
       "lead_gain": 0.054,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -75071,7 +75351,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5528,
       "lead_gain": 0.0481,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -75383,7 +75664,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5169,
       "lead_gain": 0.0154,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -75691,7 +75973,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3069,
       "lead_gain": 0.0078,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -76001,7 +76284,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3207,
       "lead_gain": 0.0424,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -76252,7 +76536,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0653,
       "lead_gain": 0.5723,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -76426,7 +76711,8 @@
     "lead_sharpness": {
       "r_lag0": 0.535,
       "lead_gain": 0.0145,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": true,
@@ -76738,7 +77024,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0402,
       "lead_gain": 0.1644,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -76961,7 +77248,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1349,
       "lead_gain": 0.1005,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -77205,7 +77493,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4369,
       "lead_gain": 0.0137,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -77537,7 +77826,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6021,
       "lead_gain": 0.0064,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -77868,7 +78158,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5599,
       "lead_gain": 0.0035,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -78207,7 +78498,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0549,
       "lead_gain": 0.2066,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -78429,7 +78721,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0852,
       "lead_gain": 0.1693,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -78652,7 +78945,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0678,
       "lead_gain": 0.1629,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -78874,7 +79168,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1571,
       "lead_gain": 0.0871,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -79128,7 +79423,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1079,
       "lead_gain": 0.1216,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -79349,7 +79645,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0908,
       "lead_gain": 0.1657,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -79572,7 +79869,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1163,
       "lead_gain": 0.1338,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -79795,7 +80093,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5286,
       "lead_gain": 0.0088,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -80132,7 +80431,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1835,
       "lead_gain": 0.11,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -80336,7 +80636,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4439,
       "lead_gain": 0.0165,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -80652,7 +80953,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4369,
       "lead_gain": 0.0157,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -80968,7 +81270,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4304,
       "lead_gain": 0.0151,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -81284,7 +81587,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4244,
       "lead_gain": 0.0146,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -81600,7 +81904,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4187,
       "lead_gain": 0.0142,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -81916,7 +82221,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4134,
       "lead_gain": 0.0138,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -82232,7 +82538,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4084,
       "lead_gain": 0.0135,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -82548,7 +82855,8 @@
     "lead_sharpness": {
       "r_lag0": 0.4037,
       "lead_gain": 0.0133,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -82864,7 +83172,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3993,
       "lead_gain": 0.0131,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -83180,7 +83489,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3951,
       "lead_gain": 0.0129,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -83496,7 +83806,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0115,
       "lead_gain": 0.1609,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -83715,7 +84026,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0118,
       "lead_gain": 0.1609,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -83934,7 +84246,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0349,
       "lead_gain": 0.0966,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -84150,7 +84463,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0356,
       "lead_gain": 0.0964,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -84366,7 +84680,8 @@
     "lead_sharpness": {
       "r_lag0": 0.012,
       "lead_gain": 0.1613,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -84585,7 +84900,8 @@
     "lead_sharpness": {
       "r_lag0": 0.012,
       "lead_gain": 0.162,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -84804,7 +85120,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0026,
       "lead_gain": 0.1043,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -85131,7 +85448,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0023,
       "lead_gain": 0.1056,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -85458,7 +85776,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1938,
       "lead_gain": 0.0734,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -85677,7 +85996,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1612,
       "lead_gain": 0.0496,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -85926,7 +86246,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1604,
       "lead_gain": 0.0509,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -86175,7 +86496,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1323,
       "lead_gain": 0.0705,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -86394,7 +86716,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1314,
       "lead_gain": 0.0781,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -86613,7 +86936,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0825,
       "lead_gain": 0.066,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -86832,7 +87156,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0862,
       "lead_gain": 0.0673,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -87051,7 +87376,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0174,
       "lead_gain": 0.1809,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -87270,7 +87596,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0191,
       "lead_gain": 0.1909,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -87489,7 +87816,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0194,
       "lead_gain": 0.1916,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -87708,7 +88036,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0802,
       "lead_gain": 0.0804,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -87927,7 +88256,8 @@
     "lead_sharpness": {
       "r_lag0": 0.078,
       "lead_gain": 0.0824,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -88146,7 +88476,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0562,
       "lead_gain": 0.1151,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -88431,7 +88762,8 @@
     "lead_sharpness": {
       "r_lag0": 0.058,
       "lead_gain": 0.1246,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -88716,7 +89048,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0119,
       "lead_gain": 0.0802,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -88935,7 +89268,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0124,
       "lead_gain": 0.0802,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -89154,7 +89488,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0462,
       "lead_gain": 0.068,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -89393,7 +89728,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0468,
       "lead_gain": 0.0678,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -89632,7 +89968,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1837,
       "lead_gain": 0.08,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -89851,7 +90188,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1842,
       "lead_gain": 0.0795,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -90070,7 +90408,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1413,
       "lead_gain": 0.0605,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -90319,7 +90658,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1417,
       "lead_gain": 0.0599,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -90568,7 +90908,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1837,
       "lead_gain": 0.0817,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -90787,7 +91128,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1842,
       "lead_gain": 0.0815,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -91006,7 +91348,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0328,
       "lead_gain": 0.0108,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -91335,7 +91678,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0387,
       "lead_gain": 0.0116,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -91664,7 +92008,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2012,
       "lead_gain": 0.0076,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -91883,7 +92228,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1647,
       "lead_gain": 0.0155,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -92196,7 +92542,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1662,
       "lead_gain": 0.0148,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -92509,7 +92856,8 @@
     "lead_sharpness": {
       "r_lag0": -0.078,
       "lead_gain": 0.1316,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -92728,7 +93076,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0075,
       "lead_gain": 0.1918,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -92947,7 +93296,8 @@
     "lead_sharpness": {
       "r_lag0": 0.0773,
       "lead_gain": 0.1266,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -93282,7 +93632,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0369,
       "lead_gain": 0.1535,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -93501,7 +93852,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2228,
       "lead_gain": 0.0965,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -93725,7 +94077,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2198,
       "lead_gain": 0.0978,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -93949,7 +94302,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6052,
       "lead_gain": 0.0018,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -94274,7 +94628,8 @@
     "lead_sharpness": {
       "r_lag0": 0.58,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -94609,7 +94964,8 @@
     "lead_sharpness": {
       "r_lag0": 0.5798,
       "lead_gain": 0.0,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -94944,7 +95300,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6049,
       "lead_gain": 0.0023,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -95269,7 +95626,8 @@
     "lead_sharpness": {
       "r_lag0": 0.2931,
       "lead_gain": 0.0663,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -95513,7 +95871,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0514,
       "lead_gain": 0.0998,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -95736,7 +96095,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0159,
       "lead_gain": 0.1526,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -95959,7 +96319,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2751,
       "lead_gain": 0.0444,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -96178,7 +96539,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1171,
       "lead_gain": 0.113,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -96397,7 +96759,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0108,
       "lead_gain": 0.1601,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -96616,7 +96979,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0167,
       "lead_gain": 0.1348,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -96835,7 +97199,8 @@
     "lead_sharpness": {
       "r_lag0": 0.013,
       "lead_gain": 0.1131,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -97054,7 +97419,8 @@
     "lead_sharpness": {
       "r_lag0": 0.1159,
       "lead_gain": 0.2071,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -97313,7 +97679,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1186,
       "lead_gain": 0.1764,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -97537,7 +97904,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0302,
       "lead_gain": 0.21,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -97761,7 +98129,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0251,
       "lead_gain": 0.0636,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": false,
@@ -97980,7 +98349,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1729,
       "lead_gain": 0.0403,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -98203,7 +98573,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1318,
       "lead_gain": 0.009,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -98427,7 +98798,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1308,
       "lead_gain": 0.0145,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -98651,7 +99023,8 @@
     "lead_sharpness": {
       "r_lag0": -0.32,
       "lead_gain": 0.0179,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -98875,7 +99248,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2263,
       "lead_gain": 0.016,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -99102,7 +99476,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1604,
       "lead_gain": 0.0229,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -99325,7 +99700,8 @@
     "lead_sharpness": {
       "r_lag0": -0.3077,
       "lead_gain": 0.0031,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -99549,7 +99925,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2954,
       "lead_gain": 0.0345,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -99773,7 +100150,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2056,
       "lead_gain": 0.0223,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -100000,7 +100378,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1406,
       "lead_gain": 0.021,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -100227,7 +100606,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2951,
       "lead_gain": 0.0094,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -100451,7 +100831,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2307,
       "lead_gain": 0.0156,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -100678,7 +101059,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1608,
       "lead_gain": 0.0245,
-      "is_comover": true
+      "is_comover": true,
+      "lead_class": "co-mover"
     },
     "gates": {
       "screen_pass": false,
@@ -100901,7 +101283,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1061,
       "lead_gain": 0.1722,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -101125,7 +101508,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1046,
       "lead_gain": 0.1719,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -101349,7 +101733,8 @@
     "lead_sharpness": {
       "r_lag0": -0.0703,
       "lead_gain": 0.1539,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -101573,7 +101958,8 @@
     "lead_sharpness": {
       "r_lag0": -0.2499,
       "lead_gain": 0.0645,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -101797,7 +102183,8 @@
     "lead_sharpness": {
       "r_lag0": -0.207,
       "lead_gain": 0.0684,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -102021,7 +102408,8 @@
     "lead_sharpness": {
       "r_lag0": -0.1285,
       "lead_gain": 0.037,
-      "is_comover": true
+      "is_comover": false,
+      "lead_class": "lags"
     },
     "gates": {
       "screen_pass": false,
@@ -102245,7 +102633,8 @@
     "lead_sharpness": {
       "r_lag0": 0.596,
       "lead_gain": 0.0763,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -102529,7 +102918,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3319,
       "lead_gain": 0.1914,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -102800,7 +103190,8 @@
     "lead_sharpness": {
       "r_lag0": 0.6073,
       "lead_gain": 0.0828,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -103075,7 +103466,8 @@
     "lead_sharpness": {
       "r_lag0": 0.476,
       "lead_gain": 0.0901,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -103383,7 +103775,8 @@
     "lead_sharpness": {
       "r_lag0": 0.275,
       "lead_gain": 0.0787,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
@@ -103696,7 +104089,8 @@
     "lead_sharpness": {
       "r_lag0": 0.3365,
       "lead_gain": 0.1918,
-      "is_comover": false
+      "is_comover": false,
+      "lead_class": "true lead"
     },
     "gates": {
       "screen_pass": true,
